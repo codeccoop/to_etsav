@@ -1,0 +1,10 @@
+{
+  "name": "to_etsav",
+  "version": "1.0.0",
+  "description": "Public page of the ETSAV's project TO",
+  "main": "index.js",
+  "repository": "https://github.com/orzocogorzo/to_etsav",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

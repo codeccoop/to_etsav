@@ -1,0 +1,9 @@
+# FOLDERS
+dist/*
+src/data/*
+src/statics/*
+assets/*
+node_modules/*
+
+# SCRIPTS
+__python__
