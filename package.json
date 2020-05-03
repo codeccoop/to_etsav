@@ -13,6 +13,7 @@
     "navigo": "^7.1.2"
   },
   "scripts": {
-    "serve": "rm -rf dist/* && cp index.html dist/index.html && browserify src/index.js > dist/bundle.js && stylus < src/index.styl > dist/bundle.css && cp -rf src/templates dist/templates && python server.py"
+    "serve": "rm -rf dist/* && cp index.html dist/index.html && browserify src/index.js > dist/bundle.js && stylus < src/index.styl > dist/bundle.css && cp -rf src/templates dist/templates && python server.py",
+    "compile": "rm -rf dist/* && cp index.html dist/index.html && browserify src/index.js > dist/bundle.js && stylus < src/index.styl > dist/bundle.css && cp -rf src/templates dist/templates"
   }
 }
