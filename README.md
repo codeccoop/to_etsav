@@ -16,22 +16,22 @@ Run development server
 
 ### REPOSITORY STRUCTURE
 
-/
-|- assets <-- Folder to save documents, data an any kind of worthy data related to the project 
-|- dist <-- Folder where our app will be placed after a compilation
-|- include <-- Folder created by virtualenv, don't carry about it
-|- lib <-- Folder created by virtualenv, don't carry about it
-|- node_modules <-- Folder created by npm, don't carry about it
-|- src <-- Folder where all our app source will be placed
-    |- data <-- Folder where our data (json, csv, xml...) files will be placed.
-    |- scripts <-- Folder where our js scripts will be placed.
-    |- styles <-- Folder where our stylus scripts will be placed.
-    |- templates <-- Folder where our templates will be placed.
-    |- index.js <-- Index file of our scripts.
-    |- index.styl <-- Index file of our styles.
-|- index.html <-- index.html is our index file
-|- package.json <-- Config file for npm where our dependencies where registereds, don't carry about it.
-|- README.md <-- Description of the project
-|- requirments.txt <-- Config file for python where our dependencies where registereds, don't carry about it.
-|- server.py <-- Source code of the development server
-|- package-lock.json <-- Config file for npm where our dependencies where registereds, don't carry about it.
+    /
+    |- assets <-- Folder to save documents, data an any kind of worthy data related to the project 
+    |- dist <-- Folder where our app will be placed after a compilation
+    |- include <-- Folder created by virtualenv, don't carry about it
+    |- lib <-- Folder created by virtualenv, don't carry about it
+    |- node_modules <-- Folder created by npm, don't carry about it
+    |- src <-- Folder where all our app source will be placed
+        |- data <-- Folder where our data (json, csv, xml...) files will be placed.
+        |- scripts <-- Folder where our js scripts will be placed.
+        |- styles <-- Folder where our stylus scripts will be placed.
+        |- templates <-- Folder where our templates will be placed.
+        |- index.js <-- Index file of our scripts.
+        |- index.styl <-- Index file of our styles.
+    |- index.html <-- index.html is our index file
+    |- package.json <-- Config file for npm where our dependencies where registereds, don't carry about it.
+    |- README.md <-- Description of the project
+    |- requirments.txt <-- Config file for python where our dependencies where registereds, don't carry about it.
+    |- server.py <-- Source code of the development server
+    |- package-lock.json <-- Config file for npm where our dependencies where registereds, don't carry about it.
