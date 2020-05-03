@@ -3,7 +3,11 @@ const Injector = (function () {
         this.parser = document.createElement("template");
         this.renders = new Map();
         this.url = 'templates/';
-        this.ajax = new XMLHttpRequest();
+        Object.defineProperty(this, "ajax", {
+            get: function () {
+                return new XMLHttpRequest();
+            }
+        })
     }
 
     Injector.prototype.render = function render (el, template, data) {
@@ -26,8 +30,9 @@ const Injector = (function () {
     Injector.prototype.load = function load (template_name) {
         const self = this;
         return new Promise(function (res, rej) {
-            self.ajax.open("GET", self.url + template_name);
-            self.ajax.onreadystatechange = function () {
+            const ajax = self.ajax;
+            ajax.open("GET", self.url + template_name);
+            ajax.onreadystatechange = function () {
                 if (this.readyState === 4) {
                     if (this.status === 200) {
                         res(this.response);
@@ -36,7 +41,7 @@ const Injector = (function () {
                     }
                 }
             }
-            self.ajax.send();
+            ajax.send();
         });
         
     }
