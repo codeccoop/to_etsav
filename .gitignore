@@ -5,5 +5,8 @@ src/statics/*
 assets/*
 node_modules/*
 
-# SCRIPTS
+# PYTHON
 __python__
+bin
+lib
+include

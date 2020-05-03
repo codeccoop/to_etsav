@@ -5,6 +5,14 @@
   "main": "index.js",
   "repository": "https://github.com/orzocogorzo/to_etsav",
   "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "browserify": "^16.5.1",
+    "stylus": "^0.54.7"
+  },
+  "dependencies": {
+    "navigo": "^7.1.2"
+  },
+  "scripts": {
+    "serve": "rm -rf dist/* && cp index.html dist/index.html && browserify src/index.js > dist/bundle.js && stylus < src/index.styl > dist/bundle.css && cp -rf src/templates dist/templates && python server.py"
+  }
 }
