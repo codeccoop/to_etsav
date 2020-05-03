@@ -1,5 +1,5 @@
 const Injector = (function () {
-    const Injector = function Injector () {
+    const _Injector = function () {
         this.parser = document.createElement("template");
         this.renders = new Map();
         this.url = 'templates/';
@@ -10,16 +10,16 @@ const Injector = (function () {
         })
     }
 
-    Injector.prototype.render = function render (el, template, data) {
+    _Injector.prototype.render = function render (el, template, data) {
         const self = this;
-        typeof template === "function" ? template : function () {return template};
+        ftemplate = typeof template === "function" ? template : function () {return template};
         data = data || new Object();
 
         return new Promise(function (res, rej) {
             try {
-                this.parser.innerHTML = template(data);
+                self.parser.innerHTML = ftemplate(data);
                 el.innerHTML = "";
-                el.appendChild(this.parser.content);
+                el.appendChild(self.parser.content);
                 res(el);
             } catch (err) {
                 rej(err);
@@ -27,7 +27,7 @@ const Injector = (function () {
         });
     }
 
-    Injector.prototype.load = function load (template_name) {
+    _Injector.prototype.load = function load (template_name) {
         const self = this;
         return new Promise(function (res, rej) {
             const ajax = self.ajax;
@@ -46,7 +46,7 @@ const Injector = (function () {
         
     }
 
-    return Injector;
+    return _Injector;
 })();
 
 module.exports = Injector;
