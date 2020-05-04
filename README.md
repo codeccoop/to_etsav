@@ -7,8 +7,6 @@ Activate the virtualenv
 `source bin/activate`
 Install python requirements
 `pip install -r requirements.txt`
-Run the development server
-`python server.py`
 Install npm dependencies
 `npm install`
 Run development server
