@@ -2,18 +2,15 @@
   "name": "to_etsav",
   "version": "1.0.0",
   "description": "Public page of the ETSAV's project TO",
-  "main": "index.js",
   "repository": "https://github.com/orzocogorzo/to_etsav",
   "license": "MIT",
-  "devDependencies": {
-    "browserify": "^16.5.1",
-    "stylus": "^0.54.7"
-  },
   "dependencies": {
     "navigo": "^7.1.2"
   },
   "scripts": {
-    "serve": "rm -rf dist/* && cp index.html dist/index.html && browserify src/index.js > dist/bundle.js && stylus < src/index.styl > dist/bundle.css && cp -rf src/templates dist/templates && python server.py",
-    "compile": "rm -rf dist/* && cp index.html dist/index.html && browserify src/index.js > dist/bundle.js && stylus < src/index.styl > dist/bundle.css && cp -rf src/templates dist/templates"
+    "default": "export NODE_ENV='DEV' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD serve",
+    "serve": "export NODE_ENV='DEV' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD serve",
+    "build:pre": "export NODE_ENV='PRE' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD build",
+    "build:pro": "export NODE_ENV='PRO' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD build"
   }
 }

@@ -2,16 +2,16 @@
 const Navigo = require("navigo");
 
 // SOURCE
-const Injector = require("./scripts/Injector.js");
+const Injector = require("./Injector.js");
 
 // COMPONENTS
-const Header = require("./scripts/components/Header.js");
-const Footer = require("./scripts/components/Footer.js");
+const Header = require("./components/Header.js");
+const Footer = require("./components/Footer.js");
 
 // VIEWS
-const Home = require("./scripts/views/Home.js");
-const Project = require("./scripts/views/Project.js");
-const Documents = require("./scripts/views/Documents.js");
+const Home = require("./views/Home.js");
+const Project = require("./views/Project.js");
+const Documents = require("./views/Documents.js");
 
 
 window.addEventListener("DOMContentLoaded" , function () {
