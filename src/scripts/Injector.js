@@ -2,12 +2,12 @@ const Injector = (function () {
     const _Injector = function () {
         this.parser = document.createElement("template");
         this.renders = new Map();
-        this.url = 'templates/';
+        this.url = window._env.staticURL + "templates/";
         Object.defineProperty(this, "ajax", {
             get: function () {
                 return new XMLHttpRequest();
             }
-        })
+        });
     }
 
     _Injector.prototype.render = function render (el, template, data) {

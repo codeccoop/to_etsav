@@ -1,12 +1,17 @@
-# FOLDERS
+# JAVASCRIPT
 dist/*
 src/data/*
 src/statics/*
 assets/*
-node_modules/*
+**/node_modules
 
 # PYTHON
-__python__
+**/__python__
+*.pyc
 bin
 lib
 include
+
+# IDE's
+.idea
+.vscode
