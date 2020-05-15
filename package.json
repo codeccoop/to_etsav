@@ -12,5 +12,8 @@
     "serve": "export NODE_ENV='DEV' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD serve",
     "build:pre": "export NODE_ENV='PRE' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD build",
     "build:pro": "export NODE_ENV='PRO' && gulp --gulpfile .devlite/gulpfile.js --cwd $PWD build"
+  },
+  "devDependencies": {
+    "mustache": "^4.0.1"
   }
 }

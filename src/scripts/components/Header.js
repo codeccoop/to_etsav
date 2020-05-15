@@ -1,19 +1,23 @@
+const BaseView = require("../core/BaseView.js");
+
+
 const Header = (function () {
 
-    const _Header = function (el) {
-        this.el = el;
-    }
+    const Header = BaseView.extend(function (el, template) {
+        const self = this;
+        this.render();
+    });
 
-    _Header.prototype.onRender = function onRender () {
+    Header.prototype.onRender = function onRender () {
         Array.apply(null, this.el.getElementsByClassName("header__link")).forEach(link => {
             link.addEventListener("click", function () {
-                console.log(this);
+                // console.log(this);
             });
         });
         console.log("Header rendered");
     }
 
-    return _Header;
+    return Header;
 })();
 
 module.exports = Header;
