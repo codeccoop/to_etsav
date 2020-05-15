@@ -1,13 +1,17 @@
-const Footer = (function () {
-    const _Footer = function (el) {
-        this.el = el;
-    }
+const BaseView = require("../core/BaseView.js");
 
-    _Footer.prototype.onRender = function onRender () {
+
+const Footer = (function () {
+    const Footer = BaseView.extend(function (el, template) {
+        const self = this;
+        this.render();
+    });
+
+    Footer.prototype.onRender = function onRender () {
         console.log("Footer rendered");
     }
 
-    return _Footer;
+    return Footer;
 })();
 
 module.exports = Footer;

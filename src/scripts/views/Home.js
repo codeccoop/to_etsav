@@ -1,13 +1,25 @@
+const BaseView = require("../core/BaseView.js");
+
+
 const Home = (function () {
-    const _Home = function (el) {
-        this.el = el;
+    const Home = BaseView.extend(function (el, template) {
+        const self = this;
+        this.render();
+    });
+
+    Home.prototype.onUpdate = function onUpdate () {
+        console.log("Home updated");
     }
 
-    _Home.prototype.onRender = function onRender () {
+    Home.prototype.onRender = function onRender () {
         console.log("Home rendered");
     }
 
-    return _Home;
+    Home.prototype.onRemove = function onRemove () {
+        console.log("Home removed");
+    }
+
+    return Home;
 })();
 
 module.exports = Home;

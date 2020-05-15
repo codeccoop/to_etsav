@@ -1,13 +1,28 @@
+const BaseView = require("../core/BaseView.js");
+
+
 const Documents = (function () {
-    const _Documents = function (el) {
-        this.el = el;
+    const Documents = BaseView.extend(function (el, template) {
+        const self = this;
+        this.load("data/documents.json", function (response) {
+            self.data = JSON.parse(response);
+        });
+    });
+
+    Documents.prototype.onUpdate = function onUpdate () {
+        console.log("Documents updated");
+        this.render();
     }
 
-    _Documents.prototype.onRender = function onRender () {
+    Documents.prototype.onRender = function onRender () {
         console.log("Documents rendered");
     }
 
-    return _Documents;
+    Documents.prototype.onRemove = function onRemove () {
+        console.log("Documents removed");
+    }
+
+    return Documents;
 })();
 
 module.exports = Documents;
