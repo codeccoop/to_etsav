@@ -8,6 +8,7 @@ const Footer = require("../components/Footer.js");
 const Home = require("../views/Home.js");
 const Project = require("../views/Project.js");
 const Documents = require("../views/Documents.js");
+const Gallery = require("../views/Gallery.js");
 
 
 
@@ -31,6 +32,9 @@ const Router = (function () {
             .resolve();
     
         this.navigo.on("documents", self.onNavigate("documents.html", "#content", Documents))
+            .resolve();
+
+        this.navigo.on("gallery", self.onNavigate("gallery.html", "#content", Gallery))
             .resolve();
 
         self.ajax("templates/header.html").then(function (template) {

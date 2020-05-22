@@ -1,17 +1,22 @@
 const Mustache = require("mustache");
 
 const BaseView = (function () {
+
+    /// PRIVATE BLOCK CODE
+    var renderCount = 0;
+    var privata_data = new Object();
+    /// END OF PRIVATE BLOCK CODE
+
     const BaseView = function BaseView (el, template) {
         const self = this;
         this.el = el;
         this.template = template;
-        var _data = new Object();
         Object.defineProperty(this, "data", {
             get: function () {
-                return _data;
+                return privata_data;
             },
             set: function (data) {
-                _data = data;
+                privata_data = data;
                 self.dispatch("update");
             }
         });
@@ -47,6 +52,7 @@ const BaseView = (function () {
     }
 
     BaseView.prototype.onUpdate = function onUpdate () {
+        // TO OVERWRITE
         console.log("onUpdate");
     }
 
