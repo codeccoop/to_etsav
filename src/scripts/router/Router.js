@@ -1,3 +1,4 @@
+// VENDOR
 const Navigo = require("navigo");
 
 // COMPONENTS
@@ -11,14 +12,16 @@ const Documents = require("../views/Documents.js");
 const Gallery = require("../views/Gallery.js");
 
 
-
 const Router = (function () {
+    // PRIVATE CODE BLOCK
     function beforeNavigate (cssEl) {
         const el = document.querySelector(cssEl);
         if (el && this.views.get(el)) {
             this.views.get(el).remove();
         }
     }
+    const cache = new Map();
+    // END OF PRIVATE CODE BLOCK
     
     const Router = function Router () {
         const self = this;
@@ -42,6 +45,7 @@ const Router = (function () {
             const view = new Header(el, template);
             self.views.set(el, view);
         });
+        
         self.ajax("templates/footer.html").then(function (template) {
             const el = document.querySelector("footer");
             const view = new Footer(el, template);
@@ -52,20 +56,28 @@ const Router = (function () {
     Router.prototype.onNavigate = function onNavigate (templateName, cssEl, View) {
         const self = this;
         return function () {
-            self.ajax("templates/" + templateName)
+            if (cache.get(templateName)) {
+                beforeNavigate.call(self, cssEl);
+                const el = document.querySelector(cssEl);
+                const view = new View(el, cache.get(templateName));
+                self.views.set(el, view);
+            } else {
+                self.ajax("templates/" + templateName)
                 .then(function (template) {
+                    cache.set(templateName, template);
                     beforeNavigate.call(self, cssEl);
                     const el = document.querySelector(cssEl);
                     const view = new View(el, template);
-                    self.views.set(el, view);
-                });
+                    self.views.set(el, view);    
+                });   
+            }
         }
     }
 
     Router.prototype.ajax = function ajax (path) {
         return new Promise(function (res, rej) {
             var ajax = new XMLHttpRequest();
-            ajax.open("GET", window._env.staticsURL + path, true);
+            ajax.open("GET", window._env.publicURL + path, true);
             ajax.onreadystatechange = function () {
                 if (this.readyState === 4) {
                     if (this.status === 200) {

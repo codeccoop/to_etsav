@@ -9,7 +9,7 @@ const Documents = (function () {
     
     var Documents = function (el, template) {
         const self = this;
-        this.load("data/documents.json").then(function (response) { 
+        this.load(_env.apiURL + "documents.json").then(function (response) { 
             // this == funció anonima
             // self == Documents
             self.data = JSON.parse(response);

@@ -6,6 +6,7 @@ const fs = require("fs");
 const { src, dest, parallel, series, watch } = require('gulp');
 const del = require('del');
 const browserify = require('browserify');
+const envify = require("envify/custom");
 // const http = require("http");
 
 // GULP PLUGINS
@@ -21,17 +22,12 @@ const replace = require('gulp-token-replace');
 const connect = require('gulp-connect');
 const rename = require('gulp-rename');
 
-const join = path.join;
+
 const rc = (function () {
   const template = {
-    build: "server/statics",
     dist: "dist",
     src: "src",
-    js: "scripts/index.js",
-    html: "index.html",
-    css: "styles/index.styl",
-    images: "statics/images",
-    data: "statics/data"
+    statics: "statics"
   }
   try {
     const user = require("../devliterc.js");
@@ -46,34 +42,39 @@ const rc = (function () {
   }
 })();
 
-function getHtmlGlobals () {
-  let htmlGlobals;
+function globals () {
+  let globals;
   try {
-    htmlGlobals = require(process.env.NODE_ENV === "PRO" ?
-      "../build/build.pro.js" : process.env.NODE_ENV === "PRE" ?
-      "../build/build.pre.js" : process.env.NODE_ENV === "DEV" ?
-      "../build/build.dev.js" : "../build/build.custom.js");
+    globals = require(process.env.NODE_ENV === "pro" ?
+      "../globals/global.pro.js" : process.env.NODE_ENV === "pre" ?
+      "../globals/global.pre.js" : process.env.NODE_ENV === "dev" ?
+      "../globals/global.dev.js" : "../globals/global.custom.js");
+
+    
+    for (let k in globals) {
+      globals[k.toUpperCase()] = globals[k];
+      delete globals[k.toLowerCase()];
+      process.env[k.toUpperCase()] = process.env[k.toUpperCase()] || globals[k.toUpperCase()];
+    }
+
   } catch (err) {
     console.log(err);
     throw new Error("No build folder found. Please define your build environment config files into a build folder on your root directory.");
   }
   
   try {
-    return {
-      ...Object.call(null, htmlGlobals),
-      ...{
-        env: require("../envs.js")[htmlGlobals.env]
-      }
-    }
+    globals.ENVIRON = require("../envs.js")[process.env.NODE_ENV];
+    return globals;
   } catch (err) {
     console.log(err);
     throw new Error("Not envs.js found. Please define your client environment variables in a file and name it envs.js on your root directory.");
   }
 }
+globals.description = "Retrive object from global files."
 
 function clean (done) {
   return del([
-    join(rc.dist + "\*")
+    path.join(rc.dist + "\*")
   ], {
     force: true
   });
@@ -83,8 +84,9 @@ clean.description = "Remove dist folder contents";
 
 
 function dist (done) {
+  const statics = path.join(rc.dist, "statics");
   return src("*.*", {read: false})
-    .pipe(dest(join(join(rc.dist, rc.statics))));
+    .pipe(dest(statics));
 };
 dist.description = "Create dist directory structure";
 // exports.dist = dist;
@@ -92,18 +94,20 @@ dist.description = "Create dist directory structure";
 function deploy (done) {
   console.log("[DEPLOY TASK]");
   console.log("FROM: ", rc.dist);
-  console.log("TO: ", rc.build);
-  return src(join(rc.dist, "\*"))
-    .pipe(dest(join(rc.build)));
+  console.log("TO: ", rc.deploy);
+  return src(path.join(rc.dist, "\*"))
+    .pipe(dest(path.join(rc.deploy)));
 }
 deploy.description = 'Deploy bundling to the server';
 // exports.deploy;
 
 function js (done) {
   const b = browserify({
-      entries: join(rc.src, rc.js),
+      entries: path.join(rc.src, "index.js"),
       debug: true
   });
+
+  b.transform(envify(globals()));
 
   var proc = b.bundle()
     .pipe(vinylSource('bundle.js'))
@@ -125,11 +129,12 @@ js.description = 'Bundle js files, compile them with buble and uglify and move t
 // exports.js = js;
 
 function css (done) {
-  return src(join(rc.src, rc.css))
+  return src(path.join(rc.src, "index.styl"))
     .pipe(sourcemaps.init({loadMaps: true}))
       .pipe(stylus({
         compress: true,
-        'include css': true
+        'include css': true,
+        rawDefine: globals()
       }))
     .pipe(sourcemaps.write())
     .pipe(rename('bundle.css'))
@@ -140,15 +145,17 @@ css.descriptions = "Bundle all styuls files, compile them and move the output to
 // exports.css = css;
 
 function statics (done) {
-  return src(join(rc.src, rc.statics, "\*\*\/\*"))
+  return src(path.join(rc.statics, "\*\*/\*"))
+    .pipe(image())
     .pipe(connect.reload())
-    .pipe(dest(join(rc.dist, rc.statics)));
+    .pipe(dest(path.join(rc.dist, rc.statics)));
 }
+statics.description = "Move statics to dist folder";
+
 
 function html (done) {
-  const env = getHtmlGlobals();
-  return src(join(rc.src, rc.html))
-    .pipe(replace({global: env}))
+  return src(path.join(rc.src, "index.html"))
+    .pipe(replace({global: globals()}))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(connect.reload())
     .pipe(dest(rc.dist));
@@ -156,8 +163,9 @@ function html (done) {
 html.description = "Minify index.html and put it on the dist folder";
 // exports.html = html;
 
-const bundle = parallel(html, js, css, statics); /* imageCompress, data */
-exports.bundle = bundle;
+const bundle = parallel(html, js, css, statics);
+//  exports.bundle = bundle;
+
 const pipeline = series(clean, dist, bundle);
 // exports.pipeline = pipeline;
 
@@ -179,12 +187,10 @@ const serve = series(pipeline, function serve (done) {
     }
   });
 
-  watch(join(rc.src, rc.html), series(html));
-  watch(join(rc.src, "\*\*/\*.js"), series(js));
-  watch(join(rc.src, "\*\*/\*.styl|css"), series(css));
-  watch(join(rc.src, rc.statics, "\*\*\/\*"), series(statics));
-  // watch(join(rc.src, rc.images, "\*"), series(imageCompress));
-  // watch(join(rc.src, rc.data, "\*"), series(data));
+  watch(path.join(rc.src, "index.html"), series(html));
+  watch(path.join(rc.src, "\*\*/\*.js"), series(js));
+  watch(path.join(rc.src, "\*\*/\*.styl|css"), series(css));
+  watch(path.join(rc.statics, "\*\*/\*"), series(statics));
 });
 serve.description = "Setup a static server, start a livereload listener and put gulp watching for changes";
 exports.serve = serve;

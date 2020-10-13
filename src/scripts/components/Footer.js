@@ -8,7 +8,7 @@ const Footer = (function () {
     });
 
     Footer.prototype.onRender = function onRender () {
-        console.log("Footer rendered");
+        // TO OVERWRITE
     }
 
     return Footer;
