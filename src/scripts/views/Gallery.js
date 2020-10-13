@@ -9,7 +9,7 @@ const Gallery = (function () {
     
     var Gallery = function (el, template) {
         const self = this;
-        this.load("data/gallery_images.json").then(function (response) { 
+        this.load(_env.apiURL + "gallery_images.json").then(function (response) { 
             self.data = JSON.parse(response);
         });
     };

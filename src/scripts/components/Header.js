@@ -10,11 +10,12 @@ const Header = (function () {
 
     Header.prototype.onRender = function onRender () {
         Array.apply(null, this.el.getElementsByClassName("header__link")).forEach(link => {
-            link.addEventListener("click", function () {
-                // console.log(this);
+            link.addEventListener("click", function (ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                location.hash = this.children[0].getAttribute("href");
             });
         });
-        console.log("Header rendered");
     }
 
     return Header;

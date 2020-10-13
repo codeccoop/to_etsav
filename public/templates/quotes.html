@@ -1,0 +1,12 @@
+<div id="quotes">
+    <h1>This is a page with quotes</h1>
+    <hr>
+    <div class="content">
+        {{#quotes}}
+            <blockquote>
+                <p><em>"{{content}}"</em></p>
+                <div><b>{{author}}</b>.<cite style="margin-left: 5px;">{{cite}}</cite></div>
+            </blockquote>
+        {{/quotes}}
+    </div>
+</div>
