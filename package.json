@@ -5,7 +5,8 @@
   "repository": "https://github.com/orzocogorzo/tablao",
   "license": "GPL-3.0",
   "dependencies": {
+    "mustache": "^4.0.1",
     "navigo": "^7.1.2",
-    "mustache": "^4.0.1"
+    "tablao": "^1.0.3"
   }
 }
