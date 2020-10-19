@@ -1,5 +1,5 @@
 # JAVASCRIPT
-dist/*
+.dist/*
 src/data/*
 src/statics/*
 assets/*
