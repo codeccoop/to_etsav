@@ -1,0 +1,29 @@
+{
+  "images": [
+    {
+      "url": "https://etsav.upc.edu",
+      "description": "Image description",
+      "id": 1
+    }, {
+      "url": "https://etsav.upc.edu",
+      "description": "Some other description about an other image.",
+       "id": 2
+    }, {
+      "url": "https://etsav.upc.edu",
+      "description": "Some other description about an other image.",
+      "id": 3
+    }, {
+      "url": "https://etsav.upc.edu",
+      "description": "Some other description about an other image.",
+      "id": 4
+    }, {
+      "url": "https://etsav.upc.edu",
+      "description": "Some other description about an other image.",
+      "id": 5
+    }, {
+      "url": "https://etsav.upc.edu",
+      "description": "Some other description about an other image.",
+      "id": 6
+    }
+  ]
+}
