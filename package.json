@@ -6,7 +6,6 @@
   "license": "GPL-3.0",
   "dependencies": {
     "mustache": "^4.0.1",
-    "navigo": "^7.1.2",
-    "tablao": "^1.0.3"
+    "navigo": "^7.1.2"
   }
 }
