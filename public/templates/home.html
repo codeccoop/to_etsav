@@ -1,8 +1,10 @@
 <div id="home">
     <div class="imgs-container">
-        {{#images}}
-        <div id="{{id}}" class="img">
-            <a href="{{url}}" ></a>
+        {{#sections}}
+        <div id="{{section}}" class="img">
+            <a href="#{{section}}" >
+                <img src="{{image}}"/>
+            </a>
             <div class="img-text" >{{description}}</div>
-        {{/images}}
+        {{/sections}}
 </div>
