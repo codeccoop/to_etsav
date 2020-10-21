@@ -6,10 +6,10 @@ const Documents = (function () {
     /// PRIVATE BLOCK CODE
     var renderCount = 0;
     /// END OF PRIVATE BLOCK CODE
-    
+
     var Documents = function (el, template) {
         const self = this;
-        this.load(_env.apiURL + "documents.json").then(function (response) { 
+        this.load(_env.apiURL + "documents.json").then(function (response) {
             // this == funció anonima
             // self == Documents
             self.data = JSON.parse(response);
@@ -21,7 +21,7 @@ const Documents = (function () {
     Documents.prototype.onUpdate = function onUpdate () {
         console.log("Documents updated");
         this.render();
-    }
+    };
 
     Documents.prototype.onRender = function onRender () {
         const self = this;
@@ -41,18 +41,18 @@ const Documents = (function () {
         // });
         // this.el.appendChild(list);
         console.log("Documents rendered");
-    }
+    };
 
     Documents.prototype.onRemove = function onRemove () {
         for (let doc of self.el.querySelectorAll(".doc-row")) {
             doc.removeEventListener("click", self.onClickDocument);
         }
         console.log("Documents removed");
-    }
+    };
 
     Documents.prototype.onClickDocument = function (ev) {
         window.open("statics/data/" + ev.currentTarget.dataset.file);
-    }
+    };
 
     return Documents;
 })();
