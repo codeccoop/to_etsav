@@ -3,9 +3,13 @@ const BaseView = require("../core/BaseView.js");
 
 const Home = (function () {
     const Home = BaseView.extend(function (el, template) {
-        const self = this;
+      const self = this;
       this.load(_env.apiURL + "home.json").then(function (response) {
-        sefl.data = JSON.parse(response);
+        const data = JSON.parse(response);
+        data.sections.forEach(function (sect) {
+          sect.image = _env.publicURL + "images/" + sect.image;
+        });
+        self.data = data;
       });
     });
 
