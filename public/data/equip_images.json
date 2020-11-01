@@ -1,0 +1,61 @@
+{
+    "images": [
+        {
+            "file": "1_Clara Alseda.png",
+            "fullname": {"name": "CLARA",
+                    "surnames":"ALSEDÀ RODRÍGUEZ"
+                     },
+            "details":{"date": "22/2/1996",
+                        "level": "Undergraduate, 4th year",   
+                        "position":"Contest Captain",
+                        "department":"All of them"
+                        },
+            "quote":"«A veces les pongo a mis palabras diéresis de colores imitando diademas.»"
+        },
+        {
+            "file": "2_Marta Aracil.png"
+        },
+        {
+            "file": "3_Helena Armengol.png"
+        },
+        {
+            "file": "4_Lluc Borras.png"
+        },
+        {
+            "file": "5_Mariona Blanch.png"
+        },
+        {
+            "file": "-6.jpg"
+        },
+        {
+            "file": "-7.jpg"
+        },
+        {
+            "file": "-8.jpg"
+        },
+        {
+            "file": "GALLERY-9.jpg"
+        },
+        {
+            "file": "GALLERY-10.jpg"
+        },
+        {
+            "file": "GALLERY-11.jpg"
+        },
+        {
+            "file": "GALLERY-12.jpg"
+        },
+        {
+            "file": "GALLERY-13.jpg"
+        },
+        {
+            "file": "GALLERY-14.jpg"
+        },
+        {
+            "file": "GALLERY-15.jpg"
+        },
+        {
+            "file": "GALLERY-16.jpg"
+        }
+    ]
+}
