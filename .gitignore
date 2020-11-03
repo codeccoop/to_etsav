@@ -1,8 +1,8 @@
 # JAVASCRIPT
 .dist/*
-src/data/*
-src/statics/*
-assets/*
+public/images/*
+public/data/*
+public/fonts/*
 **/node_modules
 
 # PYTHON
