@@ -1,0 +1,29 @@
+#lngMenu
+
+  .lng-menu__wrapper
+    height: 100%
+    width: 100%
+    text-transform: uppercase
+    text-align: right
+    position: relative
+
+    &:hover
+      .lng-menu__visible
+        display: none
+
+      .lng-menu__list
+        display: block
+
+  .lng-menu__visible
+    color: #222
+    line-height: 100px
+
+  .lng-menu__list
+    position: absolute
+    z-indez: 10
+    display: none
+    right: 0px
+    top: 45%
+
+    &:focus
+      display: none
