@@ -1,14 +1,43 @@
 header
-    left: 0px
-    right: 0px
+    height: 100px
+    position: fixed
     top: 0px
-    height: $header
-    
+    left: 0px
+    width: 100%
+
     .header__content
         display: flex
+        height: 100%
+        padding: 10px 20px
+
+    .header__icon_wrapper
+      min-width: 150px
+      width: 10%
+      height: 100%
+
+    .header__icon
+      font-size: 50px
+      font-weight: bold
+      color: #ff00ff
+      text-align: center
+
+    .header__links_wrapper
+      display: flex
+      flex: 1
 
     .header__link
         margin: 0px 10px
-        
+        color: white
+        font-size: 17px
+        line-height: 100px
+        font-weight: 300
+        text-transform: uppercase
+        cursor: pointer
+        flex: 1
+
         &:hover
             text-decoration: underline
+
+    .header__lng-menu
+      width: 10%
+      min-width: 200px

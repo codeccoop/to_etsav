@@ -25,23 +25,22 @@ const BaseView = (function () {
                 };
             }
         });
-    }
+    };
 
-    var privata_data;
     /// END OF PRIVATE BLOCK CODE
 
     const BaseView = function BaseView (el, template) {
         const self = this;
         this.el = el;
         this.template = template;
-        
-        private_data = reactive.call(this, new Object());
+
+        var private_data = reactive.call(this, new Object());
         Object.defineProperty(this, "data", {
             get: function () {
-                return privata_data;
+                return private_data;
             },
             set: function (data) {
-                privata_data = reactive.call(self, data);
+                private_data = reactive.call(self, data);
                 self.dispatch("update");
             }
         });
@@ -53,7 +52,7 @@ const BaseView = (function () {
         this.on("remove", this.onRemove, this);
         this.on("before:update", this.beforeUpdate, this);
         this.on("update", this.onUpdate, this);
-    }
+    };
 
     BaseView.prototype.render = function render () {
         this.dispatch("before:render", this.el);
@@ -63,40 +62,40 @@ const BaseView = (function () {
         this.el.appendChild(renderer.content);
         this.dispatch("render", this.el);
         return this;
-    }
+    };
 
     BaseView.prototype.remove = function remove () {
         this.dispatch("before:remove", this.el);
         for (let entry of this.eventBounds.entries()) {
-            this.el.removeEventListener(...entry)
+            this.el.removeEventListener(...entry);
         }
         this.dispatch("remove", this.el);
         return this;
-    }
+    };
 
     BaseView.prototype.beforeRender = function beforeRender () {
         // TO OVERWRITE
-    }
+    };
 
     BaseView.prototype.onRender = function onRender () {
         // TO OVERWRITE
-    }
+    };
 
     BaseView.prototype.beforeRemove = function beforeRemove () {
         // TO OVERWRITE
-    }
+    };
 
     BaseView.prototype.onRemove = function onRemove () {
         // TO OVERWRITE
-    }
+    };
 
     BaseView.prototype.beforeUpdate = function beforeUpdate () {
         // TO OVERWRITE
-    }
+    };
 
     BaseView.prototype.onUpdate = function onUpdate () {
         // TO OVERWRITE
-    }
+    };
 
     BaseView.prototype.on = function on (event, callback, context=null) {
         this.eventBounds.set(event, function (ev) {
@@ -104,19 +103,19 @@ const BaseView = (function () {
         });
         this.el.addEventListener(event, this.eventBounds.get(event));
         return this;
-    }
+    };
 
     BaseView.prototype.off = function off (event) {
         this.el.removeEventListener(event, this.eventBounds.get(event));
         return this;
-    }
+    };
 
     BaseView.prototype.dispatch = function dispatch (event, data) {
         this.el.dispatchEvent(new CustomEvent(event, {
             detail: data
         }));
         return this;
-    }
+    };
 
     BaseView.prototype.load = function load (path, type, data) {
         const self = this;
@@ -132,22 +131,22 @@ const BaseView = (function () {
                         rej(this.status);
                     }
                 }
-            }
+            };
             ajax.send(data);
         });
-    }
+    };
 
     BaseView.extend = function extend (Class) {
-        const Wrapper = function (el, template) {
-            BaseView.call(this, el, template);
-            Class.call(this, el, template);
-        }
+        const Wrapper = function () {
+            BaseView.apply(this, arguments);
+            Class.apply(this, arguments);
+        };
 
         Class.prototype = Object.create(BaseView.prototype);
         Wrapper.prototype = Class.prototype;
         Wrapper.extend = BaseView.prototype.extend;
-        return Wrapper
-    }
+        return Wrapper;
+    };
 
     return BaseView;
 })();

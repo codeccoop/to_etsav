@@ -1,29 +1,41 @@
+// CORE
 const BaseView = require("../core/BaseView.js");
+const ScrollHandler = require("../helpers/ScrollHandler.js");
 
+const Home = (function() {
 
-const Home = (function () {
-    const Home = BaseView.extend(function (el, template) {
-      const self = this;
-      this.load(_env.apiURL + "home.json").then(function (response) {
-        const data = JSON.parse(response);
-        data.sections.forEach(function (sect) {
-          sect.image = _env.publicURL + "images/" + sect.image;
+    const Home = BaseView.extend(function(el, template, sections) {
+        const self = this;
+        this.fetchChilds(sections).then(function() {
+            self.data.sections = sections;
         });
-        self.data = data;
-      });
     });
 
-    Home.prototype.onUpdate = function onUpdate () {
-      // console.log("Home updated");
-      this.render();
+    Home.prototype.onUpdate = function onUpdate() {
+        this.render();
     };
 
-    Home.prototype.onRender = function onRender () {
-        console.log("Home rendered");
+    Home.prototype.onRender = function onRender() {
+        for (let section of this.data.sections) {
+            section.view = new section.view(this.el.querySelector(`#${section.id}`), section.template);
+        }
+        this.scrollHandler = new ScrollHandler(this.el, this.el.getElementsByClassName("scroll-section"));
+        this.scrollHandler.patch();
     };
 
-    Home.prototype.onRemove = function onRemove () {
-        console.log("Home removed");
+    Home.prototype.fetchChilds = function fetchChilds(sections) {
+        const self = this;
+        return Promise.all(sections.map(function(section) {
+            return new Promise(function(done, error) {
+                fetch(_env.publicURL + `templates/home-sections/${section.id}.html`)
+                    .then(function(res) {
+                        res.text().then(function(template) {
+                            section.template = template;
+                            done(section);
+                        });
+                    });
+            });
+        }));
     };
 
     return Home;

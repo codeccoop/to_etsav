@@ -1,10 +1,9 @@
 <div id="home">
-    <div class="imgs-container">
-        {{#sections}}
-        <div id="{{section}}" class="img">
-            <a href="#{{section}}" >
-                <img src="{{image}}"/>
-            </a>
-            <div class="img-text" >{{description}}</div>
-        {{/sections}}
+    <div class="home-scroll-window">
+        <div class="imgs-container">
+            {{#sections}}
+                <div id="{{id}}" class="scroll-section"></div>
+            {{/sections}}
+        </div>
+    </div>
 </div>
