@@ -19,8 +19,9 @@ const Router = (function() {
     const cache = new Map();
     // END OF PRIVATE CODE BLOCK
 
-    const Router = function Router(sections) {
+    const Router = function Router(sections, app) {
         const self = this;
+        this.app = app;
         this.views = new Map();
         this.navigo = new Navigo(null, true, "#");
 
@@ -32,11 +33,18 @@ const Router = (function() {
 
         this.navigo.on("gallery", self.onNavigate("gallery.html", "#content", Gallery))
             .resolve();
+
+        this.navigo.notFound(function () {
+            self.views.forEach(function (view) {
+                view.remove();
+            });
+            location.hash = "#home";
+        });
     };
 
     Router.prototype.onNavigate = function onNavigate(templateName, cssEl, View, data) {
         const self = this;
-        return function() {
+        return function(parmas) {
             if (cache.get(templateName)) {
                 beforeNavigate.call(self, cssEl);
                 const el = document.querySelector(cssEl);

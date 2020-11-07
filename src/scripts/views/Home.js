@@ -1,6 +1,6 @@
 // CORE
 const BaseView = require("../core/BaseView.js");
-const ScrollHandler = require("../helpers/ScrollHandler.js");
+const ScrollHandler = require("../utils/ScrollHandler.js");
 
 const Home = (function() {
 
@@ -17,10 +17,19 @@ const Home = (function() {
 
     Home.prototype.onRender = function onRender() {
         for (let section of this.data.sections) {
+            section._proto = section.view;
             section.view = new section.view(this.el.querySelector(`#${section.id}`), section.template);
         }
         this.scrollHandler = new ScrollHandler(this.el, this.el.getElementsByClassName("scroll-section"));
         this.scrollHandler.patch();
+    };
+
+    Home.prototype.beforeRemove = function onRemove () {
+        const self = this;
+        this.data.sections.forEach(function (section) {
+            section.view.remove();
+            section.view = section._proto;
+        });
     };
 
     Home.prototype.fetchChilds = function fetchChilds(sections) {
