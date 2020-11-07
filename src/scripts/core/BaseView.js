@@ -1,5 +1,6 @@
 const Mustache = require("mustache");
 
+
 const BaseView = (function () {
 
     /// PRIVATE BLOCK CODE
@@ -57,9 +58,10 @@ const BaseView = (function () {
     BaseView.prototype.render = function render () {
         this.dispatch("before:render", this.el);
         const renderer = document.createElement("template");
-        renderer.innerHTML = Mustache.render(this.template, this.data);
+        renderer.innerHTML = this.translate(Mustache.render(this.template, this.data));
         this.el.innerHTML = "";
         this.el.appendChild(renderer.content);
+        this.content = render.content;
         this.dispatch("render", this.el);
         return this;
     };
@@ -69,6 +71,7 @@ const BaseView = (function () {
         for (let entry of this.eventBounds.entries()) {
             this.el.removeEventListener(...entry);
         }
+        this.el.innerHTML = "";
         this.dispatch("remove", this.el);
         return this;
     };
@@ -99,7 +102,7 @@ const BaseView = (function () {
 
     BaseView.prototype.on = function on (event, callback, context=null) {
         this.eventBounds.set(event, function (ev) {
-            callback.call(context, event, ev.details, ev);
+            callback.call(context, ev.detail, ev);
         });
         this.el.addEventListener(event, this.eventBounds.get(event));
         return this;

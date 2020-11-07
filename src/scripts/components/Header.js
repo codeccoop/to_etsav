@@ -4,13 +4,18 @@ const LngMenu = require("./LngMenu.js");
 
 const Header = (function () {
 
-    const Header = BaseView.extend(function (el, template, sections) {
+    const Header = BaseView.extend(function (el, template, data) {
         const self = this;
-        this.data.sections = sections;
+        this.app = data.app;
+        this.data.sections = data.sections;
         fetch(_env.publicURL + "templates/components/lng-menu.html").then(res => {
             res.text().then(template => {
                 self.render();
-                self.lngMenu = new LngMenu(self.el.querySelector(".header__lng-menu"), template);
+                self.lngMenu = new LngMenu(
+                    self.el.querySelector(".header__lng-menu"),
+                    template,
+                    {lng: self.app.lng}
+               );
             });
         });
     });

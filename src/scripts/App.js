@@ -1,3 +1,4 @@
+const Lng = require("./utils/Lng.js");
 const Router = require("./router/Router.js");
 
 // COMPONENTS
@@ -44,22 +45,54 @@ const sections = [
     }
 ];
 
-module.exports = function startApp () {
-    new Router(sections).on(function () {
+function startLng (app) {
+    return new Promise(function (done, err) {
+        fetch(_env.apiURL + "lng.json").then(function (res) {
+            res.json().then(function (dictionaries) {
+                app.lng = new Lng(dictionaries);
+                done(app);
+            });
+        });
+    });
+};
+
+function startComponents (app) {
+    return new Promise(function (done, err) {
+        return Promise.all([
+            fetch(_env.publicURL + "templates/components/header.html").then(function (res) {
+                res.text().then(function (template) {
+                    const el = document.querySelector("header");
+                    app.header = new Header(el, template, {
+                        sections: sections,
+                        app: app
+                    });
+                });
+            }),
+            fetch(_env.publicURL + "templates/components/footer.html").then(function (res) {
+                res.text().then(function (template) {
+                    const el = document.querySelector("footer");
+                    app.footer = new Footer(el, template, {
+                        app: app
+                    });
+                });
+            })
+        ]).then(function () {
+            done(app);
+        });
+    });
+};
+
+function startApp (app) {
+    app.router = new Router(sections, app).on(function () {
         window.location.hash = "home";
     }).resolve();
+};
 
-    fetch(_env.publicURL + "templates/components/header.html").then(function (res) {
-        res.text().then(function (template) {
-            const el = document.querySelector("header");
-            const view = new Header(el, template, sections);
-        });
-    });
-
-    fetch(_env.publicURL + "templates/components/footer.html").then(function (res) {
-        res.text().then(function (template) {
-            const el = document.querySelector("footer");
-            const view = new Footer(el, template);
-        });
-    });
+module.exports = function () {
+    const app = new Object();
+    new Promise(function (done, err) {
+        done(app);
+    }).then(startLng)
+        .then(startComponents)
+        .then(startApp);
 };
