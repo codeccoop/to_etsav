@@ -1,6 +1,6 @@
 const BaseView = require("../core/BaseView.js");
 
-
+const overlay = document.getElementById('overlay');
 const Gallery = (function () {
 
     /// PRIVATE BLOCK CODE
@@ -35,9 +35,13 @@ const Gallery = (function () {
         }
         console.log("Gallery removed");
     };
-
+    
     Gallery.prototype.onClickImage = function (ev) {
         console.log("Has clicat sobre una imàtge!");
+        const ruta = img.getAttribute('src');
+        overlay.classList.add('activo');
+		document.querySelector('#overlay img').src = ruta;
+		document.querySelector('#overlay .description').innerHTML = description;
     };
 
     return Gallery;

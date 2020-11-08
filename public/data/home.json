@@ -9,11 +9,15 @@
       "description": "Some other description about an other image.",
       "image": "image1.jpeg"
     }, {
-      "section": "team",
+      "section": "equip",
       "description": "Some other description about an other image.",
       "image": "image1.jpeg"
     }, {
       "section": "documents",
+      "description": "Some other description about an other image.",
+      "image": "image1.jpeg"
+    },{
+      "section": "patrocinadors",
       "description": "Some other description about an other image.",
       "image": "image1.jpeg"
     }

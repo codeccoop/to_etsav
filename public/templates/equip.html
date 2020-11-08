@@ -1,7 +1,7 @@
 <div class="equip-content">
     {{#images}}
         <div class="img-row" >
-            <img src="public/images/equip/{{file}}" width=90% height=65%/>
+            <img src="public/images/equip/{{file}}" width=90% height=60%/>
             <div class="img-name" >
             {{fullname.name}}<br>
             {{fullname.surnames}}
@@ -11,8 +11,27 @@
             {{details.level}}<br>
             {{details.position}}<br>
             {{details.department}}<br>
+            </div>
+            <div class="img-quote">
             {{quote}}
             </div>
         </div>
-    {{/images}}
+        {{/images}}
+
 </div>
+<h1>COL·LABORADORS</h1>
+<div class="collaboradors-content">
+        {{#images2}}
+            <div class="img-row">
+                <img src="public/images/equip/col·laboradors/{{file}}" width=90% height=70%/>
+                <div class="img-name" >
+                {{fullname.name}}<br>
+                {{fullname.surnames}}
+                </div>
+                <div class="img-details">
+                {{details.position}}<br>
+                {{details.level}}<br>
+                </div>
+            </div>       
+    {{/images2}}
+</div> 

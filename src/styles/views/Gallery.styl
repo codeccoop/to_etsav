@@ -4,4 +4,56 @@
     grid-template-rows: auto
 
     // .img-row
-        
+/*OVERLAY*/
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,.9); /*Pantalla de color negre amb opacitat .9*/
+    width:100%;
+    height: 100vh;
+    display: none; /*volem treballar amb la imatge i el text com si fossin un grid*/
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; ;/*per posar el paràgraf sota la imatge*/
+}
+
+.overlay.activo{
+    display: flex;
+
+}
+.overlay img{
+    width: 100%;
+    height: 80vh;
+    margin-top: 0px; 
+    }
+.overlay .description{
+    display: block;
+    padding: 40px;
+    text-align: left;
+    max-width: 50%;
+    background: #fff;
+    height: 80vh;
+    margin-top: -.5vh;
+    text-align: justify;
+    }
+.overlay-img{
+    position: relative;
+    width: 80vw;
+    
+
+    }
+.overlay-img #boton-cerrar{
+    background: none;
+    font-size: 25px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top:3px;
+    right: -25px;
+
+
+}
