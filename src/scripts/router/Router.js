@@ -11,6 +11,7 @@ const Project = require("../views/Project.js");
 const Documents = require("../views/Documents.js");
 const Gallery = require("../views/Gallery.js");
 const Equip = require("../views/Equip.js");
+const Patrocinadors = require("../views/Equip.js");
 
 const Router = (function () {
     // PRIVATE CODE BLOCK
@@ -41,6 +42,8 @@ const Router = (function () {
             .resolve();
         
         this.navigo.on("equip", self.onNavigate("equip.html", "#content", Equip))
+            .resolve();
+        this.navigo.on("patrocinadors", self.onNavigate("patrocinadors.html", "#content", Patrocinadors))
             .resolve();
 
         self.ajax("templates/header.html").then(function (template) {
