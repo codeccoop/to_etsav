@@ -21,10 +21,11 @@ const Lng = (function () {
 
         Object.defineProperty(this, "currentLanguage", {
             get: function () {
-                return location.hash.match(/\?lng\=([a-z]{2})/)[1];
+                return location.hash.indexOf("?lng=") > -1 ? location.hash.match(/\?lng\=([a-z]{2})/)[1] : "en";
             },
             set: function (lng) {
-                const currentLocation = location.hash.replace(/(?<=\?lng\=).*$/, '');
+                var currentLocation = location.hash.replace(/(?<=\?lng\=).*$/, '');
+                if (currentLocation.indexOf("?lng=") == -1) currentLocation += "?lng=";
                 location.hash = currentLocation + lng;
                 location.reload();
             }
@@ -51,6 +52,11 @@ const Lng = (function () {
             template = template.replace(key, this.translate(key.substr(5).slice(0, -1)));
         };
         return template;
+    };
+
+    Lng.prototype.beforeNavigate = function beforeNavigate (route) {
+        if (route.indexOf("?lng=") == -1) route += "?lng=" + this.currentLanguage;
+        return route;
     };
 
     return Lng;

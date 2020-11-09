@@ -8,11 +8,9 @@ const Project = (function() {
     });
 
     Project.prototype.onRender = function onRender() {
-        console.log("Project rendered");
     };
 
     Project.prototype.onRemove = function onRemove() {
-        console.log("Project removed");
     };
 
     Project.id = "project";

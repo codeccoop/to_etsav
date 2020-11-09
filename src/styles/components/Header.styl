@@ -4,26 +4,63 @@ header
     top: 0px
     left: 0px
     width: 100%
+    z-index: 1000
+
+    &.dark .header__link
+      color: black
 
     .header__content
         display: flex
         height: 100%
-        padding: 10px 20px
+        padding: 0px 20px
 
-    .header__icon_wrapper
-      min-width: 150px
-      width: 10%
+    .header__icon-wrapper
       height: 100%
+      padding: 0px 20px
 
     .header__icon
       font-size: 50px
       font-weight: bold
       color: $magenta
       text-align: center
+      cursor: pointer
+      line-height: $header
 
-    .header__links_wrapper
+    .header__links-wrapper
       display: flex
       flex: 1
+
+      @media screen and (max-width: 950px)
+        display: none
+
+    .header__burger-wrapper
+      flex: 1
+      display: none
+
+      @media screen and (max-width: 950px)
+        display: block
+
+    .header__burger
+      width: fit-content
+      position: relative
+      display: flex
+      padding-top: 36px
+
+      &:hover
+        .header__burger-expanded
+          display: inline-flex
+          flex-direction: column
+
+      .header__link
+        line-height: 2
+
+    .header__burger-collapsed
+      display: inline
+      font-size: 1.2rem
+      margin-right: 5px
+
+    .header__burger-expanded
+      display: none
 
     .header__link
         margin: 0px 10px
@@ -33,11 +70,10 @@ header
         font-weight: 300
         text-transform: uppercase
         cursor: pointer
-        flex: 1
+        transition: color .5s
 
         &:hover
             text-decoration: underline
 
     .header__lng-menu
-      width: 10%
-      min-width: 200px
+      flex: 0

@@ -1,14 +1,17 @@
 <div class="manifest__wrapper">
     <div class="manifest__content">
         {{#principles}}
-        <div class="manifest__principle">
-            <div principle="{{id}}" class="manifest__principle-card">
-                <p>{{name}}</p>
+        <div principle="{{id}}" class="manifest__principle">
+                <div class="manifest__principle-card">
+                    <div class="manifest__principle-inner">
+                        <div class="manifest__principle-image"></div>
+                        <!-- <p>{{name}}</p> -->
+                        <div class="manifest__principle-description">
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="manifest__principle-description">
-                <p>{{description}}</p>
-            </div>
-        </div>
         {{/principles}}
     </div>
 </div>

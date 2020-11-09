@@ -8,11 +8,9 @@ const Team = (function() {
     });
 
     Team.prototype.onRender = function onRender() {
-        console.log("Team rendered");
     };
 
     Team.prototype.onRemove = function onRemove() {
-        console.log("Team removed");
     };
 
     Team.id = "team";

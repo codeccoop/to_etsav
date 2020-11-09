@@ -12,12 +12,12 @@ const Gallery = (function () {
         this.load(_env.apiURL + "gallery_images.json").then(function (response) { 
             self.data = JSON.parse(response);
         });
+        this.app.header.setSections([]);
     };
 
     Gallery = BaseView.extend(Gallery);
 
     Gallery.prototype.onUpdate = function onUpdate () {
-        console.log("Gallery updated");
         this.render();
     };
 
@@ -26,14 +26,13 @@ const Gallery = (function () {
         for (let img of self.el.querySelectorAll(".img-row")) {
             img.addEventListener("click", self.onClickImage);
         }
-        console.log("Gallery rendered");
     };
 
     Gallery.prototype.onRemove = function onRemove () {
+        const self = this;
         for (let img of self.el.querySelectorAll(".img-row")) {
             img.removeEventListener("click", self.onClickImage);
         }
-        console.log("Gallery removed");
     };
 
     Gallery.prototype.onClickImage = function (ev) {

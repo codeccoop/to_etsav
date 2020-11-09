@@ -1,8 +1,8 @@
 const BaseView = require("../../core/BaseView.js");
 
 
-const Manifest = (function() {
-    const Manifest = BaseView.extend(function Manifest(el) {
+const Manifest = (function () {
+    const Manifest = BaseView.extend(function Manifest (el) {
         const self = this;
         fetch(_env.apiURL + "manifest.json").then(function (res) {
             res.json().then(function (data) {
@@ -18,7 +18,7 @@ const Manifest = (function() {
     Manifest.prototype.beforeRender = function beforeRender () {
         var css = "";
         this.data.principles.forEach(function (principle) {
-            css += `#manifest .manifest__principle-card[principle=${principle.id}] {
+            css += `#manifest .manifest__principle[principle=${principle.id}] .manifest__principle-image {
                 background-image: url(${_env.publicURL}images/home-sections/${principle.image});
             }`;
         });
@@ -28,8 +28,7 @@ const Manifest = (function() {
         document.head.appendChild(style);
     };
 
-    Manifest.prototype.onRender = function onRender() {
-        console.log("Manifest rendered");
+    Manifest.prototype.onRender = function onRender () {
     };
 
     Manifest.prototype.beforeRemove = function beforeRemove () {

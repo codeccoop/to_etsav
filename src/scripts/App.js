@@ -1,49 +1,10 @@
 const Lng = require("./utils/Lng.js");
 const Router = require("./router/Router.js");
+const ScrollHandler = require("./utils/ScrollHandler.js");
 
 // COMPONENTS
 const Header = require("./components/Header.js");
 const Footer = require("./components/Footer.js");
-
-// VIEWS
-const Cover = require("./views/home/Cover.js");
-const Manifest = require("./views/home/Manifest.js");
-const Project = require("./views/home/Project.js");
-const Gallery = require("./views/home/Gallery.js");
-const Team = require("./views/home/Team.js");
-const Sponsors = require("./views/home/Sponsors.js");
-const Documents = require("./views/home/Documents.js");
-
-const sections = [
-    {
-        id: "cover",
-        view: Cover,
-    },
-    {
-        id: "manifest",
-        view: Manifest
-    },
-    {
-        id: "project",
-        view: Project
-    },
-    {
-        id: "gallery",
-        view: Gallery
-    },
-    {
-        id: "team",
-        view: Team
-    },
-    {
-        id: "sponsors",
-        view: Sponsors
-    },
-    {
-        id: "documents",
-        view: Documents
-    }
-];
 
 function startLng (app) {
     return new Promise(function (done, err) {
@@ -63,7 +24,6 @@ function startComponents (app) {
                 res.text().then(function (template) {
                     const el = document.querySelector("header");
                     app.header = new Header(el, template, {
-                        sections: sections,
                         app: app
                     });
                 });
@@ -83,16 +43,39 @@ function startComponents (app) {
 };
 
 function startApp (app) {
-    app.router = new Router(sections, app).on(function () {
-        window.location.hash = "home";
-    }).resolve();
+    return new Promise(function (done, error) {
+        app.router = new Router(app).on(function () {
+            app.router.navigate(app.router.generate("home-section", {
+                section: "cover"
+            }));
+        });
+        app.router.hooks({
+            after: (function (count) {
+                return function () {
+                    count += 1;
+                    if (count > 1) return;
+                    done(app);
+                };
+            })(0)
+        });
+        app.router.resolve();
+    });
 };
 
-module.exports = function () {
+function scrollPatch (app) {
+    app.scroll= new ScrollHandler(app);
+    app.scroll.on("update:section", function (section) {
+        app.header.turnDark(section !== 0);
+    });
+}
+
+module.exports = function App () {
     const app = new Object();
+    app.el = document.getElementById("app");
     new Promise(function (done, err) {
         done(app);
     }).then(startLng)
         .then(startComponents)
-        .then(startApp);
+        .then(startApp)
+        .then(scrollPatch);
 };
