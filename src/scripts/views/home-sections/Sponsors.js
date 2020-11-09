@@ -8,11 +8,9 @@ const Sponsors = (function() {
     });
 
     Sponsors.prototype.onRender = function onRender() {
-        console.log("Sponsors rendered");
     };
 
     Sponsors.prototype.onRemove = function onRemove() {
-        console.log("Sponsors removed");
     };
 
     Sponsors.id = "sponsors";

@@ -1,4 +1,8 @@
+// VENDOR
 const Mustache = require("mustache");
+
+// SOURCE
+const Dispatcher = require("./Dispatcher.js");
 
 
 const BaseView = (function () {
@@ -30,10 +34,19 @@ const BaseView = (function () {
 
     /// END OF PRIVATE BLOCK CODE
 
-    const BaseView = function BaseView (el, template) {
+    const BaseView = function BaseView (el, template, data) {
         const self = this;
+        new Dispatcher(this);
         this.el = el;
         this.template = template;
+        data = data || new Object();
+
+        this.app = data.app;
+        this.url = data.url;
+        this.query = data.query;
+        delete data.url;
+        delete data.query;
+        delete data.app;
 
         var private_data = reactive.call(this, new Object());
         Object.defineProperty(this, "data", {
@@ -46,7 +59,6 @@ const BaseView = (function () {
             }
         });
 
-        this.eventBounds = new Map();
         this.on("before:render", this.beforeRender, this);
         this.on("render", this.onRender, this);
         this.on("before:remove", this.beforeRemove, this);
@@ -68,11 +80,10 @@ const BaseView = (function () {
 
     BaseView.prototype.remove = function remove () {
         this.dispatch("before:remove", this.el);
-        for (let entry of this.eventBounds.entries()) {
-            this.el.removeEventListener(...entry);
-        }
         this.el.innerHTML = "";
+        delete this.data;
         this.dispatch("remove", this.el);
+        this.haltListeners();
         return this;
     };
 
@@ -98,26 +109,6 @@ const BaseView = (function () {
 
     BaseView.prototype.onUpdate = function onUpdate () {
         // TO OVERWRITE
-    };
-
-    BaseView.prototype.on = function on (event, callback, context=null) {
-        this.eventBounds.set(event, function (ev) {
-            callback.call(context, ev.detail, ev);
-        });
-        this.el.addEventListener(event, this.eventBounds.get(event));
-        return this;
-    };
-
-    BaseView.prototype.off = function off (event) {
-        this.el.removeEventListener(event, this.eventBounds.get(event));
-        return this;
-    };
-
-    BaseView.prototype.dispatch = function dispatch (event, data) {
-        this.el.dispatchEvent(new CustomEvent(event, {
-            detail: data
-        }));
-        return this;
     };
 
     BaseView.prototype.load = function load (path, type, data) {

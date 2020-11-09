@@ -8,11 +8,9 @@ const Documents = (function() {
     });
 
     Documents.prototype.onRender = function onRender() {
-        console.log("Documents rendered");
     };
 
     Documents.prototype.onRemove = function onRemove() {
-        console.log("Documents removed");
     };
 
     Documents.id = "documents";

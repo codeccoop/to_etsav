@@ -1,16 +1,13 @@
 // VENDOR
 const Navigo = require("navigo");
 
-// VIEWS
-const Home = require("../views/Home.js");
-const Project = require("../views/Project.js");
-const Documents = require("../views/Documents.js");
-const Gallery = require("../views/Gallery.js");
+// ROUTES
+const routes = require("./routes.js");
 
 
 const Router = (function() {
     // PRIVATE CODE BLOCK
-    function beforeNavigate(cssEl) {
+    function beforeNavigate (cssEl) {
         const el = document.querySelector(cssEl);
         if (el && this.views.get(el)) {
             this.views.get(el).remove();
@@ -19,69 +16,105 @@ const Router = (function() {
     const cache = new Map();
     // END OF PRIVATE CODE BLOCK
 
-    const Router = function Router(sections, app) {
+    const Router = function Router (app) {
+        Navigo.call(this, null, true, "#");
+
         const self = this;
         this.app = app;
         this.views = new Map();
-        this.navigo = new Navigo(null, true, "#");
 
-        this.navigo.on("home", self.onNavigate("home.html", "#content", Home, sections))
-            .resolve();
+        this.onNavigate = this.onNavigate.bind(this);
+        this.on(this.parseRoutes(routes));
 
-        this.navigo.on("project", self.onNavigate("project.html", "#content", Project))
-            .resolve();
-
-        this.navigo.on("gallery", self.onNavigate("gallery.html", "#content", Gallery))
-            .resolve();
-
-        this.navigo.notFound(function () {
+        this.notFound(function (query) {
             self.views.forEach(function (view) {
                 view.remove();
             });
-            location.hash = "#home";
+            self.navigate("#home/cover");
         });
     };
 
-    Router.prototype.onNavigate = function onNavigate(templateName, cssEl, View, data) {
+    Router.prototype = Object.create(Navigo.prototype);
+
+    Router.prototype.parseRoutes = function parseRoutes (routes) {
         const self = this;
-        return function(parmas) {
+        return Object.keys(routes).reduce(function (acum, route) {
+            acum[route] = routes[route];
+            acum[route].uses = self.onNavigate(
+                acum[route].uses.template,
+                acum[route].uses.el,
+                acum[route].uses.view,
+                acum[route].uses.data
+            );
+            return acum;
+        }, new Object());
+    };
+
+    Router.prototype.onNavigate = function onNavigate(
+        templateName,
+        cssEl,
+        View,
+        data
+    ) {
+        const self = this;
+        data = data || new Object();
+        return function (params, query) {
+            if (self._silent === true) {
+                self._silent = false;
+                return;
+            }
             if (cache.get(templateName)) {
                 beforeNavigate.call(self, cssEl);
                 const el = document.querySelector(cssEl);
-                const view = new View(el, cache.get(templateName), data);
+                const view = new View(
+                    el,
+                    cache.get(templateName),
+                    Object.assign(data, {
+                        app: self.app,
+                        url: {
+                            params: params,
+                            query: query
+                        }
+                    })
+                );
                 self.views.set(el, view);
             } else {
-                self.ajax("templates/" + templateName)
-                    .then(function(template) {
-                        cache.set(templateName, template);
-                        beforeNavigate.call(self, cssEl);
-                        const el = document.querySelector(cssEl);
-                        const view = new View(el, template, data);
-                        self.views.set(el, view);
+                fetch(_env.publicURL + "templates/" + templateName)
+                    .then(function (res) {
+                        res.text().then(function (template) {
+                            cache.set(templateName, template);
+                            beforeNavigate.call(self, cssEl);
+                            const el = document.querySelector(cssEl);
+                            const view = new View(
+                                el,
+                                template,
+                                Object.assign(data, {
+                                    app: self.app,
+                                    url: {
+                                        params: params,
+                                        query: query
+                                    }
+                                })
+                            );
+                            self.views.set(el, view);
                     });
+                });
             }
         };
     };
 
-    Router.prototype.ajax = function ajax(path) {
-        return new Promise(function(res, rej) {
-            var ajax = new XMLHttpRequest();
-            ajax.open("GET", window._env.publicURL + path, true);
-            ajax.onreadystatechange = function() {
-                if (this.readyState === 4) {
-                    if (this.status === 200) {
-                        res(this.response);
-                    } else {
-                        rej(this);
-                    }
-                }
-            };
-            ajax.send();
-        });
+    Router.prototype.beforeNavigate = function beforeNavigate (route) {
+        return this.app.lng.beforeNavigate(route);
     };
 
-    Router.prototype.on = function on() {
-        return this.navigo.on.apply(this.navigo, arguments);
+    Router.prototype.navigate = function navigate (route, absolute) {
+        route = this.beforeNavigate(route);
+        Navigo.prototype.navigate.call(this, route, absolute)
+    };
+
+    Router.prototype.silent = function silent (route) {
+        this._silent = true;
+        this.navigate(route);
     };
 
     return Router;
