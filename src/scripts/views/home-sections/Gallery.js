@@ -9,12 +9,12 @@ const Gallery = (function() {
     });
 
     Gallery.prototype.onRender = function onRender() {
-        this.el.querySelector(".nav-link")
+        this.el.querySelector(".nav-pannel__btn span")
             .addEventListener("click", this.goToGallery);
     };
 
     Gallery.prototype.beforeRemove = function onRemove() {
-        this.el.querySelector(".nav-link")
+        this.el.querySelector(".nav-pannel__btn span")
             .removeEventListener("click", this.goToGallery);
     };
 
