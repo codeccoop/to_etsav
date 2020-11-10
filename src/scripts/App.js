@@ -64,9 +64,6 @@ function startApp (app) {
 
 function scrollPatch (app) {
     app.scroll= new ScrollHandler(app);
-    app.scroll.on("update:section", function (section) {
-        app.header.turnDark(section !== 0);
-    });
 }
 
 module.exports = function App () {
