@@ -7,7 +7,8 @@ const Header = (function () {
     const Header = BaseView.extend(function (el, template, data) {
         const self = this;
         this.navReset = this.navReset.bind(this);
-        this.updateLayout = this.updateLayout.bind(this);
+        this.onScroll = this.onScroll.bind(this);
+        this.onClickLink = this.onClickLink.bind(this);
     });
 
     Header.prototype.onUpdate = function onUpdate () {
@@ -15,23 +16,13 @@ const Header = (function () {
     };
 
     Header.prototype.beforeRender = function beforeRender () {
-        this.app.scroll.on("update:section", this.updateLayout);
+        this.app.scroll.on("update:section", this.onScroll);
     };
 
     Header.prototype.onRender = function onRender () {
         const self = this;
-        Array.apply(null, this.el.getElementsByClassName("header__link")).forEach((link, i) => {
-            link.addEventListener("click", function (ev) {
-                window.scrollTo({
-                    top: document.getElementById(link.getAttribute("link")).offsetTop,
-                    behavior: ev.detail.smooth === false ? "auto" : "smooth"
-                });
-                self.updateLayout(self.data.sections.map(d => d.id).indexOf(link.getAttribute("link")));
-                self.app.router.silent(self.app.router.generate("home-section", {
-                    section: link.getAttribute("link")
-                }));
-            });
-        });
+        Array.apply(null, this.el.getElementsByClassName("header__link"))
+            .forEach(link => link.addEventListener("click", this.onClickLink));
         this.el.querySelector(".header__icon").addEventListener("click", this.navReset);
         fetch(_env.publicURL + "templates/components/lng-menu.html")
             .then(res => {
@@ -47,19 +38,41 @@ const Header = (function () {
                 });
             });
 
+        this.el.querySelector(".header__nav-btn")
+            .addEventListener("click", this.onBreadcrumb);
+    };
+
+    Header.prototype.beforeRemove = function beforeRemove () {
+        this.el.querySelector(".header__nav-btn")
+            .removeEventListener("click", this.onBreadcrumb);
+        Array.apply(null, this.el.getElementsByClassName("header__link"))
+            .forEach(link => link.removeEventListener("click", this.onClickLink));
+
     };
 
     Header.prototype.onRemove = function onRemove () {
-        this.app.scroll.off("update:section", this.updateLayout);
+        this.app.scroll.off("update:section", this.onScroll);
     };
 
     Header.prototype.setSections = function setSection (sections) {
         this.data.sections = sections;
     };
 
-    Header.prototype.updateLayout = function updateLayout (section) {
-        this.addClass("dark", [1, 3, 5, 6, 7].indexOf(section) != -1);
-        this.addClass("green", [3].indexOf(section) != -1);
+    Header.prototype.onNavigate = function onNavigate () {
+        if (this.app.scroll.scrolling === true) return;
+        const isHome = this.app.router.lastRouteResolved().name.indexOf("home") > -1;
+        if (isHome === true) {
+            this.setSections(this.app.homeSections);
+        } else {
+            this.setSections([{id: this.app.router.lastRouteResolved().name}]);
+        }
+
+        this.addClass("breadcrumb", !isHome);
+    };
+
+    Header.prototype.onScroll = function onScroll (section) {
+        this.addClass("dark", [1, 5, 6, 7].indexOf(section) != -1);
+        this.addClass("green", [3, 5, 6].indexOf(section) != -1);
         Array.apply(null, this.el.querySelectorAll(".header__link"))
             .forEach(function (el, i) {
                 el.classList[i % 7 === section ? "add" : "remove"]("active");
@@ -73,6 +86,22 @@ const Header = (function () {
     Header.prototype.navReset = function navReset () {
         this.app.router.navigate("#home/cover");
     };
+
+    Header.prototype.onBreadcrumb = function onBreadcrumb () {
+        history.back();
+    };
+
+    Header.prototype.onClickLink = function onClickLink (ev) {
+        window.scrollTo({
+            top: document.getElementById(ev.srcElement.getAttribute("link")).offsetTop,
+            behavior: ev.detail.smooth === false ? "auto" : "smooth"
+        });
+        this.onScroll(this.data.sections.map(d => d.id).indexOf(ev.srcElement.getAttribute("link")));
+        this.app.router.silent(this.app.router.generate("home-section", {
+            section: ev.srcElement.getAttribute("link")
+        }));
+    };
+ 
 
     return Header;
 })();

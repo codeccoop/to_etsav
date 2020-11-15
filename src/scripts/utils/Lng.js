@@ -54,7 +54,7 @@ const Lng = (function () {
         return template;
     };
 
-    Lng.prototype.beforeNavigate = function beforeNavigate (route) {
+    Lng.prototype.onNavigate = function onNavigate (route) {
         if (route.indexOf("?lng=") == -1) route += "?lng=" + this.currentLanguage;
         return route;
     };

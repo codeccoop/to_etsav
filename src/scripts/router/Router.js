@@ -4,10 +4,13 @@ const Navigo = require("navigo");
 // ROUTES
 const routes = require("./routes.js");
 
+// SOURCE
+const Dispatcher = require("../core/Dispatcher.js");
+
 
 const Router = (function() {
     // PRIVATE CODE BLOCK
-    function beforeNavigate (cssEl) {
+    function clearContent (cssEl) {
         const el = document.querySelector(cssEl);
         if (el && this.views.get(el)) {
             this.views.get(el).remove();
@@ -22,6 +25,9 @@ const Router = (function() {
         const self = this;
         this.app = app;
         this.views = new Map();
+
+        this.ev = new Object();
+        new Dispatcher(this.ev);
 
         this.onNavigate = this.onNavigate.bind(this);
         this.on(this.parseRoutes(routes));
@@ -50,7 +56,7 @@ const Router = (function() {
         }, new Object());
     };
 
-    Router.prototype.onNavigate = function onNavigate(
+    Router.prototype.onNavigate = function onNavigate (
         templateName,
         cssEl,
         View,
@@ -64,7 +70,7 @@ const Router = (function() {
                 return;
             }
             if (cache.get(templateName)) {
-                beforeNavigate.call(self, cssEl);
+                clearContent.call(self, cssEl);
                 const el = document.querySelector(cssEl);
                 const view = new View(
                     el,
@@ -83,7 +89,7 @@ const Router = (function() {
                     .then(function (res) {
                         res.text().then(function (template) {
                             cache.set(templateName, template);
-                            beforeNavigate.call(self, cssEl);
+                            clearContent.call(self, cssEl);
                             const el = document.querySelector(cssEl);
                             const view = new View(
                                 el,
@@ -103,13 +109,9 @@ const Router = (function() {
         };
     };
 
-    Router.prototype.beforeNavigate = function beforeNavigate (route) {
-        return this.app.lng.beforeNavigate(route);
-    };
-
     Router.prototype.navigate = function navigate (route, absolute) {
-        route = this.beforeNavigate(route);
-        Navigo.prototype.navigate.call(this, route, absolute)
+        route = this.app.lng.onNavigate(route);
+        Navigo.prototype.navigate.call(this, route, absolute);
     };
 
     Router.prototype.silent = function silent (route) {

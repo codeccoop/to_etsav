@@ -3,6 +3,7 @@ const Dispatcher = (function () {
 
     // PUBLIC OBJECT
     const Dispatcher = function (obj) {
+        obj.el = obj.el || document.body;
         obj.dispatch = this.dispatch.bind(obj);
         obj.on = this.on.bind(obj);
         obj.off = this.off.bind(obj);
