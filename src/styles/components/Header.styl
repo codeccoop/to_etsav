@@ -12,10 +12,21 @@ header
     &.dark .header__link
       color: black
 
+    &.breadcrumb .header__nav-pannel
+      display: block
+
     .header__content
-        display: flex
-        height: 100%
-        padding: 0px 20px
+      display: flex
+      flex-direction: column
+      height: 100%
+
+    .header__row
+      display: flex
+      padding: 0px 20px
+      flex: 0
+
+      &.header__main-row
+        flex: 1
 
     .header__icon-wrapper
       height: 100%
@@ -84,3 +95,14 @@ header
 
     .header__lng-menu
       flex: 0
+
+    .header__nav-pannel
+      display: none
+
+    .header__nav-btn
+      color: $magenta
+      font-size: 3.5rem
+      text-align: left
+      cursor: pointer
+      line-height: 45px
+      font-weight: 300

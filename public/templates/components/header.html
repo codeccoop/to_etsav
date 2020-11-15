@@ -1,21 +1,28 @@
 <div class="header__content">
-    <div class="header__icon-wrapper">
-        <div class="header__icon">TO</div>
-    </div>
-    <div class="header__links-wrapper">
-        {{#sections}}
+    <div class="header__row header__main-row">
+        <div class="header__icon-wrapper">
+            <div class="header__icon">TO</div>
+        </div>
+        <div class="header__links-wrapper">
+            {{#sections}}
             <div class="header__link" link="{{id}}">$lng({{id}})</div>
-        {{/sections}}
-    </div>
-    <div class="header__burger-wrapper">
-        <div class="header__burger">
-            <div class="header__burger-collapsed" >menu ></div>
-            <div class="header__burger-expanded">
-                {{#sections}}
+            {{/sections}}
+        </div>
+        <div class="header__burger-wrapper">
+            <div class="header__burger">
+                <div class="header__burger-collapsed" >menu ></div>
+                <div class="header__burger-expanded">
+                    {{#sections}}
                     <li class="header__link" link="{{id}}">$lng({{id}})</li>
-                {{/sections}}
+                    {{/sections}}
+                </div>
             </div>
         </div>
+        <div id="lngMenu" class="header__lng-menu"></div>
     </div>
-    <div id="lngMenu" class="header__lng-menu"></div>
+    <div class="header__row header__secondary-row">
+        <div class="header__nav-pannel" >
+            <div class="header__nav-btn" >&larr;</div>
+        </div>
+    </div>
 </div>

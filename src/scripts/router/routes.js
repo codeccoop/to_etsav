@@ -3,6 +3,7 @@ const Home = require("../views/Home.js");
 const Project = require("../views/Project.js");
 const Documents = require("../views/Documents.js");
 const Gallery = require("../views/Gallery.js");
+const Equip = require("../views/Equip.js");
 
 module.exports = {
     "home": {
@@ -43,6 +44,14 @@ module.exports = {
             el: "#content",
             template: "gallery.html",
             view: Gallery
+        }
+    },
+    "team": {
+        as: "team",
+        uses: {
+            el: "#content",
+            template: "equip.html",
+            view: Equip
         }
     }
 }

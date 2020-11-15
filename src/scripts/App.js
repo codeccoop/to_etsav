@@ -6,6 +6,47 @@ const ScrollHandler = require("./utils/ScrollHandler.js");
 const Header = require("./components/Header.js");
 const Footer = require("./components/Footer.js");
 
+// VIEWS
+const Cover = require("./views/home-sections/Cover.js");
+const Manifest = require("./views/home-sections/Manifest.js");
+const Project = require("./views/home-sections/Project.js");
+const Gallery = require("./views/home-sections/Gallery.js");
+const Team = require("./views/home-sections/Team.js");
+const Sponsors = require("./views/home-sections/Sponsors.js");
+const Documents = require("./views/home-sections/Documents.js");
+
+
+const homeSections = [
+    {
+        id: "cover",
+        view: Cover,
+    },
+    {
+        id: "manifest",
+        view: Manifest
+    },
+    {
+        id: "project",
+        view: Project
+    },
+    {
+        id: "gallery",
+        view: Gallery
+    },
+    {
+        id: "team",
+        view: Team
+    },
+    {
+        id: "sponsors",
+        view: Sponsors
+    },
+    {
+        id: "documents",
+        view: Documents
+    }
+];
+
 function startLng (app) {
     return new Promise(function (done, err) {
         fetch(_env.apiURL + "lng.json").then(function (res) {
@@ -19,25 +60,28 @@ function startLng (app) {
 
 function startComponents (app) {
     return new Promise(function (done, err) {
-        return Promise.all([
+        const parsers = new Array();
+        Promise.all([
             fetch(_env.publicURL + "templates/components/header.html").then(function (res) {
-                res.text().then(function (template) {
+                parsers.push(res.text().then(function (template) {
                     const el = document.querySelector("header");
                     app.header = new Header(el, template, {
                         app: app
                     });
-                });
+                }));
             }),
             fetch(_env.publicURL + "templates/components/footer.html").then(function (res) {
-                res.text().then(function (template) {
+                parsers.push(res.text().then(function (template) {
                     const el = document.querySelector("footer");
                     app.footer = new Footer(el, template, {
                         app: app
                     });
-                });
+                }));
             })
         ]).then(function () {
-            done(app);
+            Promise.all(parsers).then(function () {
+                done(app);
+            });
         });
     });
 };
@@ -50,29 +94,44 @@ function startApp (app) {
             }));
         });
         app.router.hooks({
-            after: (function (count) {
-                return function () {
-                    count += 1;
-                    if (count > 1) return;
-                    done(app);
-                };
-            })(0)
+            before: function (done, params) {
+                app.router.ev.dispatch("before:navigate");
+                done();
+            },
+            after: function () {
+                app.router.ev.dispatch("navigate");
+            }
         });
+
+        function firstNavigation () {
+            app.router.ev.off("navigate", firstNavigation);
+            app.router.ev.on("navigate", onNavigate);
+            app.header.onNavigate();
+            done(app);
+        };
+
+        function onNavigate () {
+            !app.router._silent && app.header.onNavigate();
+        };
+
+        app.router.ev.on("navigate", firstNavigation);
         app.router.resolve();
     });
 };
 
 function scrollPatch (app) {
     app.scroll= new ScrollHandler(app);
+    return app;
 }
 
 module.exports = function App () {
     const app = new Object();
     app.el = document.getElementById("app");
+    app.homeSections = homeSections;
     new Promise(function (done, err) {
         done(app);
     }).then(startLng)
+        .then(scrollPatch)
         .then(startComponents)
-        .then(startApp)
-        .then(scrollPatch);
+        .then(startApp);
 };

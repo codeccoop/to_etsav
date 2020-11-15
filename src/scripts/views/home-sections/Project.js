@@ -2,19 +2,20 @@ const BaseView = require("../../core/BaseView.js");
 
 
 const Project = (function() {
-    const Project = BaseView.extend(function Project(el) {
+    const Project = BaseView.extend(function Project (el, template, data) {
         const self = this;
+        this.data = data;
         this.goToProject = this.goToProject.bind(this);
         this.render();
     });
 
     Project.prototype.onRender = function onRender () {
-        this.el.querySelector(".nav-pannel__btn span")
+        this.el.querySelector(".nav-pannel__btn")
             .addEventListener("click", this.goToProject);
     };
 
     Project.prototype.beforeRemove = function onRemove () {
-        this.el.querySelector(".nav-pannel__btn span")
+        this.el.querySelector(".nav-pannel__btn")
             .removeEventListener("click", this.goToProject);
     };
 

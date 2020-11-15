@@ -1,25 +1,49 @@
 {
     "images": [
         {
-            "file": "image1.jpeg"
+            "file": "GALLERY-1.jpg"
         },
         {
-            "file": "image2.jpeg"
+            "file": "GALLERY-2.jpg"
         },
         {
-            "file": "image3.jpeg"
+            "file": "GALLERY-3.jpg"
         },
         {
-            "file": "image4.jpeg"
+            "file": "GALLERY-4.jpg"
         },
         {
-            "file": "image5.jpeg"
+            "file": "GALLERY-5.jpg"
         },
         {
-            "file": "image6.jpeg"
+            "file": "GALLERY-6.jpg"
         },
         {
-            "file": "image1.jpeg"
+            "file": "GALLERY-7.jpg"
+        },
+        {
+            "file": "GALLERY-8.jpg"
+        },
+        {
+            "file": "GALLERY-9.jpg"
+        },
+        {
+            "file": "GALLERY-10.jpg"
+        },
+        {
+            "file": "GALLERY-11.jpg"
+        },
+        {
+            "file": "GALLERY-12.jpg"
+        },
+        {
+            "file": "GALLERY-13.jpg"
+        },
+        {
+            "file": "GALLERY-14.jpg"
+        },
+        {
+            "file": "GALLERY-15.jpg"
         }
     ]
 }

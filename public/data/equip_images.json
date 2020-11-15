@@ -1,0 +1,602 @@
+{
+    "images": [
+        {
+            "file": "1_Clara Alseda.png",
+            "fullname": {"name": "CLARA",
+                    "surnames":"ALSEDÀ RODRÍGUEZ"
+                     },
+            "details":{"date": "22/2/1996",
+                        "level": "Undergraduate, 4th year",   
+                        "position":"Contest Captain",
+                        "department":"All of them"
+                        },
+            "quote":"«A veces les pongo a mis palabras diéresis de colores imitando diademas.»"
+        },
+        {
+            "file": "2_Marta Aracil.png",
+            "fullname": {"name": "MARTA",
+                    "surnames":"ARACIL GONZÁLEZ"
+                 },
+            "details":{"date": "27/6/1995",
+                    "level": "Undergraduate, 5th year",   
+                    "position":"Safety Officer",
+                    "department":"Habits Department"
+                    },
+            "quote":"«L'art de trencar plats.»"
+        },
+        {
+            "file": "3_Helena Armengol.png",
+            "fullname": {"name": "HELENA",
+                "surnames":"ARMENGOL BIOSCA"
+             },
+            "details":{"date": "20/12/1998",
+                "level": "Undergraduate, 3rd year",   
+                "position":"Music Coordinator",
+                "department":"Comunication Department"
+                },
+            "quote":"«I wish I could, but I don't want to.»"
+        },
+        {
+            "file": "4_Lluc Borras.png",
+            "fullname": {"name": "LLUC",
+                "surnames":"BORRÀS BIBILONI"
+             },
+            "details":{"date": "23/08/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Audiovisual Communicator",
+                "department":"Comunication Department"
+                },
+            "quote":"«Viure per viure.»"
+        },
+        {
+            "file": "5_Mariona Blanch.png",
+            "fullname": {"name": "MARIONA",
+                "surnames":"BLANCH BIBILONI"
+             },
+            "details":{"date": "23/08/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Audiovisual Communicator",
+                "department":"Comunication Department"
+                },
+            "quote":"«Viure per viure.»"
+        },
+        {
+            "file": "6_Pol Blasco.png",
+            "fullname": {"name": "POL",
+                "surnames":"BLASCO SOLER"
+             },
+            "details":{"date": "14/06/1999",
+                "level": "Undergraduate, 1st year",   
+                "position":"",
+                "department":"Workshop team"
+                },
+            "quote":"«Malabars del món.»"
+        },
+        {
+            "file": "7_Laia Boquera.png",
+            "fullname": {"name": "LAIA",
+                "surnames":"BOQUERA LLAMBRICH"
+             },
+            "details":{"date": "14/09/1995",
+                "level": "Undergraduate, 5th year",   
+                "position":"Project Engineer",
+                "department":"Energy Department"
+                },
+            "quote":"«Hem nascut en aquest món per veure’l i escoltar-lo.»"
+        },
+        {
+            "file": "8_Paola Busso.png",
+            "fullname": {"name": "PAOLA",
+                "surnames":"BUSSO"
+             },
+            "details":{"date": "04/01/1991",
+                "level": "Architect",   
+                "position":"Safety Officer",
+                "department":"Architecture Department"
+                },
+            "quote":"«M’agrada ballar.»"
+
+        },
+        {
+            "file": "9_Elias Casanova.png",
+            "fullname": {"name": "ELIAS",
+                "surnames":"CASANOVAS ADRIÁN"
+             },
+            "details":{"date": "23/02/1996",
+                "level": "Undergraduate, 4th year",   
+                "position":"Team coordinator",
+                "department":"Departmenthood"
+                },
+            "quote":"«Vaig començar a fumar per poder deixar-ho.»"
+
+        },
+        {
+            "file": "10_Maria Casino.png",
+            "fullname": {"name": "MARIA",
+                "surnames":"CASINO LOZANO"
+             },
+            "details":{"date": "15/07/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Safety Officer",
+                "department":"Comunication Department"
+                },
+            "quote":"«I have the best boyfriend in the whole world.»"
+
+        },
+        {
+            "file": "11_Clara Castellote.png",
+            "fullname": {"name": "CLARA",
+                "surnames":"CASTELLOTE BORRELL"
+             },
+            "details":{"date": "03/12/1996",
+                "level": "Undergraduate, 5th year",   
+                "position":"Model Assistant",
+                "department":"Urbanism Department"
+                },
+            "quote":"«Frase que em defineixi...»"
+
+        },
+        {
+            "file": "12_Marti Catalan.png",
+            "fullname": {"name": "MARTÍ",
+                "surnames":"CATALAN FRANQUESA"
+             },
+            "details":{"date": "21/09/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Project Engineer",
+                "department":"Architecture Department"
+                },
+            "quote":"«Ara domines tots els horitzons.»"
+
+        },
+        {
+            "file": "13_Albert Clotet.png",
+            "fullname": {"name": "ALBERT",
+                "surnames":"CLOTET ARRUFAT"
+             },
+            "details":{"date": "12/08/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"HS Team Coordinator",
+                "department":"Architecture Department"
+                },
+            "quote":"«Ai, deixeu-me un minut, és complicat.»"
+        },
+        {
+            "file": "14_Guillermo de Alfonso.png",
+            "fullname": {"name": "GUILLERMO",
+                "surnames":"DE ALFONSO SÁNCHEZ"
+             },
+            "details":{"date": "12/12/1995",
+                "level": "Undergraduate, 5th year",   
+                "position":"Atom Relator",
+                "department":"Art Department"
+                },
+            "quote":"«Mmm... Hola. Respiro. I tu?»"
+
+        },
+        {
+            "file": "15_Miquel Debón.png",
+            "fullname": {"name": "MIQUEL",
+                "surnames":"DEBÓN VILLAGRASA"
+             },
+            "details":{"date": "27/11/1995",
+                "level": "Undergraduate, 5th year",   
+                "position":"Workshop Team",
+                "department":"Installation Department"
+                },
+            "quote":"«No ens afecta el que ens succeeixi, ens afecta el que ens diem del que ens succeeix.»"
+        },
+        {
+            "file": "16_Julia Dubois.png",
+            "fullname": {"name": "JÚLIA",
+                "surnames":"DUBOIS AULEDA"
+             },
+            "details":{"date": "28/05/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Communications Coordinator",
+                "department":"Communication Department"
+                },
+            "quote":"«Ric molt. Ara ja no tant.»"
+        },
+        {
+            "file": "17_Miren Etxebarria.png",
+            "fullname": {"name": "MIREN",
+                "surnames":"ETXEBARRIA SAGASTA"
+             },
+            "details":{"date": "15/02/1993",
+                "level": "Undergraduate, 5th year",   
+                "position":"Project Manager",
+                "department":"Architecture Department"
+                },
+            "quote":"«Tendència al desastre.»"
+        },
+        {
+            "file": "18_Pep Fradera.png",
+            "fullname": {"name": "PEP",
+                "surnames":"FRADERA CASTELLÓ"
+             },
+            "details":{"date": "27/10/1997",
+                "level": "Undergraduate, 5th year",   
+                "position":"Sponsorship Manager",
+                "department":"Sponsors Department"
+                },
+            "quote":"«Come to Brasil.»"
+        },
+        {
+            "file": "19_Marta Galisteo.png",
+            "fullname": {"name": "MARTA",
+                "surnames":"GALISTEO GARRIDO"
+             },
+            "details":{"date": "30/05/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Apple Taster",
+                "department":"CoLab Department"
+                },
+            "quote":"«Metamorfosi permanent.»"
+        },
+        {
+            "file": "20_Paula Guallar.png",
+            "fullname": {"name": "PAULA",
+                "surnames":"GUALLAR SANCHO"
+             },
+            "details":{"date": "25/11/1992",
+                "level": "Graphic Designer",   
+                "position":"Design",
+                "department":"Communication Department"
+                },
+            "quote":"«Als matins: ràdio, sol, desayuno.»"
+        },
+        {
+            "file": "21_Javi Guerrero.png",
+            "fullname": {"name": "JAVI",
+                "surnames":"GUERRERO GARCIA"
+             },
+            "details":{"date": "05/05/1996",
+                "level": "Undergraduate, 5th year",   
+                "position":"-",
+                "department":"Workshop Team"
+                },
+            "quote":"«Esto y/o eso y/o aquello.»"
+        },
+        {
+            "file": "22_Laia Guillen.png",
+            "fullname": {"name": "LAIA",
+                "surnames":"GUILLÉN SOLEY"
+             },
+            "details":{"date": "05/09/1995",
+                "level": "Undergraduate, 5th year",   
+                "position":"Energizer",
+                "department":"Sponsors Department"
+                },
+            "quote":"«here we go!»"
+        },
+        {
+            "file": "24_Elsa Martínez.png",
+            "fullname": {"name": "ELSA",
+                "surnames":"MARTÍNEZ FONTS"
+             },
+            "details":{"date": "05/09/1995",
+                "level": "Undergraduate, 4th year",   
+                "position":"Audiovisual Communicator",
+                "department":"Communication Department"
+                },
+            "quote":"«Al final em pensaré que em dic Pla de cognom, quan és el meu poble!»"
+        },
+        {
+            "file": "25_Helena Majó.png",
+            "fullname": {"name": "HELENA",
+                "surnames":"MAJÓ YLLA-CATALÀ"
+             },
+            "details":{"date": "22/10/1996",
+                "level": "Undergraduate, 5th year",   
+                "position":"Clarifying",
+                "department":"Urbanism Department"
+                },
+            "quote":"«És impescindible?»"
+        },
+        {
+            "file": "26_Simón Martin.png",
+            "fullname": {"name": "SIMÓN",
+                "surnames":"MARTÍN"
+             },
+            "details":{"date": "03/02/1999",
+                "level": "Undergraduate, 1st year",   
+                "position":"-",
+                "department":"Workshop Team"
+                },
+            "quote":""
+        },
+        {
+            "file": "27_Marta Mayoral.png",
+            "fullname": {"name": "MARTA",
+                "surnames":"MAYORAL ANTICH"
+             },
+            "details":{"date": "08/02/1997",
+                "level": "Undergraduate, 4th year",   
+                "position":"Inspector Gadgets",
+                "department":"Architecture Department"
+                },
+            "quote":"«Escoltant The Beatles.»"
+        },
+        {
+            "file": "28_Henrique Muniz.png",
+            "fullname": {"name": "HENRIQUE",
+                "surnames":"MUNIZ DE CASTRO SILVA"
+             },
+            "details":{"date": "20/10/1996",
+                "level": "Undergraduate, 6th year",   
+                "position":"Site Operations Coordinator",
+                "department":"Architecture Department"
+                },
+            "quote":"«Beauty is simplicity.»"
+        },
+        {
+            "file": "29_Esther Orús.png",
+            "fullname": {"name": "ESTHER",
+                "surnames":"ORÚS ALCALDE"
+             },
+            "details":{"date": "03/02/1994",
+                "level": "Undergraduate, 5th year",   
+                "position":"Instrumentation Contact",
+                "department":"Communication Department"
+                },
+            "quote":"«Som el resultat dels nostres traumes.»"
+        },
+        {
+            "file": "30_Jaume Ribas.png",
+            "fullname": {"name": "JAUME",
+                "surnames":"RIBAS SOLEY"
+             },
+            "details":{"date": "10/10/1989",
+                "level": "PFC",   
+                "position":"Student Team Leader",
+                "department":"Management Department"
+                },
+            "quote":"«Segurament acabaré el SDE19 calb.»"
+        },
+        {
+            "file": "31_Pau Quingles.png",
+            "fullname": {"name": "PAU",
+                "surnames":"QUINGLES LAMARCA"
+             },
+            "details":{"date": "14/05/1998",
+                "level": "Undergraduate, 2nd year",   
+                "position":"Departmenthood Leader",
+                "department":"Departmenthood"
+                },
+            "quote":"«La complexitat de la senzillesa.»"
+        },
+        {
+            "file": "32_Alvaro Rancano.png",
+            "fullname": {"name": "ALVARO",
+                "surnames":"RANCANO"
+             },
+            "details":{"date": "29/01/1995",
+                "level": "Undergraduate, 4th year",   
+                "position":"3D Viewer",
+                "department":"Departmenthood"
+                },
+            "quote":"«Me tomo el azúcar del sobre.»"
+        },
+        {
+            "file": "33_Julia Reñones.png",
+            "fullname": {"name": "JULIA",
+                "surnames":"REÑONES DE LA PUENTE"
+             },
+            "details":{"date": "02/09/1996",
+                "level": "Undergraduate, 5th year",   
+                "position":"Styler",
+                "department":"Urbanism Department"
+                },
+            "quote":"«Ponte el casco que nos vamos.»"
+        },
+        {
+            "file": "34_Xavi Ruiz.png",
+            "fullname": {"name": "XAVI",
+                "surnames":"RUIZ SAFONT"
+             },
+            "details":{"date": "12/12/1995",
+                "level": "Undergraduate, 5th year",   
+                "position":"Project Architect",
+                "department":"Architecture Department"
+                },
+            "quote":"«Vida experimental nº106.001.367.663 de la història de la humanitat.»"
+        },
+        {
+            "file": "35_Julia Sabaté.png",
+            "fullname": {"name": "JÚLIA",
+                "surnames":"SABATÉ GINER"
+             },
+            "details":{"date": "19/03/1997",
+                "level": "Undergraduate, 1st year",   
+                "position":"Media Developer",
+                "department":"Communication Department"
+                },
+            "quote":"«Move on like curtis.»"
+        },
+        {
+            "file": "36_Clara Seffance.png",
+            "fullname": {"name": "CLARA",
+                "surnames":"SEFFANCE"
+             },
+            "details":{"date": "18/01/1999",
+                "level": "Undergraduate, 3rd year",   
+                "position":"-",
+                "department":"Workshop Team"
+                },
+            "quote":"«International enthusiasm.»"
+        },
+        {
+            "file": "36_Joan Valero.png",
+            "fullname": {"name": "JOAN",
+                "surnames":"VALERO HARO"
+             },
+            "details":{"date": "22/07/1992",
+                "level": "Undergraduate, 3rd year",   
+                "position":"Time Traveler",
+                "department":"-"
+                },
+            "quote":"«Jo ja ho vaig dir.»"
+        }
+        
+    ],
+
+    "images2": [
+        {
+        "file": "1_ALBERT CUCHI.png",
+        "fullname": {"name": "ALBERT",
+                "surnames":"CUCHÍ BURGOS"
+                 },
+        "details":{"position":"Contest Captain",
+                    "level": "ETSAV Dean"
+                    }
+
+        },
+        {
+            "file": "2_TORSTEN MASSECK.png",
+            "fullname": {"name": "TORSTEN",
+                    "surnames":"MASSECK"
+                     },
+            "details":{"position":"Faculty Advisor",
+                        "level": "PhD Architect"
+                        }
+        },
+        {
+            "file": "3_MARTI OBIOLS.png",
+            "fullname": {"name": "MARTÍ",
+                        "surnames":"OBIOLS GALÍ"
+                         },
+            "details":{"position":"Faculty Advisor",
+                            "level": "Architect"
+                            }
+        },
+        {
+            "file": "4_CARMEN BODELÓN.png",
+            "fullname": {"name": "CARMEN",
+                        "surnames":"BODELÓN"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architecture Student, RESSÒ Team"
+                            }
+        },
+        {
+            "file": "5_DANI CALATAYUD.png",
+            "fullname": {"name": "DANI",
+                        "surnames":"CALATAYUD"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "6_COQUE CLARET.png",
+            "fullname": {"name": "COQUE",
+                        "surnames":"CLARET"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "7_ENRIC CORBAT.png",
+            "fullname": {"name": "ENRIC",
+                        "surnames":"CORBAT"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "8_QUIM ESCODA.png",
+            "fullname": {"name": "QUIM",
+                        "surnames":"ESCODA"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architecture student, RESSÒ team"
+                            }
+        },
+        {
+            "file": "9_JORDI MITJANS.png",
+            "fullname": {"name": "JORDI",
+                        "surnames":"MITJANS"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect, (e)CO team"
+                            }
+        },
+        {
+            "file": "10_ORIOL MUNTANE.png",
+            "fullname": {"name": "ORIOL",
+                        "surnames":"MUNTANÉ"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "PhD Architect"
+                            }
+        },
+        {
+            "file": "11_ANNA PAGÉS.png",
+            "fullname": {"name": "ANNA",
+                        "surnames":"PAGÈS"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "PhD Architect"
+                            }
+        },
+        {
+            "file": "12_JORDI PAYOLA.png",
+            "fullname": {"name": "JORDI",
+                        "surnames":"PAYOLA"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "13_FRANCESC PLA.png",
+            "fullname": {"name": "FRANCESC",
+                        "surnames":"PLA"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "14_JOSEP RICART.png",
+            "fullname": {"name": "JOSEP",
+                        "surnames":"RICART"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "15_ROSA RULL.png",
+            "fullname": {"name": "ROSA",
+                        "surnames":"RULL"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "Architect"
+                            }
+        },
+        {
+            "file": "16_AMADEU SANTACANA.png",
+            "fullname": {"name": "AMADEU",
+                        "surnames":"SANTACANA"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "PhD Architect"
+                            }
+        },
+        {
+            "file": "17_MARTA SERRA.png",
+            "fullname": {"name": "MARTA",
+                        "surnames":"SERRA"
+                         },
+            "details":{"position":"Studio Professor",
+                      "level": "PhD Architect"
+                            }
+        }
+
+
+    ]
+}

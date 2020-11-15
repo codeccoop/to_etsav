@@ -26,9 +26,12 @@ const Gallery = (function () {
         for (let img of self.el.querySelectorAll(".img-row")) {
             img.addEventListener("click", self.onClickImage);
         }
+        this.app.header.addClass("green", true);
+        this.app.header.addClass("breadcrumb", true);
+        this.app.header.setSections([{id: "gallery"}]);
     };
 
-    Gallery.prototype.onRemove = function onRemove () {
+    Gallery.prototype.beforeRemove = function onRemove () {
         const self = this;
         for (let img of self.el.querySelectorAll(".img-row")) {
             img.removeEventListener("click", self.onClickImage);
@@ -37,6 +40,10 @@ const Gallery = (function () {
 
     Gallery.prototype.onClickImage = function (ev) {
         console.log("Has clicat sobre una imàtge!");
+        const ruta = img.getAttribute('src');
+        overlay.classList.add('activo');
+        document.querySelector('#overlay img').src = ruta;
+		    document.querySelector('#overlay .description').innerHTML = description;
     };
 
     return Gallery;
