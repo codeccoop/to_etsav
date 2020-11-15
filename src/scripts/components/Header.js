@@ -9,6 +9,7 @@ const Header = (function () {
         this.navReset = this.navReset.bind(this);
         this.onScroll = this.onScroll.bind(this);
         this.onClickLink = this.onClickLink.bind(this);
+        this.data.sections = data.sections || [];
     });
 
     Header.prototype.onUpdate = function onUpdate () {
@@ -55,18 +56,21 @@ const Header = (function () {
     };
 
     Header.prototype.setSections = function setSection (sections) {
-        this.data.sections = sections;
+        const change = this.data.sections.length != sections.length || !this.data.sections
+              .reduce(function (acum, section, i) {
+                  return acum && section.id == sections[i].id;
+              }, true);
+        if (change) this.data.sections = sections;
     };
 
     Header.prototype.onNavigate = function onNavigate () {
-        if (this.app.scroll.scrolling === true) return;
         const isHome = this.app.router.lastRouteResolved().name.indexOf("home") > -1;
-        if (isHome === true) {
+        if (isHome) {
             this.setSections(this.app.homeSections);
         } else {
             this.setSections([{id: this.app.router.lastRouteResolved().name}]);
+            this.addClass("dark", true);
         }
-
         this.addClass("breadcrumb", !isHome);
     };
 
@@ -97,7 +101,7 @@ const Header = (function () {
             behavior: ev.detail.smooth === false ? "auto" : "smooth"
         });
         this.onScroll(this.data.sections.map(d => d.id).indexOf(ev.srcElement.getAttribute("link")));
-        this.app.router.silent(this.app.router.generate("home-section", {
+        this.app.router.silentNavigation(this.app.router.generate("home-section", {
             section: ev.srcElement.getAttribute("link")
         }));
     };

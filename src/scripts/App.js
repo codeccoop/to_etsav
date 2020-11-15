@@ -111,7 +111,7 @@ function startApp (app) {
         };
 
         function onNavigate () {
-            !app.router._silent && app.header.onNavigate();
+            !(app.router.silent || app.scroll.scrolling) && app.header.onNavigate();
         };
 
         app.router.ev.on("navigate", firstNavigation);
