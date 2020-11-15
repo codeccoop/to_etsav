@@ -65,8 +65,8 @@ const Router = (function() {
         const self = this;
         data = data || new Object();
         return function (params, query) {
-            if (self._silent === true) {
-                self._silent = false;
+            if (self.silent === true) {
+                self.silent = false;
                 return;
             }
             if (cache.get(templateName)) {
@@ -114,8 +114,8 @@ const Router = (function() {
         Navigo.prototype.navigate.call(this, route, absolute);
     };
 
-    Router.prototype.silent = function silent (route) {
-        this._silent = true;
+    Router.prototype.silentNavigation = function silent (route) {
+        this.silent = true;
         this.navigate(route);
     };
 

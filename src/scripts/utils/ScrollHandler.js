@@ -6,7 +6,6 @@ const ScrollHandler = (function() {
     // PRIVATE CODE BLOCK
     var dropWindow = function () {};
     function addWindow (el, callback) {
-        document.body.style.overflow = "hidden";
         const onWheel = (function (delta) {
             var lastTrigger = Date.now();
             return function() {
@@ -43,6 +42,7 @@ const ScrollHandler = (function() {
         this.el = this.app.el;
         this.sections = new Array();
         this.onWheel = this.onWheel.bind(this);
+        this.onScroll = this.onScroll.bind(this);
 
         var currentSection = 0;
         Object.defineProperty(this, "currentSection", {
@@ -56,31 +56,21 @@ const ScrollHandler = (function() {
         });
 
         this.scrolling = false;
-        window.addEventListener("scroll", (function () {
-            var lastTrigger = Date.now();
-            var delayed;
-            return function () {
-                if (Date.now() - lastTrigger < 200) return;
-                if (!self.scrolling) {
-                    clearTimeout(delayed);
-                    delayed = setTimeout(function () {
-                        self.onScroll();
-                    }, 300);
-                }
-                lastTrigger = Date.now();
-            };
-        })());
     };
 
-    ScrollHandler.prototype.patch = function () {
+    ScrollHandler.prototype.patch = function (targetSection) {
         this.sections = Array.apply(null, document.getElementsByClassName("scroll-section"));
+        this.currentSection = targetSection;
         addWindow(this.el, this.onWheel);
-        this.onScroll();
+        window.addEventListener("scroll", this.onScroll);
+        document.body.classList.add("fixed-viewport");
     };
 
     ScrollHandler.prototype.unpatch = function unpatch () {
         this.sections = new Array();
         dropWindow();
+        window.removeEventListener("scroll", this.onScroll);
+        document.body.classList.remove("fixed-viewport");
     };
 
     ScrollHandler.prototype.onWheel = function onWheel (ev) {
@@ -91,15 +81,26 @@ const ScrollHandler = (function() {
             top: this.sections[this.currentSection].offsetTop,
             behavior: "smooth"
         });
-        setTimeout(function () {
-            self.scrolling = false;
-            self.app.router.silent(self.app.router.generate("home-section", {
-                section: self.sections[self.currentSection].id
-            }));
-        }, 600);
     };
 
-    ScrollHandler.prototype.onScroll = function onScroll () {
+    ScrollHandler.prototype.onScroll = (function () {
+        var lastTrigger = Date.now();
+        var delayed, targetEl, bounding;
+        return function (ev) {
+            targetEl = this.sections[this.currentSection];
+            bounding = targetEl.getBoundingClientRect();
+            if (Math.abs(bounding.top) + Math.abs(window.innerHeight - bounding.bottom) == 0) {
+                this.scrolling = false;
+                const targetURL = this.app.router.generate("home-section", {
+                    section: targetEl.id
+                });
+                if (location.hash.replace(/\?.*$/, '') != targetURL) this.app.router.silentNavigation(targetURL);
+                this.afterScroll(ev);
+            }
+        };
+    })();
+
+    ScrollHandler.prototype.afterScroll = function afterScroll (ev) {
         var bounding, fit, currentSection;
         this.sections.reduce(function (acum, section, i) {
             bounding = section.getBoundingClientRect();
@@ -111,6 +112,11 @@ const ScrollHandler = (function() {
             return acum;
         }, Infinity);
         this.currentSection = currentSection;
+    };
+
+    ScrollHandler.prototype.onNavigate = function onNavigate () {
+        const isHome = this.app.router.lastRouteResolved().name.indexOf("home") > -1;
+        isHome === true ? this.patch() : this.unpatch();
     };
 
     return ScrollHandler;

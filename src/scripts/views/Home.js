@@ -6,7 +6,7 @@ const Home = (function () {
     const Home = BaseView.extend(function (el, template, data) {
         const self = this;
         if (!this.url.params || this.app.homeSections.map(d => d.id).indexOf(this.url.params.section) == -1) {
-            this.app.router.silent("#home/cover");
+            this.app.router.silentNavigation("#home/cover");
             this.url.params = {
                 section: "cover"
             };
@@ -22,20 +22,24 @@ const Home = (function () {
     };
 
     Home.prototype.beforeRender = function beforeRender () {
-        document.body.classList.add("fixed-viewport");
         this.app.header.setSections(this.data.sections);
     };
 
     Home.prototype.onRender = function onRender () {
+        let currentSection, i = 0;
         for (let section of this.data.sections) {
             section._proto = section.view;
             section.view = new section.view(this.el.querySelector(`#${section.id}`), section.template, {
                 app: this.app,
                 name: section.id
             });
+            if (section.id === this.url.params.section) {
+                currentSection = i;
+            }
+            i++;
         }
 
-        this.app.scroll.patch();
+        this.app.scroll.patch(currentSection);
         window.scrollTo({
             top: this.el.querySelector(`#${this.url.params.section}`).offsetTop,
             behavior: "auto"
@@ -49,10 +53,6 @@ const Home = (function () {
             section.view = section._proto;
         });
         this.app.scroll.unpatch();
-    };
-
-    Home.prototype.onRemove = function onRemove () {
-        document.body.classList.remove("fixed-viewport");
     };
 
     Home.prototype.fetchChilds = function fetchChilds (sections) {

@@ -12,8 +12,13 @@ header
     &.dark .header__link
       color: black
 
-    &.breadcrumb .header__nav-pannel
-      display: block
+    &.breadcrumb
+      .header__nav-pannel
+        display: block
+
+      .header__link
+        pointer-events: none
+        font-weight: bold
 
     .header__content
       display: flex
