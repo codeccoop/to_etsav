@@ -96,16 +96,16 @@ const Header = (function () {
     };
 
     Header.prototype.onClickLink = function onClickLink (ev) {
+        this.app.scroll.currentSection = this.data.sections
+            .map(d => d.id).indexOf(ev.srcElement.getAttribute("link"));
         window.scrollTo({
             top: document.getElementById(ev.srcElement.getAttribute("link")).offsetTop,
             behavior: ev.detail.smooth === false ? "auto" : "smooth"
         });
-        this.onScroll(this.data.sections.map(d => d.id).indexOf(ev.srcElement.getAttribute("link")));
         this.app.router.silentNavigation(this.app.router.generate("home-section", {
             section: ev.srcElement.getAttribute("link")
         }));
     };
- 
 
     return Header;
 })();
