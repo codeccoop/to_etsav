@@ -15,6 +15,9 @@ const Home = (function () {
         this.fetchChilds(this.app.homeSections).then(function () {
             self.data.sections = self.app.homeSections;
         });
+
+        this.lazyLoadSectionBackground = this.lazyLoadSectionBackground.bind(this);
+        this.app.scroll.on("update:section", this.lazyLoadSectionBackground);
     });
 
     Home.prototype.onUpdate = function onUpdate () {
@@ -23,6 +26,7 @@ const Home = (function () {
 
     Home.prototype.beforeRender = function beforeRender () {
         this.app.header.setSections(this.data.sections);
+        document.body.getElementsByTagName("footer")[0].classList.add("scroll-section");
     };
 
     Home.prototype.onRender = function onRender () {
@@ -33,6 +37,7 @@ const Home = (function () {
                 app: this.app,
                 name: section.id
             });
+            section.view.el.classList.add("lazy");
             if (section.id === this.url.params.section) {
                 currentSection = i;
             }
@@ -55,6 +60,10 @@ const Home = (function () {
         this.app.scroll.unpatch();
     };
 
+    Home.prototype.onRemove = function onRemove () {
+        document.body.getElementsByTagName("footer")[0].classList.remove("scroll-section");
+    };
+
     Home.prototype.fetchChilds = function fetchChilds (sections) {
         const self = this;
         return Promise.all(sections.map(function (section) {
@@ -68,6 +77,10 @@ const Home = (function () {
                     });
             });
         }));
+    };
+
+    Home.prototype.lazyLoadSectionBackground = function lazyLoadSectionBackground (section) {
+        this.data.sections[section] && this.data.sections[section].view.el.classList.remove("lazy");
     };
 
     return Home;

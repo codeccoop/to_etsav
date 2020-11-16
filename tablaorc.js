@@ -4,7 +4,7 @@
 module.exports = {
     src: "src",
     public: "public",
-    dist: "/path/to/package/distribution",
+    dist: "/home/orzo/github/githubio/",
     port: 8050,
     middleware: function (connect, opt) {
         // Example middleware to disable cache on local environment.

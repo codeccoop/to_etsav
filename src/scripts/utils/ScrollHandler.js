@@ -74,31 +74,31 @@ const ScrollHandler = (function() {
     };
 
     ScrollHandler.prototype.onWheel = function onWheel (ev) {
-        const self = this;
+        if (this.scrolling) return;
         this.currentSection += (ev.deltaY < 0 ? -1 : 1);
-        this.scrolling = true;
         window.scrollTo({
             top: this.sections[this.currentSection].offsetTop,
             behavior: "smooth"
         });
     };
 
-    ScrollHandler.prototype.onScroll = (function () {
-        var lastTrigger = Date.now();
-        var delayed, targetEl, bounding;
-        return function (ev) {
-            targetEl = this.sections[this.currentSection];
-            bounding = targetEl.getBoundingClientRect();
-            if (Math.abs(bounding.top) + Math.abs(window.innerHeight - bounding.bottom) == 0) {
-                this.scrolling = false;
-                const targetURL = this.app.router.generate("home-section", {
-                    section: targetEl.id
-                });
-                if (location.hash.replace(/\?.*$/, '') != targetURL) this.app.router.silentNavigation(targetURL);
-                this.afterScroll(ev);
-            }
-        };
-    })();
+    ScrollHandler.prototype.onScroll = function (ev) {
+        this.scrolling = true;
+        const targetEl = this.sections[this.currentSection];
+        const bounding = targetEl.getBoundingClientRect();
+        if (
+            Math.abs(bounding.top) + Math.abs(window.innerHeight - bounding.bottom) == 0
+            // case when its on bottom of scroll
+                || window.scrollY === document.body.offsetHeight - window.innerHeight
+        ) {
+            this.scrolling = false;
+            const targetURL = this.app.router.generate("home-section", {
+                section: targetEl.id
+            });
+            if (location.hash.replace(/\?.*$/, '') != targetURL) this.app.router.silentNavigation(targetURL);
+            this.afterScroll(ev);
+        }
+    };
 
     ScrollHandler.prototype.afterScroll = function afterScroll (ev) {
         var bounding, fit, currentSection;

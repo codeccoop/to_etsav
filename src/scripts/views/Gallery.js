@@ -9,8 +9,13 @@ const Gallery = (function () {
 
     var Gallery = function (el, template) {
         const self = this;
-        this.load(_env.apiURL + "gallery_images.json").then(function (response) { 
-            self.data = JSON.parse(response);
+        this.load(_env.apiURL + "gallery_images.json").then(function (response) {
+            const data = JSON.parse(response);
+            data.images = data.images.map(img => {
+                img["thumbnail"] = img["file"].replace(/\.(jpg|png|jpeg)/, "--small." + img.file.match(/\.([a-zA-Z]*$)/)[1]);
+                return img;
+            });
+            self.data = data;
         });
         this.app.header.setSections([]);
     };
