@@ -124,10 +124,14 @@ function scrollPatch (app) {
     return app;
 }
 
+
 module.exports = function App () {
     const app = new Object();
     app.el = document.getElementById("app");
     app.homeSections = homeSections;
+    app.touchable = 'ontouchstart' in window
+        || navigator.maxTouchPoints > 0
+        || navigator.msMaxTouchPoints > 0;
     new Promise(function (done, err) {
         done(app);
     }).then(startLng)
