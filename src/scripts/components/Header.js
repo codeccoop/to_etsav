@@ -64,7 +64,8 @@ const Header = (function () {
     };
 
     Header.prototype.onNavigate = function onNavigate () {
-        const isHome = this.app.router.lastRouteResolved().name.indexOf("home") > -1;
+        const lastRoute = this.app.router.lastRouteResolved();
+        const isHome = !lastRoute.name || lastRoute.name.indexOf("home") > -1;
         if (isHome) {
             this.setSections(this.app.homeSections);
         } else {

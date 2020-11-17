@@ -7,23 +7,54 @@ const ScrollHandler = (function() {
     var dropWindow = function () {};
     function addWindow (el, callback) {
         const onWheel = (function (delta) {
-            var lastTrigger = Date.now();
-            return function() {
+            var lastTrigger = Date.now(),
+                touchDelta = 0,
+                lastTouch;
+            return function () {
                 if (event.type == "keydown") {
                     if (event.keyCode != 40 && event.keyCode != 38) return;
                     event.deltaY = event.keyCode === 38 ? -1 : 1;
                 }
-                if (Date.now() - lastTrigger >= delta) {
+                if (event.type === "touchmove") {
+                    touchDelta += lastTouch ? lastTouch - event.touches[0].clientY : 0;
+                    if (Math.abs(touchDelta) > 200) {
+                        event.deltaY = touchDelta * -1;
+                        touchDelta = 0;
+                        lastTouch = void(0);
+                    } else {
+                        lastTouch = event.touches[0].clientY;
+                        return;
+                    }
+                }
+                if (Date.now() - lastTrigger >= delta || event.type === "touchmove") {
                     callback.apply(null, arguments);
                     lastTrigger = Date.now();
                 }
             };
-        })(500);
+        })(300);
         window.addEventListener("DOMMouseScroll", onWheel);
         window.addEventListener("touchmove", onWheel);
         window.addEventListener("keydown", onWheel);
         window.addEventListener("wheel", onWheel);
         window.addEventListener("mousewheel", onWheel);
+
+        onTouchMove = (function (callback) {
+            var ts, te, last;
+            return function () {
+                if (event.type === "touchmove") {
+                    console.log(last - event.touches[0].clientY, last, event.touches[0].clientY);
+                    last = event.touches[0].clientY;
+                }
+//                if (event.type === "touchstart") {
+//                    ts = event.touches[0].clientY;
+//                } else if ("touchend") {
+//                    te = event.touches[0].clientY;
+//                    callback({
+//                        deltaY: ts - te
+//                    });
+//                }
+            };
+        })(callback);
 
         dropWindow = function () {
             window.removeEventListener("DOMMouseScroll", onWheel);
@@ -75,6 +106,7 @@ const ScrollHandler = (function() {
 
     ScrollHandler.prototype.onWheel = function onWheel (ev) {
         if (this.scrolling) return;
+        console.log(ev);
         this.currentSection += (ev.deltaY < 0 ? -1 : 1);
         window.scrollTo({
             top: this.sections[this.currentSection].offsetTop,
