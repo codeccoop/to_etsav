@@ -15,3 +15,4 @@ include
 # IDE's
 .idea
 .vscode
+.vs
