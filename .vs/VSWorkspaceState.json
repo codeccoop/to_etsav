@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\public\\templates",
+    "\\src",
+    "\\src\\scripts",
+    "\\src\\scripts\\router",
+    "\\src\\scripts\\views",
+    "\\src\\styles",
+    "\\src\\styles\\components",
+    "\\src\\styles\\views"
+  ],
+  "SelectedNode": "\\src\\scripts\\views\\Documents.js",
+  "PreviewInSolutionExplorer": false
+}
