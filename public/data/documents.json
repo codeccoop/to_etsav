@@ -1,19 +1,43 @@
 {
     "documents": [
         {
-            "file": "document1.csv",
-            "name": "Planos del projecte"
+            "name": "Projecte",
+            "files":[
+                {
+                    "name": "Project Manual",
+                    "file": "project_manual.pdf"
+				},
+                {
+                    "name": "Project Drawings",
+                    "file": "project_drawings.pdf"
+				} 
+			]
         },
         {
-            "file": "document2.pdf",
-            "name": "Renders"
+            "name": "Premsa",
+            "files":[
+                {
+                    "name": "Press Release",
+                    "file": "press_release.pdf"
+				},
+                {
+                    "name": "Press Kit",
+                    "file": "press_kit.pdf"
+				} 
+			]
         },
         {
-            "file": "document3.docx",
-            "name": "Memoria del procés participatiu"
-        }, {
-            "file": "document4.docx",
-            "name": "Pressupostos municipals"
+            "name": "Idees",
+            "files":[
+                {
+                    "name": "Llibre",
+                    "file": "llibre.pdf"
+				},
+                {
+                    "name": "Eternari",
+                    "file": "eternari.pdf"
+				} 
+			]
         }
     ]
 }
