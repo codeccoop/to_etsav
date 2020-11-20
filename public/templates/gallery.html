@@ -1,11 +1,31 @@
 <div class="gallery-content">
     {{#images}}
-        <div class="img-row" >
-            <img src="public/images/galeria/{{file}}" width=90% height=80%/>
+    <div class="img-container">
+        <img id= "{{id}}" file="public/images/galeria/{{file}}" src="public/images/galeria/{{smallfile}}"/>
+        <div class="text-content">
+            {{text}}
         </div>
+    </div>
     {{/images}}
 </div>
+
 <div class="overlay">
     <button id="boton-cerrar">x</button>
-    <img src="" alt="">
+    <!-- <div class="glider-container">
+    {{#images}}
+        <div>{{id}}</div>
+        <img id= "{{id}}" src="public/images/galeria/{{file}}"/>
+    {{/images}}
+    <div class="glider-prev">prev</div>
+    <div class="glider-next">next</div> -->
+    <div class="glider-container">
+        <div class="glider-images">
+            {{#images}}
+                <img id="{{id}}" width="500" src="public/images/galeria/{{file}}"/>
+            {{/images}}
+        </div>
+        <button aria-label="Previous" class="glider-prev">«</button>
+        <button aria-label="Next" class="glider-next">»</button>
+        <div role="tablist" class="dots"></div>
+    </div>
 </div>
