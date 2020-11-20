@@ -1,11 +1,34 @@
 .gallery-content
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    grid-template-rows: auto
+    width:100%
+    display: flex
+    flex-wrap: wrap
 
-    // .img-row
+    .img-container
+        width: calc(33% - 20px)
+        display: flex
+        flex-grow: 0
+        margin:10px
+        flex-direction: column
+
+    @media screen and (max-width: 700px)
+        .img-container
+            width: calc(50% - 20px)
+
+    @media screen and (max-width: 450px)
+        .img-container
+            width: calc(100% - 20px)
+    
+    .img-row img
+        width:100%
+        height: auto
+
+    /*TEXT*/
+    .text-content
+        padding-right:5%
+        text-align: justify
+
 /*OVERLAY*/
-.overlay{
+.overlay
     position: fixed;
     top: 0;
     bottom: 0;
@@ -18,42 +41,37 @@
     align-items: center;
     justify-content: center;
     flex-direction: row; ;/*per posar el paràgraf sota la imatge*/
-}
+    flex-direction: column
+    justify-content: center
 
-.overlay.activo{
-    display: flex;
+    &.activo
+        display: flex
 
-}
-.overlay img{
-    width: 100%;
-    height: 80vh;
-    margin-top: 0px; 
-    }
-.overlay .description{
-    display: block;
-    padding: 40px;
-    text-align: left;
-    max-width: 50%;
-    background: #fff;
-    height: 80vh;
-    margin-top: -.5vh;
-    text-align: justify;
-    }
-.overlay-img{
-    position: relative;
-    width: 80vw;
-    
+    .glider-container
+        width: 500px
+        height: 500px
 
-    }
-.overlay-img #boton-cerrar{
-    background: none;
-    font-size: 25px;
-    color: black;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top:3px;
-    right: -25px;
+    .glider-img
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        height: 50%
 
+    .glider-prev
+        left: 50px
 
-}
+    .glider-next
+        right: 50px
+
+    #boton-cerrar
+        display: flex
+        justify-content: left 
+        background: none;
+        font-size: 25px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 1%;
+        left: 3%
+        z-index: 1000
