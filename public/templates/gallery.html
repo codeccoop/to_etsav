@@ -1,11 +1,21 @@
 <div class="gallery-content">
-    {{#images}}
+    {{#rows}}
         <div class="img-row" >
-            <img src="public/images/galeria/{{file}}" width=90% height=80%/>
+            {{#images}}
+            <div class="img-container">
+                <img id= "{{id}}" src="public/images/galeria/{{smallfile}}"/>
+                <div class="text-content">
+                    {{text}}
+                </div>
+            </div>
+            {{/images}}
         </div>
-    {{/images}}
+    {{/rows}}
 </div>
+
 <div class="overlay">
-    <button id="boton-cerrar">x</button>
-    <img src="" alt="">
+    <div class="overlay-img">
+        <button id="boton-cerrar">x</button>
+        <img src="" alt="">
+    </div>
 </div>

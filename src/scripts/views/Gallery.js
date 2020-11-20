@@ -10,7 +10,22 @@ const Gallery = (function () {
     var Gallery = function (el, template) {
         const self = this;
         this.load(_env.apiURL + "gallery_images.json").then(function (response) { 
-            self.data = JSON.parse(response);
+            var data = JSON.parse(response);
+            data.rows = [];
+            var rowindex = -1;
+            var index = 0;
+            for (let img of data.images){
+                if (index % 3 == 0) {
+                    data.rows.push({images: []});
+                    rowindex++;
+                }
+                img.id = "imatge" + index;
+                img.smallfile = img.file.split(".")[0]+"--small."+img.file.split(".")[1]
+                data.rows[rowindex].images.push(img);
+                index = index + 1;
+            }
+            console.log(data);
+            self.data = data;
         });
     };
 
@@ -37,13 +52,22 @@ const Gallery = (function () {
     };
     
     Gallery.prototype.onClickImage = function (ev) {
+        debugger;
+        var img = ev.target;
         console.log("Has clicat sobre una imàtge!");
         const ruta = img.getAttribute('src');
+        var overlay = document.querySelector('.overlay');
         overlay.classList.add('activo');
-		document.querySelector('#overlay img').src = ruta;
-		document.querySelector('#overlay .description').innerHTML = description;
+        document.querySelector('.overlay img').src = ruta;
+        var boton = document.querySelector('#boton-cerrar');
+        boton.addEventListener('click', () => {
+            overlay.classList.remove('activo');
+        });
+        overlay.addEventListener('click', (evento) => {
+            evento.target.id === 'overlay' ? overlay.classList.remove('activo') : '';
+        })
     };
-
+    
     return Gallery;
 })();
 
