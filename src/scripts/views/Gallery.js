@@ -1,6 +1,7 @@
 const BaseView = require("../core/BaseView.js");
 
-const overlay = document.getElementById('overlay');
+// const Glider = require("glider-js");
+
 const Gallery = (function () {
 
     /// PRIVATE BLOCK CODE
@@ -24,9 +25,10 @@ const Gallery = (function () {
                 data.rows[rowindex].images.push(img);
                 index = index + 1;
             }
-            console.log(data);
             self.data = data;
         });
+        this.onClickImage = this.onClickImage.bind(this);
+        this.onCloseOverlay = this.onCloseOverlay.bind(this);
     };
 
     Gallery = BaseView.extend(Gallery);
@@ -38,34 +40,51 @@ const Gallery = (function () {
 
     Gallery.prototype.onRender = function onRender () {
         const self = this;
-        for (let img of self.el.querySelectorAll(".img-row")) {
+        for (let img of self.el.querySelectorAll(".img-container img")) {
             img.addEventListener("click", self.onClickImage);
         }
         console.log("Gallery rendered");
     };
 
     Gallery.prototype.onRemove = function onRemove () {
-        for (let img of self.el.querySelectorAll(".img-row")) {
-            img.removeEventListener("click", self.onClickImage);
+        for (let img of this.el.querySelectorAll(".img-container img")) {
+            img.removeEventListener("click", this.onClickImage);
         }
         console.log("Gallery removed");
     };
     
     Gallery.prototype.onClickImage = function (ev) {
-        debugger;
-        var img = ev.target;
-        console.log("Has clicat sobre una imàtge!");
-        const ruta = img.getAttribute('src');
         var overlay = document.querySelector('.overlay');
         overlay.classList.add('activo');
-        document.querySelector('.overlay img').src = ruta;
+        if (!this.glider) {
+            new Glider(overlay.querySelector('.glider-images'), {
+                slidesToShow: 1,
+                dots: '.dots',
+                draggable: true,
+                itemWidth: 50,
+                rewind: true,
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        } else {
+            this.glider.refresh();
+        }
         var boton = document.querySelector('#boton-cerrar');
-        boton.addEventListener('click', () => {
+        boton.addEventListener('click', this.onCloseOverlay);
+        overlay.addEventListener('click', this.onCloseOverlay);
+    };
+
+    Gallery.prototype.onCloseOverlay = function onCloseOverlay (ev) {
+        var overlay = document.querySelector('.overlay');
+        var boton = document.querySelector('#boton-cerrar');
+        if (overlay === ev.target || ev.target.id == "boton-cerrar") {
             overlay.classList.remove('activo');
-        });
-        overlay.addEventListener('click', (evento) => {
-            evento.target.id === 'overlay' ? overlay.classList.remove('activo') : '';
-        })
+            boton.removeEventListener('click', this.onCloseOverlay);
+            overlay.removeEventListener('click', this.onCloseOverlay);
+        }
+        this.glider = null;
     };
     
     return Gallery;

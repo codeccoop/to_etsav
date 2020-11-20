@@ -1,21 +1,31 @@
 <div class="gallery-content">
-    {{#rows}}
-        <div class="img-row" >
-            {{#images}}
-            <div class="img-container">
-                <img id= "{{id}}" src="public/images/galeria/{{smallfile}}"/>
-                <div class="text-content">
-                    {{text}}
-                </div>
-            </div>
-            {{/images}}
+    {{#images}}
+    <div class="img-container">
+        <img id= "{{id}}" file="public/images/galeria/{{file}}" src="public/images/galeria/{{smallfile}}"/>
+        <div class="text-content">
+            {{text}}
         </div>
-    {{/rows}}
+    </div>
+    {{/images}}
 </div>
 
 <div class="overlay">
-    <div class="overlay-img">
-        <button id="boton-cerrar">x</button>
-        <img src="" alt="">
+    <button id="boton-cerrar">x</button>
+    <!-- <div class="glider-container">
+    {{#images}}
+        <div>{{id}}</div>
+        <img id= "{{id}}" src="public/images/galeria/{{file}}"/>
+    {{/images}}
+    <div class="glider-prev">prev</div>
+    <div class="glider-next">next</div> -->
+    <div class="glider-container">
+        <div class="glider-images">
+            {{#images}}
+                <img id="{{id}}" width="500" src="public/images/galeria/{{file}}"/>
+            {{/images}}
+        </div>
+        <button aria-label="Previous" class="glider-prev">«</button>
+        <button aria-label="Next" class="glider-next">»</button>
+        <div role="tablist" class="dots"></div>
     </div>
 </div>
