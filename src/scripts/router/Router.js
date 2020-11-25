@@ -8,7 +8,7 @@ const routes = require("./routes.js");
 const Dispatcher = require("../core/Dispatcher.js");
 
 
-const Router = (function() {
+const Router = (function () {
     // PRIVATE CODE BLOCK
     function clearContent (cssEl) {
         const el = document.querySelector(cssEl);
