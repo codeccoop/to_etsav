@@ -5,7 +5,6 @@
   "repository": "https://github.com/orzocogorzo/tablao",
   "license": "GPL-3.0",
   "dependencies": {
-    "glider-js": "^1.7.3",
     "mustache": "^4.0.1",
     "navigo": "^7.1.2"
   }
