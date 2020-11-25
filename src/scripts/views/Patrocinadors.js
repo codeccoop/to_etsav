@@ -14,23 +14,23 @@ const Patrocinadors = (function () {
         });
     };
 
-    Patrocinadors = BaseView.extend(Equip);
+    Patrocinadors = BaseView.extend(Patrocinadors);
 
     Patrocinadors.prototype.onUpdate = function onUpdate () {
-        console.log("Equip updated");
+        console.log("Patrocinadors updated");
         this.render();
     };
 
     Patrocinadors.prototype.onRender = function onRender () {
         const self = this;
-        for (let img of self.el.querySelectorAll(".img-row")) {
+        for (let img of self.el.querySelectorAll("")) {
             img.addEventListener("click", self.onClickImage);
         }
         console.log("Equip rendered");
     };
 
     Patrocinadors.prototype.onRemove = function onRemove () {
-        for (let img of self.el.querySelectorAll(".img-row")) {
+        for (let img of self.el.querySelectorAll("")) {
             img.removeEventListener("click", self.onClickImage);
         }
         console.log("Equip removed");
@@ -38,7 +38,7 @@ const Patrocinadors = (function () {
 
     Patrocinadors.prototype.onClickImage = function (ev) {
         console.log("Has clicat sobre una imàtge!");
-        const carouselImages = document.querySelector('.img-row')
+        const carouselImages = document.querySelector('')
     };
 
     return Patrocinadors;
