@@ -1,7 +1,7 @@
 <div class="gallery-content">
     {{#images}}
     <div class="img-container">
-        <img id= "{{id}}" file="public/images/galeria/{{file}}" src="public/images/galeria/{{smallfile}}"/>
+        <img id= "{{id}}" src="public/images/gallery/{{smallfile}}"/>
         <div class="text-content">
             {{text}}
         </div>
@@ -14,7 +14,7 @@
     <div class="glider-container">
         <div class="glider-images">
             {{#images}}
-                <img id="{{id}}" width="500" src="public/images/galeria/{{file}}"/>
+                <img id="{{id}}" width="500" src="public/images/gallery/{{file}}"/>
             {{/images}}
         </div>
         <button aria-label="Previous" class="glider-prev">«</button>

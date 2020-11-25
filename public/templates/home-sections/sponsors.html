@@ -1,4 +1,32 @@
-<div class="sponsors-wrapper">
-    <div class="sponsors-content">
+<div class="sponsors-content">
+    <div class="sponsors-row" >
+    {{#institutional}}
+    <div class="logo-container">
+        <img src="public/images/galeria/{{file}}"/>
+        <div class="text-content">
+            {{text}}
+        </div>
+    </div>
+    {{/institutional}}
+    </div>
+    <div class="sponsors-row" >
+        {{#main}}
+        <div class="logo-container">
+            <img src="public/images/galeria/{{file}}"/>
+            <div class="text-content">
+                {{text}}
+            </div>
+        </div>
+        {{/main}}
+    </div>
+    <div class="sponsors-row" >
+        {{#or}}
+        <div class="logo-container">
+            <img src="public/images/galeria/{{file}}"/>
+            <div class="text-content">
+                {{text}}
+            </div>
+        </div>
+        {{/or}}
     </div>
 </div>
