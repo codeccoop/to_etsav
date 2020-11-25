@@ -4,7 +4,6 @@ const Project = require("../views/Project.js");
 const Documents = require("../views/Documents.js");
 const Gallery = require("../views/Gallery.js");
 const Equip = require("../views/Equip.js");
-const Patrocinadors = require("../views/Patrocinadors.js");
 
 module.exports = {
     "home": {
@@ -53,14 +52,6 @@ module.exports = {
             el: "#content",
             template: "equip.html",
             view: Equip
-        }
-    },
-    "sponsors": {
-        as: "sponsors",
-        uses: {
-            el: "#content",
-            template: "patrocinadors.html",
-            view: Patrocinadors
         }
     }
 }

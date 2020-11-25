@@ -1,5 +1,5 @@
 const Lng = require("./utils/Lng.js");
-const Router = require("./router/Router.js");
+const Router = require("./core/Router.js");
 const ScrollHandler = require("./utils/ScrollHandler.js");
 
 // COMPONENTS
