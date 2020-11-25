@@ -38,24 +38,6 @@ const ScrollHandler = (function() {
         window.addEventListener("wheel", onWheel);
         window.addEventListener("mousewheel", onWheel);
 
-        onTouchMove = (function (callback) {
-            var ts, te, last;
-            return function () {
-                if (event.type === "touchmove") {
-                    console.log(last - event.touches[0].clientY, last, event.touches[0].clientY);
-                    last = event.touches[0].clientY;
-                }
-//                if (event.type === "touchstart") {
-//                    ts = event.touches[0].clientY;
-//                } else if ("touchend") {
-//                    te = event.touches[0].clientY;
-//                    callback({
-//                        deltaY: ts - te
-//                    });
-//                }
-            };
-        })(callback);
-
         dropWindow = function () {
             window.removeEventListener("DOMMouseScroll", onWheel);
             window.removeEventListener("touchmove", onWheel);

@@ -1,5 +1,13 @@
-#lngMenu
+header.dark #lngMenu .lng-menu__item
+  text-shadow: 1px 1px 3px rgba(50, 50, 50, .5)
 
+#lngMenu
+    &.expanded
+      .lng-menu__visible
+        display: none
+
+      .lng-menu__list
+        display: block
 
   .lng-menu__wrapper
     height: 100%
@@ -8,13 +16,6 @@
     position: relative
     width: fit-content
     margin-left: auto
-
-    &:hover
-      .lng-menu__visible
-        display: none
-
-      .lng-menu__list
-        display: block
 
   .lng-menu__visible
     color: #222
@@ -32,6 +33,7 @@
   .lng-menu__list-item
     cursor: pointer
     color: #ccc
+    text-shadow: 1px 1px 3px rgba(150, 150, 150, .5)
 
     &:hover
       color: #222
