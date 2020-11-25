@@ -11,7 +11,7 @@ const Project = require("../views/Project.js");
 const Documents = require("../views/Documents.js");
 const Gallery = require("../views/Gallery.js");
 const Equip = require("../views/Equip.js");
-const Patrocinadors = require("../views/Equip.js");
+const Patrocinadors = require("../views/Patrocinadors.js");
 
 const Router = (function () {
     // PRIVATE CODE BLOCK
