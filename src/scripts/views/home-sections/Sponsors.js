@@ -31,7 +31,7 @@ const Patrocinadors = (function () {
     };
 
     Patrocinadors.prototype.beforeRemove = function beforeRemove () {
-        for (let img of self.el.querySelectorAll(".logo-container")) {
+        for (let img of this.el.querySelectorAll(".logo-container")) {
             img.removeEventListener("click", self.onClickImage);
         }
         console.log("Equip removed");

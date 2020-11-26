@@ -1,8 +1,16 @@
-<div class="documents__content home-section__content">
-    <h1 class="home-section__title">Documents</h1>
-    <div class="nav-pannel" >
-        <div class="nav-pannel__btn">
-            <span>&rarr;</span>
+<div class="doc-content">
+    {{#documents}}
+        <div class='doc-col'>
+            <div class=doc-col-main>
+                <div class="doc-div">{{name}}</div>
+            </div>
+            <div class='doc-col-sub'>
+                {{#files}}
+                    <div class="doc-contain has_file" data-file={{file}}>
+                        <div class="doc-div">{{name}}</div>
+                    </div>
+                {{/files}}
+            </div>
         </div>
-    </div>
+    {{/documents}}
 </div>
