@@ -88,7 +88,6 @@ const ScrollHandler = (function() {
 
     ScrollHandler.prototype.onWheel = function onWheel (ev) {
         if (this.scrolling) return;
-        console.log(ev);
         this.currentSection += (ev.deltaY < 0 ? -1 : 1);
         window.scrollTo({
             top: this.sections[this.currentSection].offsetTop,

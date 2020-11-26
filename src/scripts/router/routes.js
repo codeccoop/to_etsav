@@ -1,7 +1,6 @@
 // VIEWS
 const Home = require("../views/Home.js");
 const Project = require("../views/Project.js");
-const Documents = require("../views/Documents.js");
 const Gallery = require("../views/Gallery.js");
 const Equip = require("../views/Equip.js");
 
@@ -28,14 +27,6 @@ module.exports = {
             el: "#content",
             template: "project.html",
             view: Project
-        }
-    },
-    "documents": {
-        as: "documents",
-        uses: {
-            el: "#content",
-            template: "documents.html",
-            view: Documents
         }
     },
     "gallery": {

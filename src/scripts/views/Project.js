@@ -9,15 +9,15 @@ const Project = (function () {
 
     Project.prototype.onUpdate = function onUpdate () {
         console.log("Project updated");
-    }
+    };
 
     Project.prototype.onRender = function onRender () {
         console.log("Project rendered");
-    }
+    };
 
     Project.prototype.onRemove = function onRemove () {
         console.log("Project removed");
-    }
+    };
 
     return Project;
 })();
