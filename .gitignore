@@ -3,6 +3,7 @@
 public/images/*
 public/data/*
 public/fonts/*
+public/documents/*
 **/node_modules
 
 # PYTHON
