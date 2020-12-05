@@ -1,76 +1,86 @@
-.template{
-	display: flex;
-	flex-direction: row;
-	height: calc(100vh - 0px);
-	margin: 0px 35px 0px 35px;
-}
+#projectView
+  .project__content
+    padding: 150px 8%
 
-.template1_container{
-	
-	
-}
+    @media screen and (max-width: 950px)
+        padding: 150px 5%
 
-.template2_container{
-	display: flex;
-	/*position:absolute;*/
-	flex-direction: row;
-	height: calc(100vh - 0px);
-	margin: 0px 35px 0px 35px;
-}
+   @media screen and (max-width: 650px)
+       padding: 150px 3%
 
-.template1_text{
-	
-	display: flex;
-	flex-direction: row;
-	align-items:center;
-	justify-content: flex-end;
-	width: 75%;
-}
+.project__child-wrapper
+  height: calc(100vh - 150px)
+  position: relative
+  padding: 20px 10%
 
-.template1_text .template4_text p{
-	width: 75%;
-}
+  @media screen and (max-width: 950px)
+    height: auto
+    padding: 20px 5%
 
-.template4_text p{
-	width: 75%;
-}
+.project__child
+  display: flex
+  flex-direction: row
+  height: 100%
 
-.template4_text {
-	align-items: flex-end;
-	justify-content: flex-start;
-	display: flex;
-	width: 100%;
-}
+  @media screen and (max-width: 950px)
+    flex-direction: column
 
-.template4_text{
+  &[template="1"]
+    .project__child-txt
+      margin-left: auto
+      flex-grow: 0
+      flex-shrink: 0
+      flex-basis: 75%
 
-	width: 100%;
-}
+  &[template="2"]
+  &[template="2r"]
+    padding-bottom: 100px
 
-.template2_text{
-	flex:1;
-}
+    .project__child-txt
+      margin-right: 20px
+      justify-content: flex-end
 
-.template2_image{
-	background-color: red;
-	height: calc(100vh - 0px);
-	flex:1;
-	
-}
+  &[template="2r"]
+    flex-direction: row-reverse
 
-.template3_image{
-	background-color: red;
-	height: calc(100vh - 0px);
-	flex:1;
-	background:aliceblue;
-}
+    .project__child-txt
+      margin-left: 20px
 
-.template4_image{
-	background-color: red;
-	height: calc(100vh - 0px);
-}
+  @media screen and (max-width: 950px)
+    &[template="2"] .project__child-img
+      margin-top: 20px
 
-.template1_container{
-	display:flex
-	
-}
+    &[template="2r"]
+      flex-direction: column-reverse
+
+      .project__child-img
+        margin-bottom: 20px
+
+  &[template="3"]
+    padding-bottom: 100px
+
+  &[template="4"]
+    display: flex
+
+    .project__child-txt
+      margin-right: auto
+      flex-grow: 0
+      flex-shrink: 0
+      flex-basis: 75%
+
+.project__child-txt
+  flex: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.project__child-img
+  flex: 1
+  display: flex
+  background-color: #E5E5F7
+  opacity: 0.4
+  background-image: radial-gradient(#444CF7 1px, #E5E5F7 1px)
+  background-size: 20px 20px
+
+  @media screen and (max-width: 950px)
+    min-height: calc(100vh - 300px)

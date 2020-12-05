@@ -1,30 +1,94 @@
-.equip-content
-    padding: 5%
-    display: grid
-    grid-template-columns: repeat(4, 1fr)
-    row-gap: 90px
+#equip
 
-    // .img-row
-.img-name
-    //padding-left: 8%
-    padding-right:8%;
-    font-size: 25px;
+  .equip__content
+    padding: 150px 8%
+
+    @media screen and (max-width: 950px)
+      padding: 150px 5%
+
+    @media screen and (max-width: 650px)
+      padding: 150px 3%
+
+  .equip__section
+    display: block
+
+  .equip__section-title
+    margin-top: 120px
+    margin-bottom: 50px
+    font-size: 2rem
     text-align: center
-.img-details
-    //padding-left: 8%
-    padding-right:8%;
-    font-size: 15px;
-    text-align: center;
-.img-quote
-    padding-top: 8%;
-    padding-right:8%;
-    font-size: 15px;
-    text-align: center;
+
+  .equip__section-grid
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    row-gap: 90px
+    column-gap: 20px
+
+    @media screen and (max-width: 1300px)
+      grid-template-columns: repeat(4, 1fr)
+
+    @media screen and (max-width: 950px)
+      grid-template-columns: repeat(3, 1fr)
+
+    @media screen and (max-width: 650px)
+      grid-template-columns: repeat(2, 1fr)
+
+    @media screen and (max-width: 450px)
+      grid-template-columns: repeat(1, 1fr)
+
+  .equip__grid-item
+    display: flex
+    flex-direction: column
+
+    p
+      margin: 0
+      padding: 0
+      text-align: center
+
+  .equip__item-img
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    height: 400px
+    cursor: pointer
+    margin-bottom: 20px
+
+    @media screen and (max-width: 1300px)
+      height: 350px
+
+    @media screen and (max-width: 950px)
+      height: 300px
+
+    &:hover
+      filter: sepia(1)
+
+  .equip__item-description
+    flex: 1
+    display: flex
+    flex-direction: column
+
+  .equip__item-name
+    text-align: center
+    margin-bottom: 25px
+
+    p
+      font-size: 1.2rem
+      line-height: 1.3
+      font-weight: bold
+
+  .equip__item-details
+  .equip__item-quote
+    display: block
+
+    p
+      font-size: .9em
+      color: #666
+
+  .equip__item-details
+    margin-bottom: 25px
 
 .collaboradors-content
     padding: 5%
     display: grid
     grid-template-columns: repeat(4, 1fr)
     row-gap: 90px
-
-    

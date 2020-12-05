@@ -1,41 +1,57 @@
 .gallery-content
-    width:100%
+    width: 100%
     display: flex
     flex-wrap: wrap
+    padding: 150px 8%
+
+    @media screen and (max-width: 950px)
+        padding: 150px 5%
+
+   @media screen and (max-width: 650px)
+       padding: 150px 3%
 
     .img-container
-        width: calc(33% - 20px)
+        flex-basis: calc(33% - 50px)
         display: flex
-        flex-grow: 0
-        margin:10px
+        flex-grow: 1
+        flex-shrink: 0
+        padding: 25px 10px
+        margin: 25px 5px
         flex-direction: column
+        border: 1px solid white
+        transition: border-color .3s ease-in-out
 
-    @media screen and (max-width: 700px)
+        &:hover .text-content
+                color: $magenta
+
+    @media screen and (max-width: 950px)
         .img-container
-            width: calc(50% - 20px)
+            flex-basis: calc(50% - 50px)
 
-    @media screen and (max-width: 450px)
+    @media screen and (max-width: 650px)
         .img-container
-            width: calc(100% - 20px)
+            flex-basis: calc(100% - 50px)
 
-    .img-row img
-        width:100%
+    .img-container img
+        width: 100%
         height: auto
+        cursor: pointer
 
     /*TEXT*/
     .text-content
-        padding-right:5%
         text-align: justify
+        margin-top: 10px
+        transition: color .3s ease-in-out
 
 /*OVERLAY*/
 .overlay
     position: fixed;
     top: 0;
     bottom: 0;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     background: rgba(0,0,0,.9); /*Pantalla de color negre amb opacitat .9*/
-    width:100%;
+    width: 100%;
     height: 100vh;
     display: none; /*volem treballar amb la imatge i el text com si fossin un grid*/
     align-items: center;
@@ -43,6 +59,7 @@
     flex-direction: row; ;/*per posar el paràgraf sota la imatge*/
     flex-direction: column
     justify-content: center
+    z-index: 1000
 
     &.activo
         display: flex

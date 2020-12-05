@@ -24,7 +24,8 @@ const Header = (function () {
         const self = this;
         Array.apply(null, this.el.getElementsByClassName("header__link"))
             .forEach(link => link.addEventListener("click", this.onClickLink));
-        this.el.querySelector(".header__icon").addEventListener("click", this.navReset);
+        this.el.querySelector(".header__icon")
+            .addEventListener("click", this.navReset);
         fetch(_env.publicURL + "templates/components/lng-menu.html")
             .then(res => {
                 res.text().then(template => {
