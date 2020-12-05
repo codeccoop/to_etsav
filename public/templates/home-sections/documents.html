@@ -1,13 +1,14 @@
-<div class="doc-content">
+<div class="documents__content">
     {{#documents}}
-        <div class='doc-col'>
-            <div class=doc-col-main>
-                <div class="doc-div">{{name}}</div>
-            </div>
-            <div class='doc-col-sub'>
+        <div class="documents__col">
+            <div class="documents__cover">{{name}}</div>
+            <div class="documents__files">
                 {{#files}}
-                    <div class="doc-contain has_file" data-file={{file}}>
-                        <div class="doc-div">{{name}}</div>
+                    <div class="documents__file" data-file={{file}}>
+                        <a href="/public/documents/{{file}}" target="_blank">
+                            {{name}}
+                        </a>
+                        <div class="documents__file-icon" ></div>
                     </div>
                 {{/files}}
             </div>

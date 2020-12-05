@@ -18,6 +18,8 @@ const Home = (function () {
 
         this.lazyLoadSectionBackground = this.lazyLoadSectionBackground.bind(this);
         this.app.scroll.on("update:section", this.lazyLoadSectionBackground);
+
+        this.onMobileScroll = this.onMobileScroll.bind(this);
     });
 
     Home.prototype.onUpdate = function onUpdate () {
@@ -40,14 +42,16 @@ const Home = (function () {
             section.view.el.classList.add("lazy");
             if (section.id === this.url.params.section) {
                 currentSection = i;
+                this.lazyLoadSectionBackground(i);
+            } else {
+                i++;
             }
-            i++;
         }
 
-        this.app.scroll.patch(currentSection);
-        window.scrollTo({
-            top: this.el.querySelector(`#${this.url.params.section}`).offsetTop,
-            behavior: "auto"
+        this.app.scroll.patch(currentSection, true);
+
+        this.el.querySelectorAll(".home__nav-btn").forEach(btn => {
+            btn.addEventListener("click", this.onMobileScroll);
         });
     };
 
@@ -81,6 +85,14 @@ const Home = (function () {
 
     Home.prototype.lazyLoadSectionBackground = function lazyLoadSectionBackground (section) {
         this.data.sections[section] && this.data.sections[section].view.el.classList.remove("lazy");
+    };
+
+    Home.prototype.onMobileScroll = function onMobileScroll (ev) {
+        if (ev.currentTarget.getAttribute("dir") == "top") {
+            this.app.scroll.currentSection--;
+        } else {
+            this.app.scroll.currentSection++;
+        }
     };
 
     return Home;

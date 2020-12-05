@@ -65,8 +65,7 @@ const Header = (function () {
     };
 
     Header.prototype.onNavigate = function onNavigate () {
-        const lastRoute = this.app.router.lastRouteResolved();
-        const isHome = !lastRoute.name || lastRoute.name.indexOf("home") > -1;
+        const isHome = this.app.router.isOnHome();
         if (isHome) {
             this.setSections(this.app.homeSections);
         } else {
@@ -100,10 +99,6 @@ const Header = (function () {
     Header.prototype.onClickLink = function onClickLink (ev) {
         this.app.scroll.currentSection = this.data.sections
             .map(d => d.id).indexOf(ev.srcElement.getAttribute("link"));
-        window.scrollTo({
-            top: document.getElementById(ev.srcElement.getAttribute("link")).offsetTop,
-            behavior: ev.detail.smooth === false ? "auto" : "smooth"
-        });
         this.app.router.silentNavigation(this.app.router.generate("home-section", {
             section: ev.srcElement.getAttribute("link")
         }));
