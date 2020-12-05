@@ -10,14 +10,16 @@ const Equip = (function () {
     var Equip = function (el, template) {
         const self = this;
         this.load(_env.apiURL + "equip_images.json").then(function (response) { 
-            self.data = JSON.parse(response);
+            const data = JSON.parse(response);
+            data.images.forEach(img => img.file = _env.publicURL + "images/equip/" + img.file);
+            data.images2.forEach(img => img.file = _env.publicURL + "images/equip/collaboradors/" + img.file);
+            self.data = data;
         });
     };
 
     Equip = BaseView.extend(Equip);
 
     Equip.prototype.onUpdate = function onUpdate () {
-        console.log("Equip updated");
         this.render();
     };
 
@@ -26,18 +28,15 @@ const Equip = (function () {
         for (let img of self.el.querySelectorAll(".img-row")) {
             img.addEventListener("click", self.onClickImage);
         }
-        console.log("Equip rendered");
     };
 
     Equip.prototype.beforeRemove = function onRemove () {
         for (let img of this.el.querySelectorAll(".img-row")) {
             img.removeEventListener("click", this.onClickImage);
         }
-        console.log("Equip removed");
     };
 
     Equip.prototype.onClickImage = function (ev) {
-        console.log("Has clicat sobre una imàtge!");
         const carouselImages = document.querySelector('.img-row')
     };
 

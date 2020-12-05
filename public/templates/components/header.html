@@ -9,11 +9,11 @@
             {{/sections}}
         </div>
         <div class="header__burger-wrapper">
-            <div class="header__burger">
-                <div class="header__burger-collapsed" >menu ></div>
-                <div class="header__burger-expanded">
+            <div class="header__burger-menu">
+                <div class="header__burger-menu__wrapper" >
+                    <div class="header__burger-menu__veil"></div>
                     {{#sections}}
-                    <li class="header__link" link="{{id}}">$lng({{id}})</li>
+                    <li class="header__burger-menu__item header__link" link="{{id}}">$lng({{id}})</li>
                     {{/sections}}
                 </div>
             </div>
