@@ -1,5 +1,5 @@
 const Lng = require("./utils/Lng.js");
-const Router = require("./core/Router.js");
+const AppRouter = require("./router/AppRouter.js");
 const ScrollHandler = require("./utils/ScrollHandler.js");
 
 // COMPONENTS
@@ -88,7 +88,7 @@ function startComponents (app) {
 
 function startApp (app) {
     return new Promise(function (done, error) {
-        app.router = new Router(app).on(function () {
+        app.router = new AppRouter(app).on(function () {
             app.router.navigate(app.router.generate("home-section", {
                 section: "cover"
             }));

@@ -1,4 +1,7 @@
 #home
+  .home__imgs-container
+    position: relative
+
   .scroll-section
     width: 100vw
     height: 100vh
@@ -6,3 +9,30 @@
   .section-wrapper
     height: 100%
     width: 100%
+
+
+  .home__nav-btn
+    position: fixed
+    display: none
+    z-index: 1000
+    border-radius: 50%
+    height: 40px
+    width: 40px
+    left: 20px
+    border: .5px solid #3332
+    background-image: url(/public/images/arrow_animation.gif)
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    background-color: #0001
+    filter: invert(1)
+
+    &[dir="top"]
+      top: 100px
+      transform: rotate(180deg)
+
+    &[dir="bottom"]
+      bottom: 20px
+
+    @media screen and (max-width: 950px)
+      display: block

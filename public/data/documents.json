@@ -1,43 +1,39 @@
 {
-    "documents": [
-        {
+    "documents": [{
             "name": "Projecte",
-            "files":[
-                {
+            "files": [{
                     "name": "Project Manual",
                     "file": "project_manual.pdf"
-				},
+                },
                 {
                     "name": "Project Drawings",
                     "file": "project_drawings.pdf"
-				} 
-			]
+                }
+            ]
         },
         {
             "name": "Premsa",
-            "files":[
-                {
+            "files": [{
                     "name": "Press Release",
                     "file": "press_release.pdf"
-				},
+                },
                 {
                     "name": "Press Kit",
                     "file": "press_kit.pdf"
-				} 
-			]
+                }
+            ]
         },
         {
             "name": "Idees",
-            "files":[
-                {
+            "files": [{
                     "name": "Llibre",
                     "file": "llibre.pdf"
-				},
+                },
                 {
                     "name": "Eternari",
                     "file": "eternari.pdf"
-				} 
-			]
+                }
+            ]
         }
     ]
 }

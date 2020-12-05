@@ -1,52 +1,122 @@
-#doc-title {
-	font-size: 40px;
-	font-family: "Lucida Console", Arial, monospace;
-	width:100vw;
-	
-	
-}
+#documents
+  display: flex
 
-.doc-summary{
-	font-family:  Arial, monospace;
-	
-}
+  .documents__content
+    flex: 1
+    display: flex
+    align-items: center
+    padding: 0 10%
 
-.doc-content{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	height: calc(100vh - 125px);
-	margin: 0px 35px 0px 35px;
-}
+    @media screen and (max-width: 950px)
+      flex-direction: column
+      padding: 150px 3%
 
+  .documents__col
+    height: 50%
+    max-height: calc(80vw / 3)
+    flex-direction: column
+    flex-grow: 1
+    margin: 5px
+    position: relative
 
+    @media screen and (max-width: 950px)
+      width: 100%
 
-.doc-col{
-	flex-direction:column;
-	flex-grow:1;
-	margin:5px;
-	
-}
+    &:hover
+      .documents__cover
+        height: 0px
+        font-size: 0px
+        border-color: #fff
 
-.doc-col-main{
-	height:75%;
-	
-}
+      .documents__file
+        height: calc(50% - 10px)
+        font-size: 1.3em
+        border-color: #ccc
+        margin: 5px 0px
 
-.has_file{
-	display:none;
-}
+        @media screen and (max-width: 950px)
+          height: 95%
+          width: calc(48% - 10px)
 
-.doc-div{
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	border: 1px solid #ccc;
-	border-radius:0px;
-	width:100%;
-	height:75%;
-	align-self:center;
-	margin: 0px 25px 0px 25px;
-	font-size: 25px;
-	font-family: "Lucida Console", Arial, monospace;
-}
+      .documents__file-icon
+        display: block
+        opacity: .1
+
+  .documents__cover
+    position: absolute
+    top: 0px
+    left: 0px
+    height: 100%
+    width: 100%
+    z-index: 10
+    transition: height .3s ease-out, font-size .3s ease-out, border-color .5s ease-out
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 1px solid #ccc
+    font-size: 1.5em
+    background-color: #2d2d2d
+    color: white
+
+  .documents__files
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 5
+    flex-direction: column
+
+    @media screen and (max-width: 950px)
+      flex-direction: row
+      justify-content: space-evenly
+
+  .documents__file
+    height: 0px
+    width: 100%
+    font-size: 0px
+    border: 1px solid #fff
+    transition: height .5s ease-out, font-size .5s ease-out, border-color .7s ease-out, color .5s ease-out, width .5s ease-out
+    cursor: pointer
+    display: flex
+    position: relative
+    font-weight: bold
+
+    @media screen and (max-width: 950px)
+      width: 0px
+      height: 100%
+
+    &:hover
+      color: $laurel
+      box-shadow: 0px 0px 10px #ddd
+
+      .documents__file-icon
+        background-image: url(/public/images/document_icon--green.png)
+
+    .documents__file-icon
+      position: absolute
+      top: 0px
+      left: 0px
+      width: 100%
+      height: 100%
+      background-image: url(/public/images/document_icon.png)
+      background-size: 30%
+      background-position: center
+      background-repeat: no-repeat
+      z-index: -1
+      opacity: .0
+      transition: opacity .5s ease-out
+
+    a
+      display: flex
+      height: 100%
+      width: 100%
+      text-decoration: none
+      align-items: center
+      justify-content: center
+      color: inherit
+      font-size: inherit
