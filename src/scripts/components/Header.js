@@ -78,10 +78,7 @@ const Header = (function () {
     Header.prototype.onScroll = function onScroll (section) {
         this.addClass("dark", [1, 5, 6, 7].indexOf(section) != -1);
         this.addClass("green", [3, 5, 6].indexOf(section) != -1);
-        Array.apply(null, this.el.querySelectorAll(".header__link"))
-            .forEach(function (el, i) {
-                el.classList[i % 7 === section ? "add" : "remove"]("active");
-            });
+        this.updateMenus(section);
     };
 
     Header.prototype.addClass = function turnDark (val, bool) {
@@ -94,6 +91,13 @@ const Header = (function () {
 
     Header.prototype.onBreadcrumb = function onBreadcrumb () {
         history.back();
+    };
+
+    Header.prototype.updateMenus = function updateMenus (section) {
+        Array.apply(null, this.el.querySelectorAll(".header__link"))
+            .forEach(function (el, i) {
+                el.classList[i % 7 === section ? "add" : "remove"]("active");
+            });
     };
 
     Header.prototype.onClickLink = function onClickLink (ev) {
