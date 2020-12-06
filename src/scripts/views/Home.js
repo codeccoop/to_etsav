@@ -17,8 +17,10 @@ const Home = (function () {
         });
 
         this.lazyLoadSectionBackground = this.lazyLoadSectionBackground.bind(this);
-        this.app.scroll.on("update:section", this.lazyLoadSectionBackground);
-
+        this.app.scroll.on("update:section", function (section) {
+            self.lazyLoadSectionBackground(section);
+            self.el.children[0].classList[[1, 5, 6, 7].indexOf(section) >= 0 ? "add" : "remove"]("dark");
+        });
         this.onMobileScroll = this.onMobileScroll.bind(this);
     });
 
@@ -43,6 +45,7 @@ const Home = (function () {
             if (section.id === this.url.params.section) {
                 currentSection = i;
                 this.lazyLoadSectionBackground(i);
+                this.app.header.updateMenus(i);
             } else {
                 i++;
             }
