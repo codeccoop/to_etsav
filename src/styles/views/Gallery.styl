@@ -50,35 +50,30 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,.9); /*Pantalla de color negre amb opacitat .9*/
-    width: 100%;
+    background: rgba(0,0,0,.8);
+    width: 100vw;
     height: 100vh;
-    display: none; /*volem treballar amb la imatge i el text com si fossin un grid*/
+    display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: row; ;/*per posar el paràgraf sota la imatge*/
-    flex-direction: column
+    flex-direction: column;
     justify-content: center
     z-index: 1000
 
     &.activo
         display: flex
 
-    .glider-container
-        width: 500px
-        height: 500px
+    .carousel-container
+        width: 90%
 
-    .glider-img
+        @media screen and (max-width: 950px)
+            width: 80%
+
+    .carousel-img
         background-position: center
         background-size: cover
         background-repeat: no-repeat
         height: 50%
-
-    .glider-prev
-        left: 50px
-
-    .glider-next
-        right: 50px
 
     #boton-cerrar
         display: flex
