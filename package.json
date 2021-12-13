@@ -4,8 +4,14 @@
   "description": "Tablao boilerplate with router based on Navigo and templates injection with Moustache.",
   "repository": "https://github.com/orzocogorzo/tablao",
   "license": "GPL-3.0",
+  "scripts": {
+    "start": "tablao serve"
+  },
   "dependencies": {
     "mustache": "^4.0.1",
     "navigo": "^7.1.2"
+  },
+  "devDependencies": {
+    "tablao": "^1.0.8"
   }
 }
