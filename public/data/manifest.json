@@ -1,0 +1,33 @@
+{
+    "principles": [{
+            "id": "sustainability",
+            "name": "sustainability & ecology",
+            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+            "image": "manifest1.png"
+        },
+        {
+            "id": "home",
+            "name": "action at home",
+            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+            "image": "manifest2.png"
+        },
+        {
+            "id": "city",
+            "name": "the city, a house",
+            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+            "image": "manifest3.png"
+        },
+        {
+            "id": "outrage",
+            "name": "self-outrage",
+            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+            "image": "manifest4.png"
+        },
+        {
+            "id": "prototype",
+            "name": "prototype",
+            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+            "image": "manifest5.png"
+        }
+    ]
+}
