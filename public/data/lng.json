@@ -1,0 +1,40 @@
+{
+    "en": {
+        "cover": "cover",
+        "manifest": "manifest",
+        "project": "project",
+        "gallery": "gallery",
+        "team": "team",
+        "sponsors": "sponsors",
+        "documents": "documents",
+        "en": "ENG",
+        "es": "ESP",
+        "ca": "CAT"
+    },
+    "es": {
+        "cover": "portada",
+        "manifest": "manifiesto",
+        "project": "proyecto",
+        "gallery": "galería",
+        "team": "equipo",
+        "sponsors": "patrocinadores",
+        "documents": "documentos",
+        "en": "ENG",
+        "es": "ESP",
+        "ca": "CAT"
+
+    },
+    "ca": {
+        "cover": "portada",
+        "manifest": "manifest",
+        "project": "projecte",
+        "gallery": "galeria",
+        "team": "equip",
+        "sponsors": "patrocinadors",
+        "documents": "documents",
+        "en": "ENG",
+        "es": "ESP",
+        "ca": "CAT"
+
+    }
+}
