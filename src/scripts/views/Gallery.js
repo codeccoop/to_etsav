@@ -9,7 +9,7 @@ const Gallery = (function () {
 
     var Gallery = function (el, template) {
         const self = this;
-        this.load(_env.apiURL + "gallery_images.json").then(function (response) { 
+        this.load(_env.apiURL + "gallery_images.json").then(function (response) {
             var data = JSON.parse(response);
             data.rows = [];
             var rowindex = -1;

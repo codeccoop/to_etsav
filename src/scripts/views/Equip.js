@@ -12,7 +12,7 @@ const Equip = (function () {
         this.load(_env.apiURL + "equip_images.json").then(function (response) { 
             const data = JSON.parse(response);
             data.images.forEach(img => img.file = _env.publicURL + "images/equip/" + img.file);
-            data.images2.forEach(img => img.file = _env.publicURL + "images/equip/collaboradors/" + img.file);
+            data.images2.forEach(img => img.file = _env.publicURL + "images/equip/col·laboradors/" + img.file);
             self.data = data;
         });
     };
