@@ -1,6 +1,3 @@
-header.dark #lngMenu .lng-menu__item
-  text-shadow: 1px 1px 3px rgba(50, 50, 50, .5)
-
 #lngMenu
     height: 100%
     text-transform: uppercase
@@ -10,12 +7,9 @@ header.dark #lngMenu .lng-menu__item
     margin-left: auto
 
     &[lang="es"] .lng-menu__list-item[lang="es"]
-      display: block
-
     &[lang="en"] .lng-menu__list-item[lang="en"]
-      display: block
-
     &[lang="ca"] .lng-menu__list-item[lang="ca"]
+      font-weight: bold
       display: block
 
   .lng-menu__wrapper
@@ -51,9 +45,8 @@ header.dark #lngMenu .lng-menu__item
 
   .lng-menu__list-item
     cursor: pointer
-    color: #ccc
-    text-shadow: 1px 1px 3px rgba(150, 150, 150, .5)
+    color: $font-color
     display: none
 
     &:hover
-      color: #222
+      font-weight: bold

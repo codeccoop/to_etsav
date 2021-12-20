@@ -4,7 +4,7 @@
             <div class="documents__cover">{{name}}</div>
             <div class="documents__files">
                 {{#files}}
-                    <div class="documents__file" data-file={{file}}>
+                    <div class="documents__file" doc="{{id}}" data-file={{file}}>
                         <a href="/public/documents/{{file}}" target="_blank">
                             {{name}}
                         </a>
