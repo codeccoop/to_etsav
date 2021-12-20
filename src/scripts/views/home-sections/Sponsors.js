@@ -9,9 +9,14 @@ const Patrocinadors = (function () {
 
     var Patrocinadors = function (el, template) {
         const self = this;
-        this.load(_env.apiURL + "sponsors_images.json")
-            .then(function (response) {
-                self.data = JSON.parse(response);
+        this.load(_env.apiURL + "sponsors_images.json").then(function (response) {
+                const data = JSON.parse(response);
+                data.institutional.forEach(img => img.file = _env.publicURL + "images/logos/institucionals/" + img.file);
+                data.main.forEach(img => img.file = _env.publicURL + "images/logos/main/" + img.file);
+                data.or.forEach(img => img.file = _env.publicURL + "images/logos/or/" + img.file);
+                data.plata.forEach(img => img.file = _env.publicURL + "images/logos/plata/" + img.file);
+                data.bronze.forEach(img => img.file = _env.publicURL + "images/logos/bronze/" + img.file);
+                self.data = data;
             });
     };
 
