@@ -1,3 +1,8 @@
+#com axecar el servidor
+
+npm start
+
+
 # Router Tablao App
 
 A light web application boilerplate based on on the historyAPI and the hash url to handle state modifications. 
