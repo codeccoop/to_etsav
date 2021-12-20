@@ -1,17 +1,18 @@
 <div class="manifest__wrapper">
-    <div class="manifest__content">
-        {{#principles}}
-        <div principle="{{id}}" class="manifest__principle">
-                <div class="manifest__principle-card">
-                    <div class="manifest__principle-inner">
-                        <div class="manifest__principle-image"></div>
-                        <!-- <p>{{name}}</p> -->
-                        <div class="manifest__principle-description">
-                            <p>{{description}}</p>
-                        </div>
-                    </div>
-                </div>
+  <div class="manifest__content">
+    {{#principles}}
+    <div principle="{{id}}" class="manifest__principle">
+      <a href="/public/documents/manifest_TO-{{language}}.pdf#page={{page}}" target="_blank">
+        <div class="manifest__principle-card">
+          <div class="manifest__principle-inner">
+            <div class="manifest__principle-image"></div>
+            <div class="manifest__principle-description">
+              <p>$lng({{id}}-manifest)</p>
             </div>
-        {{/principles}}
+          </div>
+        </div>
+      </a>
     </div>
+    {{/principles}}
+  </div>
 </div>
