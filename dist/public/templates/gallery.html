@@ -1,0 +1,22 @@
+<div class="gallery-content">
+    {{#images}}
+    <div class="img-container">
+        <img id= "{{id}}" src="public/images/gallery/{{smallfile}}"/>
+        <div class="text-content">
+            {{text}}
+        </div>
+    </div>
+    {{/images}}
+</div>
+
+<div class="overlay">
+    <button id="boton-cerrar">x</button>
+    <div class="carousel-container">
+        <div class="carousel">
+            {{#images}}
+                <img id="{{id}}" class="carousel-img" src="public/images/gallery/{{file}}"/>
+            {{/images}}
+        </div>
+        <div role="tablist" class="dots"></div>
+    </div>
+</div>
