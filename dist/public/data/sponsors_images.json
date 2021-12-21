@@ -1,0 +1,222 @@
+{
+    "institutional": [
+        {
+            "file": "1.ETSAV-R.jpg",
+            "link": ""
+        },
+        {
+            "file": "2.UPCTECH-R.jpg"
+        },
+        {
+            "file": "3.BTEC-R.jpg"
+        },
+        {
+            "file": "4.UPCENGINYERIA-R.jpg"
+        },
+        {
+            "file": "5.AJUNTAMENTBCN-R.jpg"
+        },
+        {
+            "file": "6.GENERALITATCATALUNYA-R.jpg"
+        },
+        {
+            "file": "7.TV3-R.jpg"
+        }
+
+    ],
+    "main": [
+        {
+            "file": "1.ALBERCH-R.jpg"
+        },
+        {
+            "file": "2.THERMOCHIP-R.jpg"
+        },
+        {
+            "file": "3.AISLUX-R.jpg"
+        }
+    ],
+    "or": [
+        {
+            "file": "1.ISCLETEC-R.jpg"
+        },
+        {
+            "file": "2.DESIGNBUILDER-R.jpg"
+        }
+    ],
+    "plata": [
+        {
+            "file": "1.SOLICLIMA-R.jpg"
+        },
+        {
+            "file": "2.FAGOM-R.jpg"
+        },
+        {
+            "file": "3.FIC-R.jpg"
+        },
+        {
+            "file": "4.STANLEYDEWALT-R.jpg"
+        },
+        {
+            "file": "5.JUNG-R.jpg"
+        },
+        {
+            "file": "6.DEDIETRICH-R.jpg"
+        },
+        {
+            "file": "7.ROCA-R.jpg"
+        },
+        {
+            "file": "8.RMT-R.jpg"
+        }
+    ],
+    "bronze": [
+        {
+            "file": "1.ROTHOBLAAS-R.jpg"
+        },
+        {
+            "file": "2.SAVEFOODFROMTHEFRIDGE-R.jpg"
+        },
+        {
+            "file": "3.GESTORENERGETICO-R.jpg"
+        },
+        {
+            "file": "4.PERSIANABARCELONA-R.jpg"
+        },
+        {
+            "file": "5.PROCLIMA-R.jpg"
+        },
+        {
+            "file": "6.SYSCLIMA-R.jpg"
+        },
+        {
+            "file": "7.ISOTISS-R.jpg"
+        },
+        {
+            "file": "8.CODOMIO-R.jpg"
+        },
+        {
+            "file": "9.LEDSC4-R.jpg"
+        },
+        {
+            "file": "10.MAXA-R.jpg"
+        },
+        {
+            "file": "11.CLIMA-R.jpg"
+        },
+        {
+            "file": "12.DISTRIPLAC-R.jpg"
+        },
+        {
+            "file": "13.VIROC-R.jpg"
+        },
+        {
+            "file": "14.MVIC-R.jpg"
+        },
+        {
+            "file": "15.MARANGES-R.jpg"
+        },
+        {
+            "file": "16.BREINCOSMART-R.jpg"
+        },
+        {
+            "file": "17.FRECAN-R.jpg"
+        },
+        {
+            "file": "18.ISOLFUBEX-R.jpg"
+        },
+        {
+            "file": "19.ROLLGUM-R.jpg"
+        },
+        {
+            "file": "20.SOLERA-R.jpg"
+        },
+        {
+            "file": "21.SAHECO-R.jpg"
+        },
+        {
+            "file": "21.HNA-R.jpg"
+        },
+        {
+            "file": "21.MO-R.jpg"
+        },
+        {
+            "file": "21.IRESTAL-R.jpg"
+        }
+    ],
+    "collaboradors": [
+        {
+            "file": "1.COLACAO.jpg"
+        },
+        {
+            "file": "2.NOCILLA.jpg"
+        },
+        {
+            "file": "3.ARTICULOS.jpg"
+        },
+        {
+            "file": "4.SERGEFERRARI.jpg"
+        },
+        {
+            "file": "5.FUTONLLIT.jpg"
+        },
+        {
+            "file": "6.?.jpg"
+        },
+        {
+            "file": "7.CEGE.jpg"
+        },
+        {
+            "file": "8.ROTHO.jpg"
+        },
+        {
+            "file": "9.?.jpg"
+        },
+        {
+            "file": "10.YKK.jpg"
+        },
+        {
+            "file": "11.WIBEEE.jpg"
+        },
+        {
+            "file": "12.SUCADE.jpg"
+        },
+        {
+            "file": "13.OVELLA.jpg"
+        },
+        {
+            "file": "14.ARQBAG.jpg"
+        },
+        {
+            "file": "15.RESSO.jpg"
+        },
+        {
+            "file": "16.TBWA.jpg"
+        },
+        {
+            "file": "17.FABLAB.jpg"
+        },
+        {
+            "file": "18.GREMIFUSTA.jpg"
+        }
+    ],
+    "competicio": [
+        {
+            "file": "1.SOLARDECATHLON.jpg"
+        },
+        {
+            "file": "2.MUEGYETEM.jpg"
+        },
+        {
+            "file": "3.EMI.jpg"
+        },
+        {
+            "file": "4.SZENTENDRE.jpg"
+        },
+        {
+            "file": "5.?.jpg"
+        },
+        {
+            "file": "6.?.jpg"
+        }
+    ]
+}

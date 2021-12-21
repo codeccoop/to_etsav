@@ -1,0 +1,53 @@
+{
+  "en": {
+    "cover": "cover",
+    "manifest": "manifest",
+    "project": "project",
+    "gallery": "gallery",
+    "team": "team",
+    "sponsors": "sponsors",
+    "documents": "documents",
+    "en": "ENG",
+    "es": "ESP",
+    "ca": "CAT",
+    "sustainability-manifest": "We may have come up with sustainability because we hadn’t been able to propose a proper theory for the whole ecosystem.",
+    "home-manifest": "We are embedded in projects of delegated intelligence, in which, finally we will be able to be as stupids as humans had proved to be; because the world and its leaders will be intelligent instead of us. A «smart» world for inevitably stupid inhabitants.",
+    "city-manifest": "There is not a clear limit between the different atmospheres and residential units. They are surrounded by borders in the margin thicker or thinner. The main change that derive sets out is the continuous decreasing of these borders till their complete disappearance.",
+    "outrage-manifest": "The space between distances us at the same time that keeps us separated from each other, in other words, the space between relates ourselves and we become (inter) dependents. Finishing with this distance would mean deleting the distance that brings the diversity and ending up in dangerous proximity of unanimity: we are not free immediately.",
+    "prototype-manifest": "There is a link between the physical shape of any space and the social organization that happens in it. This fact can be understood in the case of any public space, but also in the room distribution inside a house."
+  },
+  "es": {
+    "cover": "portada",
+    "manifest": "manifiesto",
+    "project": "proyecto",
+    "gallery": "galería",
+    "team": "equipo",
+    "sponsors": "patrocinadores",
+    "documents": "documentos",
+    "en": "ENG",
+    "es": "ESP",
+    "ca": "CAT",
+    "sustainability-manifest": "Puede que hayamos inventado la sostenibilidad porque no hemos sido capaces de desarrollar una teoría válida para todo el ecosistema.",
+    "home-manifest": "Se nos embarca en proyectos de inteligencia delegada, en los cuales por fin podremos ser tan estúpidos como los humanos que hemos demostrado ser, porque el mundo y sus dirigentes serán inteligentes por nosotros. Un mundo «smart» para unos habitantes irremediablement idiotas.",
+    "city-manifest": "Las diferentes unidades de atmósfera y residencia no están delimitadas hoy por hoy con precisión, sino rodeadas de márgenes fronterizos más o menos grandes. El cambio más general que propone la deriva es la disminución constante de esos márgenes fronterizos hasta su completa supresión.",
+    "outrage-manifest": "El espacio entre que nos aleja tanto como nos separa a los unos de los otros, es decir, que nos relaciona y por tanto nos hace (inter)dependientes. Eliminar esta distancia supondría anular la distancia que da lugar a la diversidad y caer en la proximidad peligrosa de la unanimidad: no somos libres de forma inmediata.",
+    "prototype-manifest": "Hay una correlación directa entre la forma del espacio y la organización social, se modifican recíprocamente. Desde la organización del espacio público hasta la distribución de las habitaciones de una casa."
+  },
+  "ca": {
+    "cover": "portada",
+    "manifest": "manifest",
+    "project": "projecte",
+    "gallery": "galeria",
+    "team": "equip",
+    "sponsors": "patrocinadors",
+    "documents": "documents",
+    "en": "ENG",
+    "es": "ESP",
+    "ca": "CAT",
+    "sustainability-manifest": "Potser hem inventat la sostenibilitat perquè no hem estat capaços de desenvolupar una teoria vàlida per tot l’ecosistema.",
+    "home-manifest": "Se’ns embarca en projectes d’intel·ligència delegada, en els quals per fí podrem ser tant estúpids com els humans que hem demostrat éser, perquè el món i els seus dirigents seràn inteligents per nosaltres. Un món smart per uns habitants irremeiablement idiotes.",
+    "city-manifest": "Les diferents unitats d’atmòsfera i residència no estan delimitades ara per ara amb precisió, sinó rodejades de marges fronterers més o menys grans. El canvi més general que proposa la deriva és la disminució constant d’aquells marges fronterers fins a la seva completa supressió.",
+    "outrage-manifest": "L’espai entre que ens allunya tant com ens separa els uns dels altres, és a dir, que ens relaciona i per tant ens fa (inter)dependents. Treure aquesta distància suposaria anul·lar la distància que dóna lloc a la diversitat i caure en la proximitat perillosa de la unanimitat: no som lliures de forma immediata.",
+    "prototype-manifest": "Hi ha una correlació directa entre la forma de l’espai i l’organització social, i es modifiquen recíprocament; des de l’organització de l’espai públic fins a la distribució de les habitacions d’una casa."
+  }
+}
