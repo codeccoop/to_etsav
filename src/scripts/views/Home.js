@@ -22,6 +22,10 @@ const Home = (function () {
     this.lazyLoadSectionBackground = this.lazyLoadSectionBackground.bind(this);
     this.app.scroll.on("update:section", function (section) {
       self.lazyLoadSectionBackground(section);
+      self.el.setAttribute(
+        "current-section",
+        self.data.sections[section]?.id || "footer"
+      );
       self.el.children[0].classList[
         [1, 5, 6, 7].indexOf(section) >= 0 ? "add" : "remove"
       ]("dark");
@@ -56,6 +60,7 @@ const Home = (function () {
       section.view.el.classList.add("lazy");
       if (section.id === this.url.params.section) {
         currentSection = i;
+        this.el.setAttribute("current-section", section.id);
         this.lazyLoadSectionBackground(i);
         this.app.header.updateMenus(i);
       } else {
@@ -68,14 +73,6 @@ const Home = (function () {
     this.el.querySelectorAll(".home__nav-btn").forEach((btn) => {
       btn.addEventListener("click", this.onMobileScroll);
     });
-
-    if (
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    ) {
-      this.el.classList.add("touch");
-    }
   };
 
   Home.prototype.beforeRemove = function beforeRemove() {
