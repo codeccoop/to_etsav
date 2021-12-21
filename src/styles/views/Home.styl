@@ -23,19 +23,20 @@
     width: 40px
     left: 15px
     border: .5px solid #3332
+    background-image: url(/public/images/home-sections/arrow.png)
     background-repeat: no-repeat
-    background-size: contain
+    background-size: 70%
     background-position: center
     background-color: #0001
     filter: invert(1)
+    cursor: pointer
 
     &[dir="top"]
       top: 90px
-      background-image: url(/public/images/arrow-up.png)
 
     &[dir="bottom"]
       bottom: 15px
-      background-image: url(/public/images/arrow-down.png)
+      transform: rotate(180deg)
 
     @media screen and (max-width: 950px)
       display: block

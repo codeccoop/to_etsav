@@ -10,11 +10,10 @@ module.exports = {
     publicURL: "/public/",
   },
   pre: {
-    name: "githubio",
-    host: "https://orzocogorzo.github.io",
-    port: null,
-    apiURL: "https://dadescomunals.tk/to/public/data/",
-    publicURL: "https://dadescomunals.tk/to/public/",
+    name: "preproduction",
+    host: "http://dadescomunals.tk/to",
+    apiURL: "/to/public/data/",
+    publicURL: "/to/public/",
   },
   pro: {
     name: "production",
