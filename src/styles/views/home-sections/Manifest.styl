@@ -15,23 +15,22 @@
   .manifest__principle
     position: relative
     flex: 1
-    flex-basis: 200px
+    flex-basis: 18vw
     flex-grow: 0
     flex-shrink: 0
     height: 280px
     padding: 10px
 
     @media screen and (min-width: 1440px)
-      flex-basis: 250px
-      height: 350px
+      height: 450px
 
-    @media screen and (max-width: 600px)
-      flex-basis: 150px
+    @media screen and (max-width: 750px)
+      flex-basis: 25vw
       height: 210px
 
-    @media screen and (max-width: 520px)
-      flex-basis: 100px
-      height: 130px
+    @media screen and (max-width: 550px)
+      flex-basis: 70vw
+      height: calc(20vh - 40px)
 
   .manifest__principle-card
     height: 100%
@@ -64,6 +63,7 @@
   .manifest__principle-image
     background-size: cover
     background-repeat: no-repeat
+    background-position-x: center
 
   .manifest__principle-description
     transform: rotateY(180deg)

@@ -7,13 +7,12 @@
     align-items: center
     padding: 0 10%
 
-    @media screen and (max-width: 950px)
+    @media screen and (orientation: portrait)
       flex-direction: column
-      padding: 150px 3%
+      padding: 150px 10%
 
   .documents__col
     height: 50%
-    max-height: calc(80vw / 3)
     flex-direction: column
     flex-grow: 1
     margin: 5px
@@ -57,7 +56,6 @@
     font-size: 1.5em
     background-color: #c5c5c5
     color: white
-    // box-shadow: 0px 0px 8px #0002
 
   .documents__files
     position: absolute
@@ -79,7 +77,6 @@
     height: 0px
     width: 100%
     font-size: 0px
-    // box-shadow: 0px 0px 8px #0002
     transition: height .5s ease-out, font-size .5s ease-out, border-color .7s ease-out, color .5s ease-out, width .5s ease-out
     cursor: pointer
     display: flex
@@ -91,6 +88,7 @@
     background-repeat: no-repeat
     background-size: cover
     background-position: center
+    padding: 0 .35em
 
     &[doc="manual"]
       background-image: url(public/images/documents/project_manual.png)
@@ -112,6 +110,11 @@
 
     > a
       position: relative
+      line-height: 1
+      text-decoration: none
+      text-align: center
+      color: inherit
+      font-size: inherit
 
       &:after
         position: absolute
@@ -124,6 +127,10 @@
         // background-color: $magenta
         background-color: $font-color
         transition: width 300ms
+
+
+      @media screen and (max-width: 650px)
+        font-size: .9em
 
 
     @media screen and (max-width: 950px)
@@ -152,9 +159,3 @@
       z-index: -1
       opacity: .0
       transition: opacity .5s ease-out
-
-    a
-      text-decoration: none
-      text-align: center
-      color: inherit
-      font-size: inherit

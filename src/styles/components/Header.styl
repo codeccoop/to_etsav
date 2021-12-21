@@ -6,8 +6,12 @@ header
     width: 100%
     z-index: 1000
 
-    &.green .header__icon
-      color: green
+    &.green
+      .header__icon
+        color: green
+
+      .header__nav-btn
+        color: $laurel
 
     &.dark
       .header__burger-menu.open .header__burger-menu__wrapper
@@ -40,12 +44,16 @@ header
       &.header__main-row
         flex: 1
 
+      &.header__secondary-row
+        margin-top: -25px
+
     .header__icon-wrapper
       height: 100%
       padding: 0px 20px 0 10px
 
       @media screen and (max-width: 950px)
         padding-left: 0px
+        padding-right: 0px
 
     .header__icon
       font-size: 50px
@@ -74,7 +82,10 @@ header
       width: fit-content
       position: relative
       display: flex
-      padding-top: 36px
+      padding-top: 27px
+
+      @media screen and (max-width: 600px)
+        padding-top: 29px
 
       &.open
         .header__burger-menu__wrapper
@@ -121,9 +132,6 @@ header
         text-transform: uppercase
         cursor: pointer
         transition: color .5s, font-weight .3s
-
-        /* &:hover
-            text-decoration: underline */
 
         &.active
           font-weight: 600
