@@ -1,3 +1,3 @@
 module.exports = {
-    BASE_URL: null
-}
+  BASE_URL: null,
+};

@@ -53,26 +53,20 @@ const Gallery = (function () {
         }
     };
 
-    Gallery.prototype.onClickImage = function (ev) {
+    Gallery.prototype.onClickImage = function () {
         var overlay = document.querySelector('.overlay');
         overlay.classList.add('activo');
-        if (!this.glider) {
-            new Glider(overlay.querySelector('.glider-images'), {
-                slidesToShow: 1,
-                dots: '.dots',
-                draggable: true,
-                itemWidth: 50,
-                rewind: true,
-                arrows: {
-                    prev: '.glider-prev',
-                    next: '.glider-next'
-                }
-            });
-        } else {
-            this.glider.refresh();
-        }
+        document.body.style.overflowY = "hidden";
+        this.carousel = $(".carousel").slick({
+            adaptiveHeight: true,
+            mobileFirst: true,
+            dots: true,
+            appendDots: ".overlay .dots"
+        });
         var boton = document.querySelector('#boton-cerrar');
+        boton.removeEventListener('click', this.onCloseOverlay);
         boton.addEventListener('click', this.onCloseOverlay);
+        overlay.removeEventListener('click', this.onCloseOverlay);
         overlay.addEventListener('click', this.onCloseOverlay);
     };
 
@@ -81,10 +75,12 @@ const Gallery = (function () {
         var boton = document.querySelector('#boton-cerrar');
         if (overlay === ev.target || ev.target.id == "boton-cerrar") {
             overlay.classList.remove('activo');
+            document.body.style.overflowY = null;
             boton.removeEventListener('click', this.onCloseOverlay);
             overlay.removeEventListener('click', this.onCloseOverlay);
+            $(".carousel").slick("unslick");
+            this.carousel = null;
         }
-        this.glider = null;
     };
 
     return Gallery;

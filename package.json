@@ -5,7 +5,8 @@
   "repository": "https://github.com/orzocogorzo/tablao",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "tablao serve"
+    "start": "tablao serve",
+    "build:pre": "tablao build pre"
   },
   "dependencies": {
     "mustache": "^4.0.1",

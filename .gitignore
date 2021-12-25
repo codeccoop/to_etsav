@@ -1,4 +1,5 @@
 # JAVASCRIPT
+dist/*
 .dist/*
 public/images/*
 public/data/*
