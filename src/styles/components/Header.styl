@@ -6,11 +6,19 @@ header
     width: 100%
     z-index: 1000
 
-    &.green .header__icon
-      color: green
+    &.green
+      .header__icon
+        color: green
 
-    &.dark .header__link
-      color: black
+      .header__nav-btn
+        color: $laurel
+
+    &.dark
+      .header__burger-menu.open .header__burger-menu__wrapper
+        background:  linear-gradient(#0000, #0002)
+
+      .header__link
+        color: black
 
     &.breadcrumb
       .header__content
@@ -36,9 +44,16 @@ header
       &.header__main-row
         flex: 1
 
+      &.header__secondary-row
+        margin-top: -25px
+
     .header__icon-wrapper
       height: 100%
-      padding: 0px 20px
+      padding: 0px 20px 0 10px
+
+      @media screen and (max-width: 950px)
+        padding-left: 0px
+        padding-right: 0px
 
     .header__icon
       font-size: 50px
@@ -67,16 +82,25 @@ header
       width: fit-content
       position: relative
       display: flex
-      padding-top: 36px
+      padding-top: 27px
 
-      &:hover
+      @media screen and (max-width: 600px)
+        padding-top: 29px
+
+      &.open
+        .header__burger-menu__wrapper
+          background: linear-gradient(#fff0, #fff6);
+          box-shadow: 0px 5px 6px #0002
+
         .header__burger-menu__veil
           width: 0px
 
         .header__burger-menu__item
-          display: list-item
+          display: block
 
       .header__burger-menu__wrapper
+        padding: 0.5em 1em
+        border-radius: 4px
         position: relative
 
       .header__burger-menu__veil
@@ -89,6 +113,7 @@ header
         background-color: darkred
         opacity: .0
         transition: width .5s
+        pointer-events: none
 
       .header__burger-menu__item
         line-height: 2
@@ -96,7 +121,7 @@ header
         margin: 0px
 
         &.active
-          display: list-item
+          display: block
 
     .header__link
         margin: 0px 10px
@@ -108,11 +133,11 @@ header
         cursor: pointer
         transition: color .5s, font-weight .3s
 
-        &:hover
-            text-decoration: underline
-
         &.active
           font-weight: 600
+
+        @media screen and (max-width: 600px)
+          font-size: 14px
 
     .header__lng-menu
       flex: 0

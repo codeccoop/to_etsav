@@ -7,13 +7,12 @@
     align-items: center
     padding: 0 10%
 
-    @media screen and (max-width: 950px)
+    @media screen and (orientation: portrait)
       flex-direction: column
-      padding: 150px 3%
+      padding: 150px 10%
 
   .documents__col
     height: 50%
-    max-height: calc(80vw / 3)
     flex-direction: column
     flex-grow: 1
     margin: 5px
@@ -54,9 +53,8 @@
     display: flex
     align-items: center
     justify-content: center
-    border: 1px solid #ccc
     font-size: 1.5em
-    background-color: #2d2d2d
+    background-color: #c5c5c5
     color: white
 
   .documents__files
@@ -79,20 +77,71 @@
     height: 0px
     width: 100%
     font-size: 0px
-    border: 1px solid #fff
     transition: height .5s ease-out, font-size .5s ease-out, border-color .7s ease-out, color .5s ease-out, width .5s ease-out
     cursor: pointer
     display: flex
+    align-items: center
+    justify-content: center
     position: relative
-    font-weight: bold
+    color: $magenta
+    color: $font-color
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    padding: 0 .35em
+
+    &[doc="manual"]
+      background-image: url(public/images/documents/project_manual.png)
+
+    &[doc="drawings"]
+      background-image: url(public/images/documents/project_drawings.png)
+
+    &[doc="press_release"]
+      background-image: url(public/images/documents/press_release.png)
+
+    &[doc="press_kit"]
+      background-image: url(public/images/documents/press_kit.png)
+
+    &[doc="llibre"]
+      background-image: url(public/images/documents/llibre.png)
+
+    &[doc="eternari"]
+      background-image: url(public/images/documents/eternari.png)
+
+    > a
+      position: relative
+      line-height: 1
+      text-decoration: none
+      text-align: center
+      color: inherit
+      font-size: inherit
+
+      &:after
+        position: absolute
+        content: ""
+        bottom: 0px
+        width: 0px
+        left: 50%
+        transform: translateX(-50%)
+        height: 1px
+        // background-color: $magenta
+        background-color: $font-color
+        transition: width 300ms
+
+
+      @media screen and (max-width: 650px)
+        font-size: .9em
+
 
     @media screen and (max-width: 950px)
       width: 0px
       height: 100%
 
     &:hover
-      color: $laurel
-      box-shadow: 0px 0px 10px #ddd
+      font-weight: bold
+
+      > a::after
+        width: 100%
 
       .documents__file-icon
         background-image: url(/public/images/document_icon--green.png)
@@ -110,13 +159,3 @@
       z-index: -1
       opacity: .0
       transition: opacity .5s ease-out
-
-    a
-      display: flex
-      height: 100%
-      width: 100%
-      text-decoration: none
-      align-items: center
-      justify-content: center
-      color: inherit
-      font-size: inherit

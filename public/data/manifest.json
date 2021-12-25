@@ -1,33 +1,34 @@
 {
-    "principles": [{
-            "id": "sustainability",
-            "name": "sustainability & ecology",
-            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-            "image": "manifest1.png"
-        },
-        {
-            "id": "home",
-            "name": "action at home",
-            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-            "image": "manifest2.png"
-        },
-        {
-            "id": "city",
-            "name": "the city, a house",
-            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-            "image": "manifest3.png"
-        },
-        {
-            "id": "outrage",
-            "name": "self-outrage",
-            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-            "image": "manifest4.png"
-        },
-        {
-            "id": "prototype",
-            "name": "prototype",
-            "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-            "image": "manifest5.png"
-        }
-    ]
+  "principles": [
+    {
+      "id": "sustainability",
+      "name": "sustainability & ecology",
+      "image": "manifest1.png",
+      "page": 1
+    },
+    {
+      "id": "home",
+      "name": "action at home",
+      "image": "manifest2.png",
+      "page": 3
+    },
+    {
+      "id": "city",
+      "name": "the city, a house",
+      "image": "manifest3.png",
+      "page": 5
+    },
+    {
+      "id": "outrage",
+      "name": "self-outrage",
+      "image": "manifest4.png",
+      "page": 7
+    },
+    {
+      "id": "prototype",
+      "name": "prototype",
+      "image": "manifest5.png",
+      "page": 9
+    }
+  ]
 }

@@ -21,21 +21,28 @@
     border-radius: 50%
     height: 40px
     width: 40px
-    left: 20px
+    left: 15px
     border: .5px solid #3332
-    background-image: url(/public/images/arrow_animation.gif)
+    background-image: url(public/images/home-sections/arrow.png)
     background-repeat: no-repeat
-    background-size: contain
+    background-size: 70%
     background-position: center
     background-color: #0001
     filter: invert(1)
+    cursor: pointer
 
     &[dir="top"]
-      top: 100px
-      transform: rotate(180deg)
+      bottom: 70px
+
+      [current-section="cover"] &
+        display: none
 
     &[dir="bottom"]
-      bottom: 20px
+      bottom: 15px
+      transform: rotate(180deg)
 
-    @media screen and (max-width: 950px)
+      [current-section="footer"] &
+        display: none
+
+    .is-touch &
       display: block

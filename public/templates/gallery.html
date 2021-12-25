@@ -11,14 +11,12 @@
 
 <div class="overlay">
     <button id="boton-cerrar">x</button>
-    <div class="glider-container">
-        <div class="glider-images">
+    <div class="carousel-container">
+        <div class="carousel">
             {{#images}}
-                <img id="{{id}}" width="500" src="public/images/gallery/{{file}}"/>
+                <img id="{{id}}" class="carousel-img" src="public/images/gallery/{{file}}"/>
             {{/images}}
         </div>
-        <button aria-label="Previous" class="glider-prev">«</button>
-        <button aria-label="Next" class="glider-next">»</button>
         <div role="tablist" class="dots"></div>
     </div>
 </div>
