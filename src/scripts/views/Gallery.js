@@ -20,6 +20,8 @@ const Gallery = (function () {
                     rowindex++;
                 }
                 img.id = "imatge" + index;
+                img.index = index;
+                img.file = encodeURIComponent(img.file);
                 img.smallfile = img.file.split(".")[0]+"--small."+img.file.split(".")[1]
                 data.rows[rowindex].images.push(img);
                 index = index + 1;
@@ -53,16 +55,20 @@ const Gallery = (function () {
         }
     };
 
-    Gallery.prototype.onClickImage = function () {
+    Gallery.prototype.onClickImage = function (event) {
+        var smallimage = event.target;
+        var index = smallimage.getAttribute("index");
         var overlay = document.querySelector('.overlay');
         overlay.classList.add('activo');
         document.body.style.overflowY = "hidden";
         this.carousel = $(".carousel").slick({
-            adaptiveHeight: true,
+            // adaptiveHeight: true,
             mobileFirst: true,
-            dots: true,
-            appendDots: ".overlay .dots"
+            // dots: true,
+            // appendDots: ".overlay .dots",
+            // initialSlide: index
         });
+        $(".carousel").slick("slickGoTo", index, true);
         var boton = document.querySelector('#boton-cerrar');
         boton.removeEventListener('click', this.onCloseOverlay);
         boton.addEventListener('click', this.onCloseOverlay);
