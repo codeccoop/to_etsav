@@ -16,6 +16,8 @@ const Patrocinadors = (function () {
                 data.or.forEach(img => img.file = _env.publicURL + "images/logos/or/" + img.file);
                 data.plata.forEach(img => img.file = _env.publicURL + "images/logos/plata/" + img.file);
                 data.bronze.forEach(img => img.file = _env.publicURL + "images/logos/bronze/" + img.file);
+                data.collaboradors.forEach(img => img.file = _env.publicURL + "images/logos/collaboradors/" + img.file);
+                data.competition.forEach(img => img.file = _env.publicURL + "images/logos/competition/" + img.file);
                 self.data = data;
             });
     };

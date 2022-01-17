@@ -92,7 +92,7 @@
             "file": "7.ISOTISS-R.jpg"
         },
         {
-            "file": "8.CODOMIO-R.jpg"
+            "file": "8.EDODOMEO-R.jpg"
         },
         {
             "file": "9.LEDSC4-R.jpg"
@@ -122,101 +122,101 @@
             "file": "17.FRECAN-R.jpg"
         },
         {
-            "file": "18.ISOLFUBEX-R.jpg"
+            "file": "18.PEYGRAN-R.jpg"
         },
         {
-            "file": "19.ROLLGUM-R.jpg"
+            "file": "19.ISOLFUBEX-R.jpg"
         },
         {
-            "file": "20.SOLERA-R.jpg"
+            "file": "20.ROLLGUM-R.jpg"
         },
         {
-            "file": "21.SAHECO-R.jpg"
+            "file": "21.SOLERA-R.jpg"
         },
         {
-            "file": "21.HNA-R.jpg"
+            "file": "22.SAHECO-R.jpg"
         },
         {
-            "file": "21.MO-R.jpg"
+            "file": "23.HNA-R.jpg"
         },
         {
-            "file": "21.IRESTAL-R.jpg"
+            "file": "24.MO-R.jpg"
+        },
+        {
+            "file": "25.IRESTAL-R.jpg"
         }
     ],
     "collaboradors": [
         {
-            "file": "1.COLACAO.jpg"
+            "file": "1.COLACAO-R.jpg"
         },
         {
-            "file": "2.NOCILLA.jpg"
+            "file": "2.NOCILLA-R.jpg"
         },
         {
-            "file": "3.ARTICULOS.jpg"
+            "file": "3.TRIBAS-R.jpg"
         },
         {
-            "file": "4.SERGEFERRARI.jpg"
+            "file": "4.SERGEFERRARI-R.jpg"
         },
         {
-            "file": "5.FUTONLLIT.jpg"
+            "file": "5.FUTONLLIT-R.jpg"
         },
         {
-            "file": "6.?.jpg"
+            "file": "6.TP-R.jpg"
         },
         {
-            "file": "7.CEGE.jpg"
+            "file": "7.CEGE-R.jpg"
         },
         {
-            "file": "8.ROTHO.jpg"
+            "file": "8.ROTHO-R.jpg"
         },
         {
-            "file": "9.?.jpg"
+            "file": "9.ELGIBRELL-R.jpg"
         },
         {
-            "file": "10.YKK.jpg"
+            "file": "10.YKK-R.jpg"
         },
         {
-            "file": "11.WIBEEE.jpg"
+            "file": "11.WIBEEE-R.jpg"
         },
         {
-            "file": "12.SUCADE.jpg"
+            "file": "12.SUCADE-R.jpg"
         },
         {
-            "file": "13.OVELLA.jpg"
+            "file": "14.ARQBAG-R.jpg"
         },
         {
-            "file": "14.ARQBAG.jpg"
+            "file": "15.RESSO-R.jpg"
         },
         {
-            "file": "15.RESSO.jpg"
+            "file": "16.TBWA-R.jpg"
         },
         {
-            "file": "16.TBWA.jpg"
+            "file": "17.FABLAB-R.jpg"
         },
         {
-            "file": "17.FABLAB.jpg"
-        },
-        {
-            "file": "18.GREMIFUSTA.jpg"
+            "file": "18.GREMIFUSTA-R.jpg"
         }
     ],
-    "competicio": [
+    "competition": [
         {
-            "file": "1.SOLARDECATHLON.jpg"
+            "file": "1.SDE-R.jpg"
         },
         {
-            "file": "2.MUEGYETEM.jpg"
+            "file": "2.MÜEGYETEM-R.jpg"
         },
         {
-            "file": "3.EMI.jpg"
+            "file": "3.EMI-R.jpg"
         },
         {
-            "file": "4.SZENTENDRE.jpg"
+            "file": "4.SZENTENDRE-R.jpg"
         },
         {
-            "file": "5.?.jpg"
+            "file": "5.ENERGYENDEAVOUR-R.jpg"
         },
         {
-            "file": "6.?.jpg"
+            "file": "6.ENERGY-R.jpg"
         }
     ]
 }
