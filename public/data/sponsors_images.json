@@ -2,10 +2,11 @@
     "institutional": [
         {
             "file": "1.ETSAV-R.jpg",
-            "link": ""
+            "name": "ETSAV-R"
         },
         {
-            "file": "2.UPCTECH-R.jpg"
+            "file": "2.UPCTECH-R.jpg",
+            "name": "UPCTECH-R"
         },
         {
             "file": "3.BTEC-R.jpg"

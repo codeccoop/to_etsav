@@ -1,90 +1,98 @@
 .gallery-content
-    width: 100%
-    display: flex
-    flex-wrap: wrap
-    padding: 150px 8%
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  padding: 150px 8%
 
-    @media screen and (max-width: 950px)
-        padding: 150px 5%
+  @media screen and (max-width: 950px)
+    padding: 150px 5%
 
-   @media screen and (max-width: 650px)
-       padding: 150px 3%
+  @media screen and (max-width: 650px)
+    padding: 150px 3%
 
+.img-container
+.mov-container
+  flex-basis: calc(33% - 50px)
+  display: flex
+  flex-grow: 1
+  flex-shrink: 0
+  padding: 25px 10px
+  margin: 25px 5px
+  flex-direction: column
+  border: 1px solid white
+  transition: border-color .3s ease-in-out
+
+  &:hover .text-content
+    color: $magenta
+
+  @media screen and (max-width: 950px)
     .img-container
-        flex-basis: calc(33% - 50px)
-        display: flex
-        flex-grow: 1
-        flex-shrink: 0
-        padding: 25px 10px
-        margin: 25px 5px
-        flex-direction: column
-        border: 1px solid white
-        transition: border-color .3s ease-in-out
+    .mov-container
+      flex-basis: calc(50% - 50px)
 
-        &:hover .text-content
-                color: $magenta
+  @media screen and (max-width: 650px)
+    .img-container
+    .mov-container
+      flex-basis: calc(100% - 50px)
 
-    @media screen and (max-width: 950px)
-        .img-container
-            flex-basis: calc(50% - 50px)
+  img
+    width: 100%
+    height: 100%
+    cursor: pointer
+    object-fit: cover
 
-    @media screen and (max-width: 650px)
-        .img-container
-            flex-basis: calc(100% - 50px)
+  video
+    width: 100%
+    height: 100%
 
-    .img-container img
-        width: 100%
-        height: auto
-        cursor: pointer
-
-    /*TEXT*/
-    .text-content
-        display: none
-        text-align: justify
-        margin-top: 10px
-        transition: color .3s ease-in-out
+  /*TEXT*/
+  .text-content
+    display: none
+    text-align: justify
+    margin-top: 10px
+    transition: color .3s ease-in-out
 
 /*OVERLAY*/
 .overlay
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,.8);
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.8);
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center
+  z-index: 1000
+
+  &.activo
+    display: flex
+
+  .carousel-container
+    width: 90%
+
+  @media screen and (max-width: 950px)
+    width: 80%
+
+  .carousel-img
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    height: 100vh
+
+  #boton-cerrar
+    display: flex
+    justify-content: left 
+    background: none;
+    font-size: 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1%;
+    left: 3%
     z-index: 1000
-
-    &.activo
-        display: flex
-
-    .carousel-container
-        width: 90%
-
-        @media screen and (max-width: 950px)
-            width: 80%
-
-    .carousel-img
-        background-position: center
-        background-size: cover
-        background-repeat: no-repeat
-        height: 50%
-
-    #boton-cerrar
-        display: flex
-        justify-content: left 
-        background: none;
-        font-size: 25px;
-        color: white;
-        border: none;
-        cursor: pointer;
-        position: absolute;
-        top: 1%;
-        left: 3%
-        z-index: 1000
