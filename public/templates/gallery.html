@@ -1,7 +1,7 @@
 <div class="gallery-content">
     {{#images}}
     <div class="img-container">
-        <img id= "{{id}}" src="public/images/gallery/{{smallfile}}"/>
+        <img id= "{{id}}" index="{{index}}" src="public/images/gallery/{{smallfile}}"/>
         <div class="text-content">
             {{text}}
         </div>
@@ -19,7 +19,8 @@
     <div class="carousel-container">
         <div class="carousel">
             {{#images}}
-                <img id="{{id}}" class="carousel-img" src="public/images/gallery/{{file}}"/>
+                <div id="{{id}}" class="carousel-img" style="background-image: url(public/images/gallery/{{file}});"></div>
+                <!-- <img id="{{id}}" class="carousel-img" src="public/images/gallery/{{file}}"/> -->
             {{/images}}
         </div>
         <div role="tablist" class="dots"></div>

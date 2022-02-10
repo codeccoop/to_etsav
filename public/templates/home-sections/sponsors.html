@@ -1,71 +1,84 @@
 <div class="sponsors__content">
-  <h1 class="institutionalsponsors__section-title">
+  <h1 class="institutionalsponsors__section-title title">
     COL·LABORADORS INSTITUCIONALS
   </h1>
-  <div class="institutionalsponsors__section-grid">
+  <div class="institutionalsponsors__section-grid flex">
     {{#institutional}}
-    <div class="institutionalsponsors__grid-item">
+    <div class="institutionalsponsors__grid-item grid-item">
       <div
-        class="institutionalsponsors__item-img"
+        class="institutionalsponsors__item-img grid-img size-1"
         style="background-image: url('{{file}}');"
       ></div>
     </div>
     {{/institutional}}
   </div>
-  <h1 class="mainsponsors__section-title">COL·LABORADORS PRINCIPALS</h1>
-  <div class="mainsponsors__section-grid">
+  <h1 class="mainsponsors__section-title title">COL·LABORADORS PRINCIPALS</h1>
+  <div class="mainsponsors__section-grid flex">
     {{#main}}
-    <div class="mainsponsors__grid-item">
+    <div class="mainsponsors__grid-item grid-item">
       <div
-        class="mainsponsors__item-img"
+        class="mainsponsors__item-img grid-img size-1"
         style="background-image: url('{{file}}');"
       ></div>
     </div>
     {{/main}}
   </div>
-  <h1 class="orsponsors__section-title">SPONSORS D'OR</h1>
-  <div class="orsponsors__section-grid">
+  <h1 class="orsponsors__section-title title">SPONSORS D'OR</h1>
+  <div class="orsponsors__section-grid flex">
     {{#or}}
-    <div class="orsponsors__grid-item">
+    <div class="orsponsors__grid-item grid-item">
       <div
-        class="orsponsors__item-img"
+        class="orsponsors__item-img grid-img size-2"
         style="background-image: url('{{file}}');"
       ></div>
     </div>
     {{/or}}
   </div>
-  <h1 class="platasponsors__section-title">SPONSORS DE PLATA</h1>
-  <div class="platasponsors__section-grid">
+  <h1 class="platasponsors__section-title title">SPONSORS DE PLATA</h1>
+  <div class="platasponsors__section-grid flex">
     {{#plata}}
-    <div class="platasponsors__grid-item">
+    <div class="platasponsors__grid-item grid-item">
       <div
-        class="platasponsors__item-img"
+        class="platasponsors__item-img grid-img size-2"
         style="background-image: url('{{file}}');"
       ></div>
     </div>
     {{/plata}}
   </div>
-  <h1 class="bronzesponsors__section-title">SPONSORS DE BRONZE</h1>
-  <div class="bronzesponsors__section-grid">
+  <h1 class="bronzesponsors__section-title title">SPONSORS DE BRONZE</h1>
+  <div class="bronzesponsors__section-grid flex">
     {{#bronze}}
-    <div class="bronzesponsors__grid-item">
+    <div class="bronzesponsors__grid-item grid-item">
       <div
-        class="bronzesponsors__item-img"
+        class="bronzesponsors__item-img grid-img size-3"
         style="background-image: url('{{file}}');"
       ></div>
     </div>
     {{/bronze}}
   </div>
-  <h1 class="collaboradorsponsors__section-title">COL·LABORADORS</h1>
-  <div class="collaboradorsponsors__section-grid">
+  <h1 class="collaboradorsponsors__section-title title">COL·LABORADORS</h1>
+  <div class="collaboradorsponsors__section-grid flex">
     {{#collaboradors}}
-    <div class="collaboradorsponsors__grid-item">
+    <div class="collaboradorsponsors__grid-item grid-item">
       <div
-        class="collaboradorsponsors__item-img"
+        class="collaboradorsponsors__item-img grid-img size-3"
         style="background-image: url('{{file}}');"
       ></div>
       <label>{{ name }}</label>
     </div>
     {{/collaboradors}}
   </div>
+  <h1 class="competitionsponsors__section-title title">COMPETICIÓ</h1>
+  <div class="competitionsponsors__section-grid flex">
+    {{#competition}}
+    <div class="competitionsponsors__grid-item grid-item">
+      <div
+        class="competitionsponsors__item-img grid-img size-3"
+        style="background-image: url('{{file}}');"
+      ></div>
+    </div>
+    {{/competition}}
+  </div>
 </div>
+
+
