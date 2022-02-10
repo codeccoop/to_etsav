@@ -74,24 +74,6 @@ const Gallery = (function () {
     }
   };
 
-<<<<<<< HEAD
-    Gallery.prototype.onClickImage = function () {
-        var overlay = document.querySelector('.overlay');
-        overlay.classList.add('activo');
-        document.body.style.overflowY = "hidden";
-        this.carousel = $(".carousel").slick({
-            adaptiveHeight: true,
-            mobileFirst: true,
-            dots: true,
-            appendDots: ".overlay .dots"
-        });
-        var boton = document.querySelector('#boton-cerrar');
-        boton.removeEventListener('click', this.onCloseOverlay);
-        boton.addEventListener('click', this.onCloseOverlay);
-        overlay.removeEventListener('click', this.onCloseOverlay);
-        overlay.addEventListener('click', this.onCloseOverlay);
-    };
-=======
   Gallery.prototype.onClickImage = function (event) {
     var smallimage = event.target;
     var index = smallimage.getAttribute("index");
@@ -112,7 +94,6 @@ const Gallery = (function () {
     overlay.removeEventListener("click", this.onCloseOverlay);
     overlay.addEventListener("click", this.onCloseOverlay);
   };
->>>>>>> 030e5f5... Videos & projecte
 
   Gallery.prototype.onCloseOverlay = function onCloseOverlay(ev) {
     var overlay = document.querySelector(".overlay");
