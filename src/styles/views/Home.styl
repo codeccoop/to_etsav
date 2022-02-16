@@ -28,18 +28,19 @@
     background-size: 70%
     background-position: center
     background-color: #0001
-    filter: invert(1)
+    filter: opacity(.6)
     cursor: pointer
 
     &[dir="top"]
       bottom: 70px
+      transform: rotate(90deg)
 
       [current-section="cover"] &
         display: none
 
     &[dir="bottom"]
       bottom: 15px
-      transform: rotate(180deg)
+      transform: rotate(270deg)
 
       [current-section="footer"] &
         display: none
