@@ -5,10 +5,10 @@
   <div class="institutionalsponsors__section-grid flex">
     {{#institutional}}
     <div class="institutionalsponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="institutionalsponsors__item-img grid-img size-1"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
     </div>
     {{/institutional}}
   </div>
@@ -16,10 +16,10 @@
   <div class="mainsponsors__section-grid flex">
     {{#main}}
     <div class="mainsponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="mainsponsors__item-img grid-img size-1"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
     </div>
     {{/main}}
   </div>
@@ -27,10 +27,10 @@
   <div class="orsponsors__section-grid flex">
     {{#or}}
     <div class="orsponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="orsponsors__item-img grid-img size-2"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
     </div>
     {{/or}}
   </div>
@@ -38,10 +38,10 @@
   <div class="platasponsors__section-grid flex">
     {{#plata}}
     <div class="platasponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="platasponsors__item-img grid-img size-2"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
     </div>
     {{/plata}}
   </div>
@@ -49,10 +49,11 @@
   <div class="bronzesponsors__section-grid flex">
     {{#bronze}}
     <div class="bronzesponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="bronzesponsors__item-img grid-img size-3"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
+      <a class="bronzesponsors__item-name item-name" href="{{link}}"><p>{{name}}</p></a>
     </div>
     {{/bronze}}
   </div>
@@ -60,10 +61,11 @@
   <div class="collaboradorsponsors__section-grid flex">
     {{#collaboradors}}
     <div class="collaboradorsponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="collaboradorsponsors__item-img grid-img size-3"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
+      <a class="collaboradorsponsors__item-name item-name" href="{{link}}"><p>{{name}}</p></a>
     </div>
     {{/collaboradors}}
   </div>
@@ -71,10 +73,11 @@
   <div class="competitionsponsors__section-grid flex">
     {{#competition}}
     <div class="competitionsponsors__grid-item grid-item">
-      <div
+      <a href="{{link}}" target="_blank"><div
         class="competitionsponsors__item-img grid-img size-3"
         style="background-image: url('{{file}}');"
-      ></div>
+      ></div></a>
+      <a class="competitionsponsors__item-name item-name" href="{{link}}"><p>{{name}}</p></a>
     </div>
     {{/competition}}
   </div>

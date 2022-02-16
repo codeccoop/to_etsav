@@ -2,222 +2,357 @@
     "institutional": [
         {
             "file": "1.ETSAV-R.jpg",
-            "name": "ETSAV-R"
+            "name": "Escola Tècnica Superior d'Arquitectura del Vallès",
+            "link": "https://etsav.upc.edu/ca"
         },
         {
             "file": "2.UPCTECH-R.jpg",
-            "name": "UPCTECH-R"
+            "name": "Universitat Politècnica de Catalunya",
+            "link": "https://www.upc.edu/ca"
         },
         {
-            "file": "3.BTEC-R.jpg"
+            "file": "3.BTEC-R.jpg",
+            "name": "Fundació B_Tec",
+            "link": "https://www.btec.cat/ca"
         },
         {
-            "file": "4.UPCENGINYERIA-R.jpg"
+            "file": "4.UPCENGINYERIA-R.jpg",
+            "name": "Escola d'Enginyeria de Barcelona Est",
+            "link": "https://eebe.upc.edu/ca"
         },
         {
-            "file": "5.AJUNTAMENTBCN-R.jpg"
+            "file": "5.AJUNTAMENTBCN-R.jpg",
+            "name": "Ajuntament de Barcelona",
+            "link": "https://www.barcelona.cat/ca/"
         },
         {
-            "file": "6.GENERALITATCATALUNYA-R.jpg"
+            "file": "6.GENERALITATCATALUNYA-R.jpg",
+            "name": "Generalitat de Catalunya",
+            "link": "https://web.gencat.cat/ca/inici/"
         },
         {
-            "file": "7.TV3-R.jpg"
+            "file": "7.TV3-R.jpg",
+            "name": "Televisió de Catalunya",
+            "link": "https://www.ccma.cat/tv3/"
         }
 
     ],
     "main": [
         {
-            "file": "1.ALBERCH-R.jpg"
+            "file": "1.ALBERCH-R.jpg",
+            "name": "Fustes Alberch",
+            "link": "https://www.alberch.com/"
         },
         {
-            "file": "2.THERMOCHIP-R.jpg"
+            "file": "2.THERMOCHIP-R.jpg",
+            "name": "Thermochip",
+            "link": "https://www.thermochip.com/"
         },
         {
-            "file": "3.AISLUX-R.jpg"
+            "file": "3.AISLUX-R.jpg",
+            "name": "Aislux",
+            "link": "http://aislux.com/"
         }
     ],
     "or": [
         {
-            "file": "1.ISCLETEC-R.jpg"
+            "file": "1.ISCLETEC-R.jpg",
+            "name": "Iscletec",
+            "link": "https://iscletec.com/"
         },
         {
-            "file": "2.DESIGNBUILDER-R.jpg"
+            "file": "2.DESIGNBUILDER-R.jpg",
+            "name": "Design Builder",
+            "link": "https://ecoeficiente.es/"
         }
     ],
     "plata": [
         {
-            "file": "1.SOLICLIMA-R.jpg"
+            "file": "1.SOLICLIMA-R.jpg",
+            "name": "Sol i Clima",
+            "link": "http://www.soliclima.com/"
         },
         {
-            "file": "2.FAGOM-R.jpg"
+            "file": "2.FAGOM-R.jpg",
+            "name": "Fagom",
+            "link": "http://www.fagom.net/"
         },
         {
-            "file": "3.FIC-R.jpg"
+            "file": "3.FIC-R.jpg",
+            "name": "FIC",
+            "link": "http://fic-grup.com/"
         },
         {
-            "file": "4.STANLEYDEWALT-R.jpg"
+            "file": "4.STANLEYDEWALT-R.jpg",
+            "name": "Stanley - DeWalt",
+            "link": "http://www.stanleyworks.es/"
         },
         {
-            "file": "5.JUNG-R.jpg"
+            "file": "5.JUNG-R.jpg",
+            "name": "Jung",
+            "link": "https://www.jung.de/es/"
         },
         {
-            "file": "6.DEDIETRICH-R.jpg"
+            "file": "6.DEDIETRICH-R.jpg",
+            "name": "De Dietrich",
+            "link": "http://www.dedietrich-calefaccion.es/"
         },
         {
-            "file": "7.ROCA-R.jpg"
+            "file": "7.ROCA-R.jpg",
+            "name": "Roca",
+            "link": "https://www.roca.es/"
         },
         {
-            "file": "8.RMT-R.jpg"
+            "file": "8.RMT-R.jpg",
+            "name": "RMT Insulation",
+            "link": "http://rmtsa.es/contacte.html"
         }
     ],
     "bronze": [
         {
-            "file": "1.ROTHOBLAAS-R.jpg"
+            "file": "1.ROTHOBLAAS-R.jpg",
+            "name": "Rothoblaas",
+            "link": "https://www.rothoblaas.es/"
         },
         {
-            "file": "2.SAVEFOODFROMTHEFRIDGE-R.jpg"
+            "file": "2.SAVEFOODFROMTHEFRIDGE-R.jpg",
+            "name": "Save food from the fridge",
+            "link": "http://www.savefoodfromthefridge.com/"
         },
         {
-            "file": "3.GESTORENERGETICO-R.jpg"
+            "file": "3.GESTORENERGETICO-R.jpg",
+            "name": "Gestor Energético",
+            "link": "https://www.gestor-energetico.com/"
         },
         {
-            "file": "4.PERSIANABARCELONA-R.jpg"
+            "file": "4.PERSIANABARCELONA-R.jpg",
+            "name": "Persiana Barcelona",
+            "link": "http://persiana-barcelona.com/ca/"
         },
         {
-            "file": "5.PROCLIMA-R.jpg"
+            "file": "5.PROCLIMA-R.jpg",
+            "name": "Proclima",
+            "link": "http://www.proclimasl.com/es/"
         },
         {
-            "file": "6.SYSCLIMA-R.jpg"
+            "file": "6.SYSCLIMA-R.jpg",
+            "name": "Sysclima",
+            "link": "https://www.sysclima.com/"
         },
         {
-            "file": "7.ISOTISS-R.jpg"
+            "file": "7.ISOTISS-R.jpg",
+            "name": "Isotiss",
+            "link": "https://www.isotiss.com/"
         },
         {
-            "file": "8.EDODOMEO-R.jpg"
+            "file": "8.EDODOMEO-R.jpg",
+            "name": "Ecodomeo",
+            "link": "http://www.ecodomeo.com/"
         },
         {
-            "file": "9.LEDSC4-R.jpg"
+            "file": "9.LEDSC4-R.jpg",
+            "name": "Leds C4",
+            "link": "http://leds-c4.com/ledsc4/es.html"
         },
         {
-            "file": "10.MAXA-R.jpg"
+            "file": "10.MAXA-R.jpg",
+            "name": "Maxa",
+            "link": "https://www.maxa.it/"
         },
         {
-            "file": "11.CLIMA-R.jpg"
+            "file": "11.CLIMA-R.jpg",
+            "name": "Climakit",
+            "link": "http://fic-grup.com/"
         },
         {
-            "file": "12.DISTRIPLAC-R.jpg"
+            "file": "12.DISTRIPLAC-R.jpg",
+            "name": "Distriplac",
+            "link": "http://www.distriplac.com/es/index.htm"
         },
         {
-            "file": "13.VIROC-R.jpg"
+            "file": "13.VIROC-R.jpg",
+            "name": "Viroc",
+            "link": "https://www.investwood.pt/es/viroc/"
         },
         {
-            "file": "14.MVIC-R.jpg"
+            "file": "14.MVIC-R.jpg",
+            "name": "MVic",
+            "link": "http://www.pmvich.com/?lang=ca"
         },
         {
-            "file": "15.MARANGES-R.jpg"
+            "file": "15.MARANGES-R.jpg",
+            "name": "Maranges",
+            "link": "http://web.maranges.com/"
         },
         {
-            "file": "16.BREINCOSMART-R.jpg"
+            "file": "16.BREINCOSMART-R.jpg",
+            "name": "Breincosmart",
+            "link": "https://www.breinco.com/ca/"
         },
         {
-            "file": "17.FRECAN-R.jpg"
+            "file": "17.FRECAN-R.jpg",
+            "name": "Frecan",
+            "link": "https://www.frecan.com/"
         },
         {
-            "file": "18.PEYGRAN-R.jpg"
+            "file": "18.PEYGRAN-R.jpg",
+            "name": "Peygran",
+            "link": "https://www.peygran.com/ca/"
         },
         {
-            "file": "19.ISOLFUBEX-R.jpg"
+            "file": "19.ISOLFUBEX-R.jpg",
+            "name": "Isoltubex",
+            "link": "https://www.isoltubex.net/es/"
         },
         {
-            "file": "20.ROLLGUM-R.jpg"
+            "file": "20.ROLLGUM-R.jpg",
+            "name": "Rollgum",
+            "link": "http://www.rollgum.com/"
         },
         {
-            "file": "21.SOLERA-R.jpg"
+            "file": "21.SOLERA-R.jpg",
+            "name": "Solera",
+            "link": "https://www.psolera.com/index.php/es/"
         },
         {
-            "file": "22.SAHECO-R.jpg"
+            "file": "22.SAHECO-R.jpg",
+            "name": "Saheco",
+            "link": "https://www.saheco.com/"
+            
         },
         {
-            "file": "23.HNA-R.jpg"
+            "file": "23.HNA-R.jpg",
+            "name": "HNA",
+            "link": "https://www.hna.es/index"
         },
         {
-            "file": "24.MO-R.jpg"
+            "file": "24.MO-R.jpg",
+            "name": "mo",
+            "link": "http://www.marioxitall.cat/"
         },
         {
-            "file": "25.IRESTAL-R.jpg"
+            "file": "25.IRESTAL-R.jpg",
+            "name": "Irestal",
+            "link": "http://www.irestal.com/"
         }
     ],
     "collaboradors": [
         {
-            "file": "1.COLACAO-R.jpg"
+            "file": "1.COLACAO-R.jpg",
+            "name": "Colacao",
+            "link": "https://www.colacao.es/"
         },
         {
-            "file": "2.NOCILLA-R.jpg"
+            "file": "2.NOCILLA-R.jpg",
+            "name": "Nocilla",
+            "link": "https://www.nocilla.es/"
         },
         {
-            "file": "3.TRIBAS-R.jpg"
+            "file": "3.TRIBAS-R.jpg",
+            "name": "Tribas",
+            "link": "http://www.fruncitex.com/"
         },
         {
-            "file": "4.SERGEFERRARI-R.jpg"
+            "file": "4.SERGEFERRARI-R.jpg",
+            "name": "Serge Ferrari",
+            "link": "https://www.sergeferrari.com/"
         },
         {
-            "file": "5.FUTONLLIT-R.jpg"
+            "file": "5.FUTONLLIT-R.jpg",
+            "name": "Futon Llit",
+            "link": "https://futonllit.com/"
         },
         {
-            "file": "6.TP-R.jpg"
+            "file": "6.TP-R.jpg",
+            "name": "TP Aquitectura i Construcció Tèxtil",
+            "link": "http://www.tpconstrucciotextil.com/"
         },
         {
-            "file": "7.CEGE-R.jpg"
+            "file": "7.CEGE-R.jpg",
+            "name": "CeGe",
+            "link": "https://www.cegeglobal.com/ca/"
         },
         {
-            "file": "8.ROTHO-R.jpg"
+            "file": "8.ROTHO-R.jpg",
+            "name": "Rotho",
+            "link": "https://www.rotho.com/de"
         },
         {
-            "file": "9.ELGIBRELL-R.jpg"
+            "file": "9.ELGIBRELL-R.jpg",
+            "name": "El Gibrell",
+            "link": "https://www.elgibrell.com/"
         },
         {
-            "file": "10.YKK-R.jpg"
+            "file": "10.YKK-R.jpg",
+            "name": "YKK",
+            "link": "https://www.ykk.es/"
         },
         {
-            "file": "11.WIBEEE-R.jpg"
+            "file": "11.WIBEEE-R.jpg",
+            "name": "WiBeee",
+            "link": "https://wibeee.com/wibeee-home/"
         },
         {
-            "file": "12.SUCADE-R.jpg"
+            "file": "12.SUCADE-R.jpg",
+            "name": "Sucade",
+            "link": "https://www.sucade.es/es/"
         },
         {
-            "file": "14.ARQBAG-R.jpg"
+            "file": "14.ARQBAG-R.jpg",
+            "name": "Arqbag",
+            "link": "https://www.arqbag.coop/"
         },
         {
-            "file": "15.RESSO-R.jpg"
+            "file": "15.RESSO-R.jpg",
+            "name": "Ressò",
+            "link": "http://www.resso.upc.edu/"
         },
         {
-            "file": "16.TBWA-R.jpg"
+            "file": "16.TBWA-R.jpg",
+            "name": "TBWA",
+            "link": "http://tbwa.es/"
         },
         {
-            "file": "17.FABLAB-R.jpg"
+            "file": "17.FABLAB-R.jpg",
+            "name": "Fablab",
+            "link": "http://www.fablabsantcugat.com/"
         },
         {
-            "file": "18.GREMIFUSTA-R.jpg"
+            "file": "18.GREMIFUSTA-R.jpg",
+            "name": "Gremi de fusta i moble",
+            "link": "https://gremifustaimoble.cat/"
         }
     ],
     "competition": [
         {
-            "file": "1.SDE-R.jpg"
+            "file": "1.SDE-R.jpg",
+            "name": "Solar Decathlon Europe",
+            "link": "https://www.solardecathlon.gov/international-europe.html"
         },
         {
-            "file": "2.MÜEGYETEM-R.jpg"
+            "file": "2.MÜEGYETEM-R.jpg",
+            "name": "Universitat Politècnica d'Hongria",
+            "link": "https://www.bme.hu/"
         },
         {
-            "file": "3.EMI-R.jpg"
+            "file": "3.EMI-R.jpg",
+            "name": "ÉMI",
+            "link": "http://www.emi.hu/EMI/web.nsf/Pub/index.html"
         },
         {
-            "file": "4.SZENTENDRE-R.jpg"
+            "file": "4.SZENTENDRE-R.jpg",
+            "name": "Ciutat de Szentendre",
+            "link": ""
         },
         {
-            "file": "5.ENERGYENDEAVOUR-R.jpg"
+            "file": "5.ENERGYENDEAVOUR-R.jpg",
+            "name": "Energy Endavour Foundation",
+            "link": "http://energyendeavour.org/"
         },
         {
-            "file": "6.ENERGY-R.jpg"
+            "file": "6.ENERGY-R.jpg",
+            "name": "Energy",
+            "link": ""
         }
     ]
 }

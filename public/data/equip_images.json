@@ -437,6 +437,15 @@
                 "department":"-"
                 },
             "quote":"«Jo ja ho vaig dir.»"
+        },
+        {
+            "file": "37_Marti Obiols.jpg",
+            "fullname": {"name": "MARTÍ",
+                        "surnames":"OBIOLS GALÍ"
+                         },
+            "details":{"position":"Faculty Advisor",
+                            "level": "Architect"
+                            }
         }
     ],
     "images2": [
@@ -458,15 +467,6 @@
             "details":{"position":"Faculty Advisor",
                         "level": "PhD Architect"
                         }
-        },
-        {
-            "file": "3_MARTI OBIOLS.png",
-            "fullname": {"name": "MARTÍ",
-                        "surnames":"OBIOLS GALÍ"
-                         },
-            "details":{"position":"Faculty Advisor",
-                            "level": "Architect"
-                            }
         },
         {
             "file": "4_CARMEN BODELÓN.png",

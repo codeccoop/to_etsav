@@ -14,14 +14,17 @@
         display: flex
         justify-content: center
         flex-wrap: wrap
+        padding-bottom: 5px
 
         &:not(:last-child)
-            border-bottom: .5px solid grey
+            border-bottom: .5px solid #ddd
 
     .grid-item
         display: flex
-        padding-bottom: 3px 
         margin: 0 2px
+
+        &:last-child .item-name p
+            border-right: unset        
  
     .grid-img
         background-size: cover
@@ -37,60 +40,73 @@
         font-weight: normal
         font-size: .8em
         margin: 0
-        padding-bottom: 4px
+        padding-top: 4px
+        font-weight: 500
 
 /* INSTITUCIONAL SPONSORS */
 .institutionalsponsors__item-img
     height: 50px
     width: 60px
 
-@media screen and (min-height: 700px)
-    #app:not(.is-touch) &
-        .institutionalsponsors__item-img
+    @media screen and (min-height: 700px)
+        #app:not(.is-touch) &
             height: 75px
             width: 95px
+
+    @media screen and (max-width: 600px) and (orientation: portrait)
+        height: 40px
+        width: 50px
 
 /* MAIN SPONSORS */
 .mainsponsors__item-img
     height: 45px
     width: 90px
 
-@media screen and (min-height: 700px)
-    #app:not(.is-touch) &
-        .mainsponsors__item-img
+    @media screen and (min-height: 700px)
+        #app:not(.is-touch) &
             height: 60px
             width: 120px
+
+
+    @media screen and (max-width: 600px) and (orientation: portrait)
+        height: 40px
+        width: 70px
 
 /* OR SPONSORS */
 .orsponsors__item-img
     height: 45px
     width: 90px
 
-@media screen and (min-height: 700px)
-    #app:not(.is-touch) &
-        .orsponsors__item-img
+    @media screen and (min-height: 700px)
+        #app:not(.is-touch) &
             height: 50px
             width: 100px
+
+    @media screen and (max-width: 600px) and (orientation: portrait)
+        height: 40px
+        width: 70px
 
 /* PLATA SPONSORS */
 .platasponsors__item-img
     height: 45px
     width: 45px
 
-@media screen and (min-height: 700px)
-    #app:not(.is-touch) &
-        .platasponsors__item-img
+    @media screen and (min-height: 700px)
+        #app:not(.is-touch) &
             height: 50px
             width: 50px
+
+    @media screen and (max-width: 600px) and (orientation: portrait)
+        height: 40px
+        width: 40px
 
 /* BRONZE SPONSORS */
 .bronzesponsors__item-img
     height: 45px
     width: 45px
 
-@media screen and (min-height: 700px)
-    #app:not(.is-touch) &
-        .bronzesponsors__item-img
+    @media screen and (min-height: 700px)
+        #app:not(.is-touch) &
             height: 50px
             width: 50px
 
@@ -101,9 +117,28 @@
     height: 40px
     width: 40px
 
-@media screen and (min-height: 700px)
-    #app:not(.is-touch) &
-        .collaboradorsponsors__item-img
-        .competitionsponsors__item-img
+    @media screen and (min-height: 700px)
+        #app:not(.is-touch) &
             height: 45px
             width: 45px
+
+.bronzesponsors__item-img
+.collaboradorsponsors__item-img
+.competitionsponsors__item-img
+    @media screen and (max-width: 700px)
+        display: none
+
+.bronzesponsors__item-name
+.competitionsponsors__item-name
+.collaboradorsponsors__item-name
+    display: none
+
+    @media screen and (max-width: 700px)
+        display: block
+
+    > p
+        font-size: 0.8em
+        cursor: pointer
+        margin: 0
+        border-right: 0.5px solid #ccc
+        padding: 0 4px 0 0

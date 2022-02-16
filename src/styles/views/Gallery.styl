@@ -17,10 +17,15 @@
   flex-grow: 1
   flex-shrink: 0
   padding: 25px 10px
-  // margin: 25px 5px
   flex-direction: column
   border: 1px solid white
   transition: border-color .3s ease-in-out
+
+  @media screen and (max-width: 950px)
+    flex-basis: 50%
+    
+  @media screen and (max-width: 650px)
+    flex-basis: 100%
 
   &:hover .text-content
     color: $magenta
@@ -42,17 +47,6 @@
     text-align: justify
     margin-top: 10px
     transition: color .3s ease-in-out
-
-@media screen and (max-width: 950px)
-  .img-container
-  .mov-container
-    flex-basis: 50%
-
-@media screen and (max-width: 650px)
-  .img-container
-  .mov-container
-    flex-basis: 100%
-
 
 /*OVERLAY*/
 .overlay
