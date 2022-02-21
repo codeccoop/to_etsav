@@ -14,6 +14,7 @@ const Gallery = require("./views/home-sections/Gallery.js");
 const Team = require("./views/home-sections/Team.js");
 const Sponsors = require("./views/home-sections/Sponsors.js");
 const Documents = require("./views/home-sections/Documents.js");
+const Contact = require("./views/home-sections/Contact.js");
 
 // UTILS
 const { isTouchDevice } = require("./utils/touchable.js");
@@ -47,6 +48,10 @@ const homeSections = [
     id: "documents",
     view: Documents,
   },
+  {
+    id: "contact",
+    view: Contact,
+  }
 ];
 
 function startLng(app) {
