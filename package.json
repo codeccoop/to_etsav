@@ -6,7 +6,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "tablao serve",
-    "build:pre": "tablao build pre"
+    "build:pre": "tablao build pre",
+    "build": "tabloa build pro"
   },
   "dependencies": {
     "mustache": "^4.0.1",
