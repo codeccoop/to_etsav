@@ -1,144 +1,149 @@
-#sponsors 
-    padding-top:100px
+#sponsors
+	padding-top:100px
 
-.sponsors__content
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    padding: 0 5%
-    height: calc(100% - 90px)
+	.sponsors__content
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center	
+		padding: 0 5%
+		height: calc(100% - 100px)
 
-    .flex
-        width:100%
-        display: flex
-        justify-content: center
-        flex-wrap: wrap
-        padding-bottom: 5px
+		.flex
+			width:100%
+			display: flex
+			justify-content: center
+			flex-wrap: wrap
+			padding-bottom: 5px
 
-        &:not(:last-child)
-            border-bottom: .5px solid #ddd
+			&:not(:last-child)
+				border-bottom: .5px solid #ddd
 
     .grid-item
-        display: flex
-        margin: 0 2px
+		display: flex
+		margin: 0 2px
 
-        &:last-child .item-name p
-            border-right: unset        
- 
-    .grid-img
-        background-size: cover
-        background-position: center
-        background-repeat: no-repeat
+		&:last-child .item-name p
+			border-right: unset
 
-        &.bronzesponsors__item-img
-        &.collaboradorsponsors__item-img
-            background-size: contain
+	.grid-img
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
 
-    .title
-        text-align: center
-        font-weight: normal
-        font-size: .8em
-        margin: 0
-        padding-top: 4px
-        font-weight: 500
+		&.bronzesponsors__item-img
+		&.collaboradorsponsors__item-img
+			background-size: contain
 
-/* INSTITUCIONAL SPONSORS */
-.institutionalsponsors__item-img
-    height: 50px
-    width: 60px
+	.title
+		text-align: center
+		font-weight: normal
+		font-size: .8em
+		margin: 0
+		padding-top: 4px
+		font-weight: 500
 
-    @media screen and (min-height: 700px)
-        #app:not(.is-touch) &
-            height: 75px
-            width: 95px
+	/* INSTITUCIONAL SPONSORS */
+	.institutionalsponsors__item-img
+		height: 50px
+		width: 60px
 
-    @media screen and (max-width: 600px) and (orientation: portrait)
-        height: 40px
-        width: 50px
+		@media screen and (min-height: 700px)
+			height: 75px
+			width: 95px
 
-/* MAIN SPONSORS */
-.mainsponsors__item-img
-    height: 45px
-    width: 90px
+		@media screen and (max-width: 600px) and (orientation: portrait)
+			height: 40px
+			width: 50px
 
-    @media screen and (min-height: 700px)
-        #app:not(.is-touch) &
-            height: 60px
-            width: 120px
+			@media screen and (max-height: 800px)
+				height: 35px
 
+	/* MAIN SPONSORS */
+	.mainsponsors__item-img
+		height: 45px
+		width: 90px
 
-    @media screen and (max-width: 600px) and (orientation: portrait)
-        height: 40px
-        width: 70px
+		@media screen and (min-height: 700px)
+			height: 60px
+			width: 120px
 
-/* OR SPONSORS */
-.orsponsors__item-img
-    height: 45px
-    width: 90px
+		@media screen and (max-width: 600px) and (orientation: portrait)
+			height: 40px
+			width: 70px
 
-    @media screen and (min-height: 700px)
-        #app:not(.is-touch) &
-            height: 50px
-            width: 100px
+			@media screen and (max-height: 800px)
+				height: 35px
+	
+	/* OR SPONSORS */
+	.orsponsors__item-img
+		height: 45px
+		width: 90px
 
-    @media screen and (max-width: 600px) and (orientation: portrait)
-        height: 40px
-        width: 70px
+		@media screen and (min-height: 700px)
+			height: 50px
+			width: 100px
 
-/* PLATA SPONSORS */
-.platasponsors__item-img
-    height: 45px
-    width: 45px
+		@media screen and (max-width: 600px) and (orientation: portrait)
+			height: 40px
+			width: 70px
 
-    @media screen and (min-height: 700px)
-        #app:not(.is-touch) &
-            height: 50px
-            width: 50px
+	/* PLATA SPONSORS */
+	.platasponsors__item-img
+		height: 45px
+		width: 45px
 
-    @media screen and (max-width: 600px) and (orientation: portrait)
-        height: 40px
-        width: 40px
+		@media screen and (min-height: 700px)
+			height: 50px
+			width: 50px
 
-/* BRONZE SPONSORS */
-.bronzesponsors__item-img
-    height: 40px
-    width: 40px
+		@media screen and (max-width: 600px) and (orientation: portrait)
+			height: 40px
+			width: 40px
 
-    @media screen and (min-height: 700px)
-        #app:not(.is-touch) &
-            height: 50px
-            width: 50px
+			@media screen and (max-height: 800px)
+				height: 35px
+				width: 35px
 
-/* COLLABORADORS */
-/* COMPETITION */
-.collaboradorsponsors__item-img
-.competitionsponsors__item-img
-    height: 40px
-    width: 40px
+	/* BRONZE SPONSORS */
+	.bronzesponsors__item-img
+		height: 40px
+		width: 40px
 
-    @media screen and (min-height: 700px)
-        #app:not(.is-touch) &
-            height: 45px
-            width: 45px
+		@media screen and (min-height: 700px)
+			height: 50px
+			width: 50px
 
-.bronzesponsors__item-img
-.collaboradorsponsors__item-img
-.competitionsponsors__item-img
-    @media screen and (max-width: 700px)
-        display: none
+	/* COLLABORADORS & COMPETITION*/
+	.collaboradorsponsors__item-img
+	.competitionsponsors__item-img
+		height: 40px
+		width: 40px
 
-.bronzesponsors__item-name
-.competitionsponsors__item-name
-.collaboradorsponsors__item-name
-    display: none
+		@media screen and (min-height: 700px)
+			height: 45px
+			width: 45px
 
-    @media screen and (max-width: 700px)
-        display: block
+	.bronzesponsors__item-img
+	.collaboradorsponsors__item-img
+	.competitionsponsors__item-img
+		@media screen and (max-width: 700px)
+			display: none
 
-    > p
-        font-size: 0.8em
-        cursor: pointer
-        margin: 0
-        border-right: 0.5px solid #ccc
-        padding: 0 4px 0 0
+	.bronzesponsors__item-name
+	.competitionsponsors__item-name
+	.collaboradorsponsors__item-name
+		display: none
+
+		@media screen and (max-width: 700px)
+			display: block
+
+		> p
+			font-size: 0.8rem
+			cursor: pointer
+			margin: 0
+			border-right: 0.5px solid #ccc
+			padding: 0 4px 0 0
+
+			@media screen and (max-height: 800px)
+				font-size: 0.7rem

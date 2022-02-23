@@ -44,7 +44,6 @@ const Gallery = (function () {
           index++;
         }
         self.data = data;
-        console.log(data);
       });
     });
     this.onClickImage = this.onClickImage.bind(this);
