@@ -17,9 +17,9 @@ module.exports = {
   },
   pro: {
     name: "production",
-    host: "http://domain.com/path",
+    host: "https://www.to.upc.edu/",
     port: null,
-    apiURL: "http://domain.com/path/rest/",
-    publicURL: "http://domain.com/path/app/public/",
+    apiURL: "https://www.to.upc.edu/public/data/",
+    publicURL: "https://www.to.upc.edu/public/",
   },
 };

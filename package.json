@@ -7,7 +7,7 @@
   "scripts": {
     "start": "tablao serve",
     "build:pre": "tablao build pre",
-    "build": "tabloa build pro"
+    "build": "tablao build pro"
   },
   "dependencies": {
     "mustache": "^4.0.1",
