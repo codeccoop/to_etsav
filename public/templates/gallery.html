@@ -1,7 +1,11 @@
+<div class="gallery-wrapper">
+
+<p> © <a href="http://www.andresflajszer.com/">Andrés Flajszer</a></p>
+
 <div class="gallery-content">
     {{#images}}
     <div class="img-container">
-        <img id= "{{id}}" index="{{index}}" src="public/images/gallery/{{smallfile}}"/>
+        <img id= "{{id}}" index="{{index}}" loading="lazy" src="public/images/gallery/{{smallfile}}"/>
         <div class="text-content">
             {{text}}
         </div>
@@ -25,4 +29,5 @@
         </div>
         <div role="tablist" class="dots"></div>
     </div>
+</div>
 </div>
