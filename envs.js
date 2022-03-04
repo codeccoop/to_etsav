@@ -11,9 +11,9 @@ module.exports = {
   },
   pre: {
     name: "preproduction",
-    host: "http://dadescomunals.tk/to",
-    apiURL: "/to/public/data/",
-    publicURL: "/to/public/",
+    host: "https://codeccoop.org/projectes/to",
+    apiURL: "/projectes/to/public/data/",
+    publicURL: "/projectes/to/public/",
   },
   pro: {
     name: "production",

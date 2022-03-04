@@ -1,4 +1,5 @@
 const App = require('./scripts/App.js');
+const { setViewport } = require('./scripts/utils/viewport.js');
 
 if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", App, false);
@@ -7,3 +8,5 @@ if (document.addEventListener) {
 } else {
     window.onload = App;
 }
+
+setViewport();
